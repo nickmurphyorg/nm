@@ -15,12 +15,6 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div id="slate" class="high">
-				<section class="heroData">
-					<?php if ( is_active_sidebar( 'hero' ) ) : ?>
-						<?php dynamic_sidebar( 'hero' ); ?>
-					<?php endif; ?>
-				</section><!-- hero -->
-				
 				<section id="prjkts" class="">
 					<div class="nudge"></div>
 					<div class="container">
@@ -33,29 +27,33 @@ get_header(); ?>
 						<div class="container">
 							<div class="row">
 								<div id="meText">
-									<?php if ( is_active_sidebar( 'about' ) ) : ?>
-										<?php dynamic_sidebar( 'about' ); ?>
-									<?php endif; ?>
+									<?php
+										$frontpage_id = get_option( 'page_on_front' );
+										
+										$page_title = get_post_field( 'post_title', $frontpage_id );
+										$page_text = get_post_field( 'post_content', $frontpage_id );
+									?>
+									<h6><?=$page_title?></h6>
+									<div class="textWidget"><?=$page_text?></div>
 								</div>
 							</div>
 						</div><!-- container -->
 					</div><!-- about text -->
 					<div class="parallax sheetXL">
-						<?php function hero_images() {
-							$paintFull = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
-							$urlLarge = $paintFull['0'];
-							$paintLarge = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
-							$urlMedium = $paintLarge['0'];
-							$paintMedium = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
-							$urlSmall = $paintMedium['0'];
-							?>
-							<script type="text/javascript">
-								heroLarge = "<?=$urlLarge?>";
-								heroMedium = "<?=$urlMedium?>";
-								heroSmall = "<?=$urlSmall?>";
-							</script>
-						<?php }
-						add_action( 'wp_footer', 'hero_images' ); ?>
+						<?php 
+							$frontpage_id = get_option( 'page_on_front' );
+							
+							if (has_post_thumbnail($frontpage_id)) {
+								$urlLarge = wp_get_attachment_url( get_post_thumbnail_id($frontpage_id), 'full' );
+								$urlMedium = wp_get_attachment_url( get_post_thumbnail_id($frontpage_id), 'large' );
+								$urlSmall = wp_get_attachment_url( get_post_thumbnail_id($frontpage_id), 'medium' );
+								?>
+								<picture>
+									<source media="(min-width: 1024px)" srcset="<?=$urlLarge?>">
+									<source media="(min-width: 751px)" srcset="<?=$urlMedium?>">
+									<img src="<?=$urlSmall?>" alt="Nick">
+								</picture>
+						<?php } ?>
 					</div><!-- bg image -->
 				</section><!-- about -->
 				
@@ -99,7 +97,9 @@ get_header(); ?>
 			</div><!-- hero text -->
 			
 			<div id="heroSlides" class="sheet low">
-				<ol class="parallax carousel sheet"></ol>
+				<?php if ( is_active_sidebar( 'hero' ) ) : ?>
+					<?php dynamic_sidebar( 'hero' ); ?>
+				<?php endif; ?>
 			</div><!-- hero slides -->  
 			
 		</main><!-- #main -->
