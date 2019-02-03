@@ -174,16 +174,6 @@ function nm_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => esc_html__( 'About', 'nm' ),
-		'id'            => 'about',
-		'description'   => esc_html__( 'About Me', 'nm' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '<h6>',
-		'after_title'   => '</h6>',
-	) );
-	
-	register_sidebar( array(
 		'name'          => esc_html__( 'Sitemap', 'nm' ),
 		'id'            => 'site-map',
 		'description'   => esc_html__( 'HTML Sitemap', 'nm' ),
@@ -228,7 +218,7 @@ function nm_scripts() {
 	    wp_enqueue_script( 'nm-parallax', get_template_directory_uri() . '/js/parallax.js', array( 'jquery' ), '1.0', true );
     }
     
-    if ( is_page() && is_page_template( 'default' ) && has_post_thumbnail() ) {
+    if ( is_page() && is_page_template( 'default' ) && has_post_thumbnail() && !is_front_page() ) {
 	    wp_enqueue_script( 'nm-parallax', get_template_directory_uri() . '/js/parallax.js', array( 'jquery' ), '1.0', true );
     }
     

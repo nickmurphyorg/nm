@@ -16,7 +16,7 @@
 	<?php endif; ?>
 	<section class="layer slab high">
 		<div class="container">
-			<header class="entry-header subH">
+			<header class="entry-header subHeader">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		
 				<div class="entry-meta">

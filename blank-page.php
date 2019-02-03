@@ -47,6 +47,4 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_template_part( 'template-parts/content', 'next' ); ?>
-
 <?php get_footer(); ?>
