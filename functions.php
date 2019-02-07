@@ -225,14 +225,6 @@ function nm_scripts() {
     if ( is_page() && is_page_template( 'blank-page.php' ) ) {
 	    wp_enqueue_script( 'nm-parallax', get_template_directory_uri() . '/js/next.js', array( 'jquery' ), '1.0', true );
     }
-    
-    if ( is_archive() ) {
-	    wp_enqueue_script( 'nm-parallax', get_template_directory_uri() . '/js/heroCenter.js', array( 'jquery' ), '1.0', true );
-	}
-	
-	if ( is_home() ) {
-	    wp_enqueue_script( 'nm-parallax', get_template_directory_uri() . '/js/heroCenter.js', array( 'jquery' ), '1.0', true );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'nm_scripts' );
 

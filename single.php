@@ -18,28 +18,33 @@ get_header(); ?>
 			
 			<section class="letter high">
 				<!-- next post widget -->
-				<div class="container xpost">
+				<div class="container">
 					<div id="previousPost">
-						<?php
-						$previous_post = get_previous_post();
+						<?php $previous_post = get_previous_post();
+							
 						if (!empty( $previous_post )): ?>
-							<div class="othrImg">
-								<a href="<?php echo get_permalink( $previous_post->ID ); ?>"><?php echo get_the_post_thumbnail($previous_post->ID,'medium'); ?></a>
+							<div class="postNavigationImage">
+								<?php echo get_the_post_thumbnail($previous_post->ID,'medium'); ?>
 							</div>
-							<div class="pstTitle">
-								<a href="<?php echo get_permalink( $previous_post->ID ); ?>"><h3><?php echo $previous_post->post_title; ?></h3></a>
+							<div class="postNavigationTitle">
+								<a href="<?php echo get_permalink( $previous_post->ID ); ?>">
+									<h3><?php echo $previous_post->post_title; ?></h3>
+								</a>
 							</div>
 						<?php endif; ?>
 					</div><!-- previous post -->
+					
 					<div id="nextPost">
-						<?php
-						$next_post = get_next_post();
+						<?php $next_post = get_next_post();
+							
 						if (!empty( $next_post )): ?>
-							<div class="othrImg">
-								<a href="<?php echo get_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail($next_post->ID,'medium'); ?></a>
+							<div class="postNavigationImage">
+								<?php echo get_the_post_thumbnail($next_post->ID,'medium'); ?>
 							</div>
-							<div class="pstTitle">
-								<a href="<?php echo get_permalink( $next_post->ID ); ?>"><h3><?php echo $next_post->post_title; ?></h3></a>
+							<div class="postNavigationTitle">
+								<a href="<?php echo get_permalink( $next_post->ID ); ?>">
+									<h3><?php echo $next_post->post_title; ?></h3>
+								</a>
 							</div>
 						<?php endif; ?>
 					</div><!-- next post -->

@@ -1149,16 +1149,13 @@ a:active {
 	position:relative;
 	float:right;
 }
-#nextPost .othrImg{
-	width:100%;
-	float:left;
-}
-#nextPost .pstTitle{
+#nextPost .postNavigationTitle{
 	display: inline-block;
 	width:100%;
 	text-align: right;
+	padding-left:10px;
 }
-#nextPost:hover .pstTitle h3{
+#nextPost:hover .postNavigationTitle h3{
 	color:#808080;
 }
 #previousPost{
@@ -1167,26 +1164,34 @@ a:active {
 	position:relative;
 	float:left;
 }
-#previousPost .othrImg{
-	width:100%;
-}
-#previousPost .othrImg img{
+#previousPost .postNavigationImage img{
 	float:right;
 }
-#previousPost .pstTitle{
-	display: inline-block;
+#previousPost .postNavigationTitle{
+	display:inline-block;
 	width:100%;
-	text-align: left;
+	text-align:left;
 	float:right;
+	padding-right:10px;
 }
-#previousPost:hover .pstTitle h3{
+#previousPost:hover .postNavigationTitle h3{
 	color:#808080;
 }
-.othrImg img{
+.postNavigationImage{
+	width:100%;
+	height:200px;
+}
+.postNavigationImage a{
+	display:flex;
+	width: 100%;
+	height: 100%;
+}
+.postNavigationImage img{
+	object-fit:cover;
 	width:100%;
 	height:auto;
 }
-.pstTitle h3{
+.postNavigationTitle h3{
 	color:#000;
 	padding-top:10px;
 }
@@ -1355,7 +1360,6 @@ a:active {
 		margin-bottom:2em;
 	}
 }
-
 .no-results{
 	min-height: 100vh;
 }
@@ -1363,20 +1367,25 @@ a:active {
 	margin-left:38px;
 	text-indent:-38px;
 }
-
 .fouro h3{
 	margin-left:23px;
 	text-indent:-23px;
 }
-
 .entry-content{
 	display: block;
 	max-width:100%;
 }
+
 /*--------------------------------------------------------------
 ## Blog Index
 --------------------------------------------------------------*/
+.hfeed .site #content .content-area .site-main .post .postHero a{
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
 .hfeed .site #content .content-area .site-main .post .postHero a img{
+	object-fit: cover;
 	width:100%;
 	height:auto;
 }
@@ -1386,30 +1395,28 @@ a:active {
 	height:auto;
 	background-color:#ffffff;
 }
-.exe{
+.postPreface{
 	padding-top:4em;
 	padding-bottom:4em;
 }
-.exe .entry-header .entry-title{
+.postPreface .entry-header .entry-title{
 	margin-bottom:0.25em;
 }
-.exe .entry-header .entry-title a{
+.postPreface .entry-header .entry-title a{
 	color:#000000;
 }
-.exe .entry-header .entry-title a:hover{
+.postPreface .entry-header .entry-title a:hover{
 	color:#808080;
 }
-.exe .entry-header .entry-meta{
+.postPreface .entry-header .entry-meta{
 	margin-bottom:2em;
 	font-weight:300;
 }
-.exe .entry-content {
+.postPreface .entry-content {
 	margin-bottom:2em;
 }
-.exe .entry-content p{
+.postPreface .entry-content p{
 	margin-bottom:0;
-	padding-left:13.3%;
-	padding-right:13.3%;
 }
 .entry-content .more-link{
 	display:inline-block;
@@ -1419,22 +1426,25 @@ a:active {
 .entry-content .more-link:hover{
 	color:#808080;
 }
-.exe .entry-footer p{
+.postPreface .entry-footer p{
 	margin-bottom:0;
 	font-weight:300;
 	font-size:16px;
 }
-.exe .entry-footer p a{
+.postPreface .entry-footer p a{
 	padding-right:1em;
 }
 @media (max-width: 1020px) {
-	.exe .entry-content p{
+	.postPreface .entry-content p{
 		padding-left:4.7%;
 		padding-right:4.7%;
 	}
 }
 @media (max-width: 550px) {
-	.exe .entry-content p{
+	.postPreface{
+		padding-top:2em;
+	}
+	.postPreface .entry-content p{
 		padding-left:0%;
 		padding-right:0%;
 	}
@@ -1491,13 +1501,11 @@ a:active {
 
 .slab .wp-block-code {
 	padding-top:2em;
-	padding-left:10.7%;
-	padding-right:10.7%;
 	padding-bottom:2em;
 	background:#000;
 	color:#fff;
-	margin-left:-10.7%;
-	margin-right:-10.7%;
+	margin-left:-20px;
+	margin-right:-20px;
 	max-width:none;
 }
 
@@ -1521,9 +1529,6 @@ a:active {
 	padding-right:8.7%;
 	margin-bottom:2em;
 	font-weight:300;
-}
-.slab .entry-footer .tags-links{
-	padding-left:1em;
 }
 
 .slab .page-links {
@@ -1562,9 +1567,9 @@ a:active {
 }
 
 #pagination{
-	text-align: center;
-	padding-top: 60px;
-	padding-bottom: 60px;
+	text-align:center;
+	padding-top:60px;
+	padding-bottom:60px;
 	font-size:20px;
 	line-height:35px;
 	background-color:#ffffff;
@@ -1632,8 +1637,6 @@ a:active {
 ## Comments
 --------------------------------------------------------------*/
 #comments{
-	padding-left:4.7%;
-	padding-right:4.7%;
 	margin-top:2em;
 	padding-bottom:2em;
 }

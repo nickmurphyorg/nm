@@ -14,6 +14,7 @@
 		<section class="layer window">
 		</section>
 	<?php endif; ?>
+	
 	<section class="layer slab high">
 		<div class="container">
 			<header class="entry-header subHeader">
@@ -39,23 +40,19 @@
 			</footer><!-- .entry-footer -->
 		</div><!-- container -->
 	</section>
+	
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="hero low">
-			<?php function hero_images() {
-				$paintFull = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
-				$urlLarge = $paintFull['0'];
-				$paintLarge = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
-				$urlMedium = $paintLarge['0'];
-				$paintMedium = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
-				$urlSmall = $paintMedium['0'];
+			<?php
+				$urlLarge = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'full' );
+				$urlMedium = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'large' );
+				$urlSmall = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'medium' );
 				?>
-				<script type="text/javascript">
-					heroLarge = "<?=$urlLarge?>";
-					heroMedium = "<?=$urlMedium?>";
-					heroSmall = "<?=$urlSmall?>";
-				</script>
-			<?php }
-			add_action( 'wp_footer', 'hero_images' ); ?>
-			</div><!-- hero -->
+				<picture>
+					<source media="(min-width: 1024px)" srcset="<?=$urlLarge?>">
+					<source media="(min-width: 751px)" srcset="<?=$urlMedium?>">
+					<img src="<?=$urlSmall?>">
+				</picture>
+		</div><!-- hero -->
 	<?php endif; ?>
 </article><!-- #post-## -->

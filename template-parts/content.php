@@ -15,9 +15,9 @@
 			<?php the_post_thumbnail(); ?>
 		</section>
 	<?php endif; ?>
-	<div class="whiteDivide high xxyyxx">
-		<div class="container exe">
-			<header class="entry-header subH">
+	<div class="whiteDivide high">
+		<div class="container postPreface">
+			<header class="entry-header subHeader">
 				<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		
 				<?php if ( 'post' === get_post_type() ) : ?>
