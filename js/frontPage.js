@@ -5,32 +5,27 @@
  */
 
 ( function( $ ) {
-	var titles = $(".titles");
-	var subtitles = $(".subtitles");
-	var carousel = $("#heroSlides .carousel");
-	var windowSize = $(window).width();
-	var heroHeight, aboutHeight, blockHeight, typeHeight, slideHeight, resizeTimer;
+	var titles = $(".titles"),
+		subtitles = $(".subtitles"),
+		carousel = $("#heroSlides .carousel"),
+		windowSize = $(window).width(),
+		heroHeight = $("#heroSlides").height(), 
+		aboutHeight = $("#aboutMe").height(),
+		blockHeight = $('#meText').height()/2,
+		typeHeight = $('#aboutText').height()*2,
+		slideHeight = $('#aboutSlide').height()*2,
+		controller = new ScrollMagic.Controller(),
+		resizeTimer;
+		
+	// Set About Slides
+	$('#meText').css('margin-top', - blockHeight );
 	
-	function math() {
-		heroHeight = $("#heroSlides").height();
-		aboutHeight = $("#aboutMe").height();
-		blockHeight = $('#meText').height()/2;
-		typeHeight = $('#aboutText').height()*2;
-		slideHeight = $('#aboutSlide').height()*2;
-		
-		// Set About Slides
-		$('#meText').css('margin-top', - blockHeight );
-		
-		// Set Blog Tiles
-		$('.postImage').each(function() {
-			$(this).height($('.postImage').width());
-		});
-	}
-	math();
+	// Set Blog Tiles
+	$('.postImage').each(function() {
+		$(this).height($('.postImage').width());
+	});
 	
 	// Parallax effects
-	var controller = new ScrollMagic.Controller();
-					
 	var parallaxHero = new TimelineMax().add(TweenMax.to($("#heroText"), 0.01, { y: -300, ease: Linear.easeNone }))
 		.add(TweenMax.to($("#heroSlides"), 0.01, { y: -200, ease: Linear.easeNone }), 0)
 	var scene = new ScrollMagic.Scene({
@@ -64,11 +59,11 @@
 			$('<li class="' + currentSlide.data('color') + '"><h2>&mdash;' + currentSlide.data('category') + '</h2></li>').appendTo(subtitles);
 		});
 		
-		wipeout();
+		runHeroCarousel();
 	}
 	
 	// Run Hero Carousel
-	function wipeout(){
+	function runHeroCarousel(){
         var sheets = $(".carousel li");
         var titles = $(".titles li");
         var subtitles = $(".subtitles li");
