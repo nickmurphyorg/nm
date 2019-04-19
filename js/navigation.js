@@ -5,7 +5,7 @@
  */
 
 jQuery(document).ready(function( $ ) {
-	var bodyElement = $('body'),
+	var bodyElement = $("body"),
 		work = $("li#workTab"),
 		blog = $("li#blogTab"),
 		email = $("li#emailTab"),
@@ -141,6 +141,24 @@ jQuery(document).ready(function( $ ) {
 			return showSlide;
 		}
 	});
+	
+	/*
+	 * Parallax Effect For Interior Pages
+	 */
+	if (bodyElement.is(".single-post, .page-template-default") && $("article").hasClass("has-post-thumbnail") && !bodyElement.hasClass("home")) {
+		console.log("Parallax time.");
+		
+		var controller = new ScrollMagic.Controller();
+			
+		var tween_parallax = new TimelineMax().add(TweenMax.to($("div.hero"), 0.01, { y: 100, ease: Linear.easeNone }))
+		var scene = new ScrollMagic.Scene({
+	        triggerElement: ".window",
+	        duration: ($(".window").height()),
+	        tweenChanges: true
+	    }).setTween(tween_parallax).addTo(controller);
+	        
+	    scene.triggerHook(0.05);
+	}
 	
 	/*
 	 * Project and Blog Tiles
