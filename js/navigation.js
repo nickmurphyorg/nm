@@ -70,7 +70,7 @@ jQuery(document).ready(function( $ ) {
 	/*
 	 * Navigation Bar Logic
 	 */
-	$( work).add(blog).add(email).add(search).on("click", function () {
+	$(work).add(blog).add(email).add(search).on("click", function () {
 		let selection = $(this);
 		let navigationSlide = returnNavigationSlideFor(selection);
 		
