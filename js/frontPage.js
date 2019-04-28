@@ -47,7 +47,7 @@
 	//Window resize functions
 	$(window).resize(function() {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(math, 150);
+        resizeTimer = setTimeout(150);
     });
 
 	// Setup Hero Carousel

@@ -105,11 +105,20 @@
 	position:absolute;
 	top:50vh;
 	margin-top:-191px;
-	color:#fff;
+	color:#ffffff;
 }
 
-#heroText .container .row .twelve h1{
+#heroText .tick{
+	font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+}
+
+#heroText h1{
 	margin-bottom:0.1em;
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+}
+
+#heroText h2{
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 }
 
 /* Carousel CSS */
@@ -237,6 +246,7 @@
 }
 #meText h6{
 	margin-bottom:0;
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 }
 #meText .textWidget{
 	font-size:18px;
@@ -271,6 +281,7 @@
 	background-color:#ffffff;
 }
 #blogs .container .row h6{
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	padding-top:0.5em;
 	padding-bottom:0.5em;
 	margin-bottom:0;
@@ -287,6 +298,8 @@
 }
 .captionThis .entry-summary a{
 	display: inline-block;
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+	font-size:18px;
 	margin-top:6px;
 	color:#7ED321;
 }
@@ -304,6 +317,7 @@
 	}
 }
 .entry-title{
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	margin-bottom:0.1em;
 }
 .entry-meta{

@@ -46,6 +46,23 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<script type="text/javascript">
+    var MTUserId='0ebe100d-0771-43a0-b75c-4d6454b2ed03';
+    var MTFontIds = new Array();
+
+    MTFontIds.push("1488880"); // Neue Helvetica® W02 45 Light 
+    MTFontIds.push("1488892"); // Neue Helvetica® W02 55 Roman 
+    MTFontIds.push("1488904"); // Neue Helvetica® W02 65 Medium 
+    (function() {
+        var mtTracking = document.createElement('script');
+        mtTracking.type='text/javascript';
+        mtTracking.async='true';
+        mtTracking.src='<?php echo get_stylesheet_directory_uri(); ?>/js/mtiFontTrackingCode.js';
+
+        (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtTracking);
+    })();
+</script>
+
 <?php wp_footer(); ?>
 
 </body>

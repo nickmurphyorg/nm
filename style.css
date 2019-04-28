@@ -253,16 +253,23 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 
 /*--------------------------------------------------------------
 # Fonts
+
+This CSS resource incorporates links to font software which is the valuable copyrighted property of Monotype and/or its suppliers. You may not attempt to copy, install, redistribute, convert, modify or reverse engineer this font software. Please contact Monotype with any questions regarding Web Fonts: https://www.linotype.com
 --------------------------------------------------------------*/
-@font-face {
-    font-family: 'icomoon';
-    src:    url('http://www.nickmurphy.org/blog/wp-content/themes/nm/fonts/icomoon.eot?1b3h2h');
-    src:    url('http://www.nickmurphy.org/blog/wp-content/themes/nm/fonts/icomoon.eot?1b3h2h#iefix') format('embedded-opentype'),
-        url('http://www.nickmurphy.org/blog/wp-content/themes/nm/fonts/icomoon.ttf?1b3h2h') format('truetype'),
-        url('http://www.nickmurphy.org/blog/wp-content/themes/nm/fonts/icomoon.woff?1b3h2h') format('woff'),
-        url('http://www.nickmurphy.org/blog/wp-content/themes/nm/fonts/icomoon.svg?1b3h2h#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
+@font-face{
+    font-family:"Helvetica Neue Light";
+    src:url("Fonts/1488880/8827e223-8d96-4750-8b0c-8ef828fb1f0f.eot?#iefix");
+    src:url("Fonts/1488880/8827e223-8d96-4750-8b0c-8ef828fb1f0f.eot?#iefix") format("eot"),url("Fonts/1488880/0128d8b7-d00b-4315-8daa-970f97ecac64.woff2") format("woff2"),url("Fonts/1488880/803af1a9-a09b-4de5-ba36-e3d228fb5bc4.woff") format("woff"),url("Fonts/1488880/831880ae-4958-487d-bc2f-aa2c1a0636e7.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Helvetica Neue Roman";
+    src:url("Fonts/1488892/285b0922-a3d2-4550-b29d-b4f74a9611e4.eot?#iefix");
+    src:url("Fonts/1488892/285b0922-a3d2-4550-b29d-b4f74a9611e4.eot?#iefix") format("eot"),url("Fonts/1488892/823e6839-53d8-41b9-a5a1-5f05833acd12.woff2") format("woff2"),url("Fonts/1488892/92679273-9798-4d27-893b-d53dfd2bb4c7.woff") format("woff"),url("Fonts/1488892/e4fb2994-44c3-40fe-bec7-9c4fa593b799.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Helvetica Neue Medium";
+    src:url("Fonts/1488904/5abe98e8-3e80-4fd6-b27b-6ec4c6385461.eot?#iefix");
+    src:url("Fonts/1488904/5abe98e8-3e80-4fd6-b27b-6ec4c6385461.eot?#iefix") format("eot"),url("Fonts/1488904/c86f4d57-4caf-4c6f-9554-7926dd67e3f1.woff2") format("woff2"),url("Fonts/1488904/92c69f6c-0185-4eb2-800e-1ee3947ca4dd.woff") format("woff"),url("Fonts/1488904/e11c48d3-bed3-4b35-9d1e-1a5c7afe80e3.ttf") format("truetype");
 }
 
 /*--------------------------------------------------------------
@@ -363,7 +370,7 @@ textarea {
 	font-size: 16px;
 	line-height: 22px;
 	font-weight: 500;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Helvetica Neue Roman", Helvetica, Arial, sans-serif;
 	color: #000000;
 	-webkit-font-smoothing: antialiased;
 }
@@ -371,6 +378,7 @@ textarea {
 h1, h2, h3, h4, h6 {
 	margin-top: 0;
 	margin-bottom: 2rem;
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	font-weight: 600;
 }
 h1 { font-size: 48px; line-height: 58px; }
@@ -562,6 +570,7 @@ input[type="submit"] {
 	border: 1px solid #7ED321;
 	border-radius: 4px;
 	background: #7ED321;
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	font-size: 20px;
 	line-height:20px;
 	color: #ffffff;
@@ -636,6 +645,9 @@ textarea {
 	-webkit-backface-visibility: hidden;
 	transform: translate3d(0, 0, 0);
 }
+#site-navigation .container{
+	background:#000000;
+}
 #site-navigation .container a{
 	display:inline-block;
 }
@@ -668,6 +680,7 @@ textarea {
 	display:inline-block;
 }
 .main-navigation p {
+	font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-weight: 300;
 	line-height: 22px;
@@ -806,6 +819,7 @@ textarea {
 }
 
 .tileLayer h2{
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	margin-bottom:4px;
 }
 .tileLayer p{
@@ -871,7 +885,10 @@ textarea {
 }
 .descrip .entry-summary a{
 	display: inline-block;
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+	font-size:18px;
 	margin-top:6px;
+	margin-bottom:18px;
 	color:#7ED321;
 }
 .descrip .entry-summary a:hover{
@@ -895,6 +912,7 @@ textarea {
 	margin-top:1em;
 	margin-bottom:1em;
 	color:#000000;
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	font-size:20px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -981,7 +999,8 @@ span.wpcf7-not-valid-tip{
 	left:0;
 	width:100%;
 	background-color:#000;
-	color:#fff;
+	color:#ffffff;
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	font-size: 140px;
 	line-height: 170px;
 	font-weight: 600;
@@ -1134,6 +1153,7 @@ a:active {
 }
 #nextPost .postNavigationTitle{
 	display: inline-block;
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	width:100%;
 	text-align: right;
 	padding-left:10px;
@@ -1152,6 +1172,7 @@ a:active {
 }
 #previousPost .postNavigationTitle{
 	display:inline-block;
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	width:100%;
 	text-align:left;
 	float:right;
@@ -1289,16 +1310,20 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-# Content
+# Search Styles
 --------------------------------------------------------------*/
-/* Search Styles */
 .result h1{
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	margin-bottom:0;
 }
 .result h2{
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	margin-bottom:2em;
 }
 .resultTxt .entry-header .entry-title{
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+	font-size:40px;
+	line-height:49px;
 	margin-bottom:0;
 }
 .resultTxt .entry-header .entry-title a{
@@ -1330,7 +1355,7 @@ a:active {
 	display:none;
 }
 .resultTxt .entry-footer .comments-link{
-	margin-left:20px;
+	font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
 }
 @media (max-width: 550px) {
 	.resultTxt .entry-header{
@@ -1403,6 +1428,8 @@ a:active {
 }
 .entry-content .more-link{
 	display:inline-block;
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+	font-size:18px;
 	margin-top:1em;
 	color:#7ED321;
 }
@@ -1415,6 +1442,7 @@ a:active {
 	font-size:16px;
 }
 .postPreface .entry-footer p a{
+	font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
 	padding-right:1em;
 }
 @media (max-width: 1020px) {
@@ -1453,6 +1481,11 @@ a:active {
 	text-align: left;
 }
 
+.page .entry-title{
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+	margin-bottom:0;
+}
+
 .sticky {
 	display: block;
 }
@@ -1489,7 +1522,6 @@ a:active {
 	margin-left:-20px;
 	margin-right:-20px;
 	max-width:none;
-	border-radius:4px;
 }
 
 .slab .entry-header{
@@ -1498,10 +1530,12 @@ a:active {
 }
 
 .slab .entry-header .entry-title{
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	margin-bottom:0.25em;
 }
 .slab .entry-header .entry-meta{
-	font-weight:300;
+	font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+	font-weight: 300;
 }
 .entry-meta .byline{
 	display:none;
@@ -1598,7 +1632,6 @@ a:active {
 	color:#fff;
 }
 
-
 #pagination .current{
 	color:#fff;
 	background-color:#7ED321;
@@ -1606,6 +1639,13 @@ a:active {
 	height:35px;
 	width:35px;
 	border-radius:40px;
+}
+
+section.error-404{
+	padding: 20px 0;
+}
+.error-404 h1.page-title{
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -1626,24 +1666,26 @@ a:active {
 
 #cancel-comment-reply-link{
 	display:block;
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	font-size:18px;
 	margin-top:0.5em;
 	color:#7ed321;
-	font-weight:500;
+	font-weight:600;
 }
 #cancel-comment-reply-link:hover{
 	color:#808080;
 }
 
 .comments-title{
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	padding-left:8.7%;
 	padding-right:8.7%;
-	margin-bottom:0;
+	margin-bottom:16px;
 }
 
 .hairline{
 	height:1px;
-	background-color:#eee;
+	background-color:#eeeeee;
 	width:82.6%;
 	margin-left:8.7%;
 	display:inline-block;
@@ -1667,6 +1709,7 @@ a:active {
 }
 
 .fn a{
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	color:#000000;
 }
 .fn a:hover{
@@ -1699,6 +1742,7 @@ a:active {
 }
 
 .comment-metadata a{
+	font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	font-size: 14px;
 	color:#808080;
@@ -1713,7 +1757,7 @@ a:active {
 }
 
 .comment-content a {
-	word-wrap: break-word;
+	word-wrap:break-word;
 }
 
 .comment-body {
@@ -1726,7 +1770,7 @@ a:active {
 }
 
 .bypostauthor {
-	display: block;
+	display:block;
 }
 
 .comment .children{
@@ -1736,6 +1780,7 @@ a:active {
 }
 
 .comment-reply-link{
+	font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
 	font-size:14px;
 	font-weight:300;
 }
@@ -1752,24 +1797,27 @@ a:active {
 }
 
 #reply-title{
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+	margin-top:16px;
 	margin-bottom:0.25em;
 }
 
 .comment-notes{
+	font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
 	font-size:14px;
 	font-weight:300;
 }
 
 #commentform label{
 	font-size:14px;
-	color:#000;
+	color:#000000;
 }
 #comment{
 	position:relative;
 	z-index:2;
 	background-color:transparent;
 	border:1px solid #808080;
-	color:#000;
+	color:#000000;
 	height:100px;
 	border-radius: 0;
 }
@@ -2004,6 +2052,7 @@ object {
 	font-weight: 300;
 }
 .site-footer h4{
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 	margin-bottom:10px;
 	margin-top:3px;
 }

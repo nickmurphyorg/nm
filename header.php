@@ -20,7 +20,7 @@
 <!-- Favicon and Webapp -->
 <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicons/32.png" />
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="Nick Murphy">
 <meta name="format-detection" content="telephone=no">
 <link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicons/300.png" />
@@ -36,10 +36,9 @@
 <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="<?php echo get_stylesheet_directory_uri(); ?>/favicons/2048x1496.png">
 
 <!-- Social Network -->
-<meta name="twitter:url" content="http://www.nickmurphy.org">
-<meta name="twitter:creator" content="@nickmdesign">
-<meta name="twitter:site" content="https://twitter.com/nickmdesign">
-<link rel="publisher" href="https://plus.google.com/+NickMurphy1">
+<meta name="twitter:url" content="https://nickmurphy.org">
+<meta name="twitter:creator" content="@nickmurphyorg">
+<meta name="twitter:site" content="https://twitter.com/nickmurphyorg">
 
 <?php wp_head(); ?>
 </head>
