@@ -2156,7 +2156,7 @@ object {
 		height:350px;
 	}
 }
-@media (max-width: 750px)  {
+@media (max-width: 750px) {
 	.postHero{
 		height:400px;
 	}
@@ -2173,7 +2173,9 @@ object {
 		height:200px;
 	}
 }
-
+.iphoneVideo{
+	max-width: 375px;
+}
 .slab{
 	z-index:3;
 	position: relative;

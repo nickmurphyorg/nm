@@ -239,11 +239,6 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-/*
- * Load Google Analytics.
- */
-require get_template_directory() . '/analyticstracking.php';
-
 /**
  * Link hero to post.
  */

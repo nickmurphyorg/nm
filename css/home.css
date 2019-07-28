@@ -7,6 +7,9 @@
 	 position:absolute;
 	 background-color:transparent;
  }
+ #site-navigation .container{
+	 background-color:transparent;
+ }
  
  /* HTML Structure Styles */
  #slate{
