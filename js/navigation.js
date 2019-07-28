@@ -21,53 +21,6 @@ jQuery(document).ready(function( $ ) {
 	var resizeTimer;
 	
 	/*
-	 * Type to Search.
-	 */
-	var searching = function(e) {
-		if (e.keyCode >= 48 && e.keyCode <= 90) {
-			$(document).unbind( "keydown", searching );
-			
-			search.addClass("active");
-			
-			if (searchSlide.siblings().hasClass("open")) {
-				searchSlide.siblings().removeClass('open');
-				searchSlide.toggleClass('open');
-				
-				searchField.val('');
-				searchField.focus();
-			} else {
-				searchField.val('');
-				searchField.focus();
-				
-				bodyElement.addClass('stop');
-				
-				TweenLite.ticker.fps(60);
-				
-				var showSearch = new TimelineLite();
-				showSearch.set((searchSlide),{className:'+=open'});
-				showSearch.from(searchSlide, 0.5, {alpha: 0, ease:Expo.easeOut}, 0.1);
-				
-				return showSearch;
-			}
-		} else {
-			return false;
-		}
-	};
-	
-	$(document).bind( "keydown", searching );
-	
-	/*
-	 * Turning Type To Search On and Off.
-	 */
-	contactForm.focusin(function() {
-		$(document).unbind( "keydown", searching );
-	});
-	
-	contactForm.focusout(function() {
-		$(document).bind( "keydown", searching );
-	});
-	
-	/*
 	 * Navigation Bar Logic
 	 */
 	$(work).add(blog).add(email).add(search).on("click", function () {
@@ -88,8 +41,6 @@ jQuery(document).ready(function( $ ) {
 			if (navigationSlide.attr("id").toLowerCase() == searchSlide.attr("id").toLowerCase()) {
 				searchField.blur();
 				searchField.val('');
-			
-				$(document).bind( "keydown", searching );
 			}
 			
 			TweenLite.ticker.fps(60);
@@ -109,14 +60,14 @@ jQuery(document).ready(function( $ ) {
 			
 			// If Showing Search Slide
 			if (navigationSlide.attr("id").toLowerCase() == searchSlide.attr("id").toLowerCase()) {
-				focusSearchSlide()
+				searchField.focus();
 			};
 			
 			// If Leaving Search Slide
 			if (searchSlide.hasClass("open")) {
 				searchSlide.removeClass("open");
-				
-				$(document).bind( "keydown", searching );	
+				searchField.blur();
+				searchField.val('');
 			} else {
 				navigationSlide.siblings().removeClass("open");
 			};
@@ -129,7 +80,7 @@ jQuery(document).ready(function( $ ) {
 			
 			// If Showing Search Slide
 			if (navigationSlide.attr("id").toLowerCase() == searchSlide.attr("id").toLowerCase()) {
-				focusSearchSlide()
+				searchField.focus();
 			};
 			
 			TweenLite.ticker.fps(60);
@@ -179,25 +130,6 @@ jQuery(document).ready(function( $ ) {
 	})
 	
 	/*
-	 * Comment Box
-	 */
-	$("#commentform textarea, #commentform input").focusin(function() {
-		const input = $(this);
-	    
-	    if (input.attr("type") != "hidden" || input.attr("type") != "submit") {
-	    		$(document).unbind( "keydown", searching );
-	    };
-	})
-		
-	$("#commentform textarea, #commentform input").focusout(function() {
-		const input = $(this);
-	    
-	    if (input.attr("type") != "hidden" || input.attr("type") != "submit") {
-			$(document).bind( "keydown", searching );
-		};
-	})
-	
-	/*
 	 * Page Transition Animation
 	 *
 	 * To be built in a future release. Elements of the site have ".high", ".medium", and ".low" classes to create a zoom effect on load.
@@ -221,11 +153,5 @@ jQuery(document).ready(function( $ ) {
 			default:
 				return null;
 		}
-	};
-	
-	function focusSearchSlide() {
-		$(document).unbind( "keydown", searching );
-		
-		searchField.focus();
 	};
 });
