@@ -35,6 +35,9 @@
 <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="<?php echo get_stylesheet_directory_uri(); ?>/favicons/1536x2008.png">
 <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="<?php echo get_stylesheet_directory_uri(); ?>/favicons/2048x1496.png">
 
+<!-- SEO -->
+<meta name="Description" content="Nick is a software developer with experience in web and iOS development.">
+
 <!-- Social Network -->
 <meta name="twitter:url" content="https://nickmurphy.org">
 <meta name="twitter:creator" content="@nickmurphyorg">
@@ -53,62 +56,66 @@
 	<header id="masthead" class="site-header" role="banner">
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<div class="container">
-					<a href="/">
+					<a class="homeIcon" href="/">
 						<img id="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/nm.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/nm.png'">
 					</a>
-					<ul id="navi">
-						<li id="workTab"><p>Work</p></li>
-						<li id="blogTab"><p>Blog</p></li>
-						<li id="emailTab"><p>Email</p></li>
-						<li id="searchTab">
-							<img class="oldFashioned" src="<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.png'">
-							<img class="markSpot" src="<?php echo get_stylesheet_directory_uri(); ?>/images/x.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/x.png'">
+					<ul class="tabbed-navigation">
+						<li class="workTab">
+							<a class="text" href="/#work">Work</a>
+							<div class="navigationSlide workSlide">
+								<div class="container">
+									<?php get_template_part( 'template-parts/content', 'projects' ); ?>
+								</div>
+							</div>
 						</li>
-					</ul><!-- navi -->
+						<li class="blogTab">
+							<a class="text" href="/blog/blog/">Blog</a>
+							<div class="navigationSlide blogSlide">
+								<div class="container">
+									<?php 
+									// the query
+									$latest_blog_posts = new WP_Query( array( 'posts_per_page' => 3 ) ); ?>
+								
+									<?php if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post(); ?>
+												
+										<?php get_template_part( 'template-parts/content', 'sample' ); ?>
+								
+									<?php endwhile; ?>
+											
+									<?php else : ?>
+								
+										<?php get_template_part( 'template-parts/content', 'none' ); ?>
+								
+									<?php endif; ?>
+										<a class="spacebar" href="/blog/blog/">Read More</a>
+								</div>
+							</div>
+						</li>
+						<li class="emailTab">
+							<a class="text">Email</a>
+							<div class="navigationSlide emailSlide">
+								<div class="container">
+									<?php echo do_shortcode( '[contact-form-7 id="47" title="Contact Me" html_id="contactForm"]' ); ?>
+								</div>
+							</div>
+						</li>
+						<li class="searchTab">
+							<a class="text">
+								<img class="staticMagnifierIcon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.png'">
+								<img class="selectedMagnifierIcon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/x.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/x.png'">
+							</a>
+							<div class="navigationSlide searchSlide" class="">
+								<div class="container">
+									<?php get_search_form(); ?>
+								</div>
+							</div>
+						</li>
+					</ul><!-- navigation -->
 				</div><!-- container -->
 			</nav><!-- #site-navigation -->
 			
 			<ul id="slides">
-				<li id="workSlide">
-					<div class="container">
-						<?php get_template_part( 'template-parts/content', 'projects' ); ?>
-					</div>
-				</li>
-				<li id="blogSlide">
-					<div class="container">
-						<?php 
-						// the query
-						$latest_blog_posts = new WP_Query( array( 'posts_per_page' => 3 ) ); ?>
-					
-						<?php if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post(); ?>
-									
-							<?php get_template_part( 'template-parts/content', 'sample' ); ?>
-					
-						<?php endwhile; ?>
-								
-						<?php else : ?>
-					
-							<?php get_template_part( 'template-parts/content', 'none' ); ?>
-					
-						<?php endif; ?>
-							<a class="spacebar" href="/blog/blog/">Read More</a>
-					</div>
-				</li>
-				<li id="emailSlide">
-					<div class="container">
-						<?php echo do_shortcode( '[contact-form-7 id="47" title="Contact Me" html_id="contactForm"]' ); ?>
-					</div>
-				</li>
-				<li id="searchSlide">
-					<div class="container">
-						<?php get_search_form(); ?>
-					</div>
-				</li>
-				<li id="preloader">
-					<div class="loading">
-						<div class="halo"></div>
-					</div>
-				</li>
+			
 			</ul><!-- slides -->
 				
 		</header><!-- #masthead -->

@@ -15,14 +15,14 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div id="slate" class="high">
-				<section id="prjkts" class="">
+				<section id="work">
 					<div class="nudge"></div>
 					<div class="container">
 						<?php get_template_part( 'template-parts/content', 'projects' ); ?>
 					</div><!-- container -->
-				</section><!-- projects -->
+				</section><!-- work -->
 				
-				<section id="aboutMe" class="slideWin">
+				<section id="about" class="slideWin">
 					<div id="aboutText" class="sheet">
 						<div class="container">
 							<div class="row">
@@ -57,7 +57,7 @@ get_header(); ?>
 					</div><!-- bg image -->
 				</section><!-- about -->
 				
-				<section id="blogs" class="">
+				<section id="blog">
 					<div class="container">
 						<div class="row">
 							<h6><a href="/blog/blog/">Blog</a></h6>

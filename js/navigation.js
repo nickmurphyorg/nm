@@ -6,99 +6,73 @@
 
 jQuery(document).ready(function( $ ) {
 	var bodyElement = $("body"),
-		work = $("li#workTab"),
-		blog = $("li#blogTab"),
-		email = $("li#emailTab"),
-		search = $("li#searchTab"),
-		workSlide = $("li#workSlide"),
-		blogSlide = $("li#blogSlide"),
-		emailSlide = $("li#emailSlide"),
-		searchSlide = $("li#searchSlide"),
-		searchField = $("#search"),
-		contactForm = $("#contactForm"),
-		tile = $(".tile");
-
-	var resizeTimer;
+		body = document.getElementsByTagName("BODY")[0],
+		navigationTabs = document.getElementsByClassName("tabbed-navigation")[0].getElementsByTagName("LI"),
+		searchField = document.getElementById("search");
 	
 	/*
 	 * Navigation Bar Logic
 	 */
-	$(work).add(blog).add(email).add(search).on("click", function () {
-		let selection = $(this);
-		let navigationSlide = returnNavigationSlideFor(selection);
+	
+	for (var i = 0; i < navigationTabs.length; i++) {
+		navigationTabs[i].getElementsByClassName("text")[0].addEventListener("click", navigationTabClick, false);
+	}
+	
+	function navigationTabClick(event) {
+		event.preventDefault();
 		
-		selection.toggleClass('active');
+		let tab = this.parentNode;
 		
-		if (navigationSlide == null) {
-			console.log("Navigation slide could not be returned.");
-			
-			return
-		}
-		
-		if (navigationSlide.hasClass("open")) {
-			// Hide Open Slide
-			
-			if (navigationSlide.attr("id").toLowerCase() == searchSlide.attr("id").toLowerCase()) {
+		if (tab.classList.contains("active")) {
+			if (tab.classList.contains("searchTab")) {
 				searchField.blur();
-				searchField.val('');
 			}
 			
-			TweenLite.ticker.fps(60);
+			let slide = tab.lastElementChild;
+			var slideOpacity = 1;
+		    var timer = setInterval(function () {
+		        if (slideOpacity <= 0.01){
+		            clearInterval(timer);
+		            slide.classList.remove("open");
+		            tab.classList.remove("active");
+					body.classList.remove("stop");
+					slide.style.opacity = 1;
+					return;
+		        }
+		        slide.style.opacity = slideOpacity;
+		        slideOpacity -= slideOpacity * 0.05;
+		    }, 1);
 			
-			bodyElement.removeClass("stop");
-			
-			var hideSlide = new TimelineLite();
-				hideSlide.to(navigationSlide, 0.5, {alpha: 0, ease:Expo.easeOut});
-				hideSlide.set(navigationSlide, {className:'-=open'}, 0.5);
-				hideSlide.to(navigationSlide, 0.01, {alpha: 1, ease:Expo.easeOut}, 0.51);
-			
-			return hideSlide;
-		} else if (navigationSlide.siblings().hasClass("open")) {
-			// Close Sibiling Slide and Open Selected Slide
-			
-			selection.siblings().removeClass("active");
-			
-			// If Showing Search Slide
-			if (navigationSlide.attr("id").toLowerCase() == searchSlide.attr("id").toLowerCase()) {
-				searchField.focus();
-			};
-			
-			// If Leaving Search Slide
-			if (searchSlide.hasClass("open")) {
-				searchSlide.removeClass("open");
-				searchField.blur();
-				searchField.val('');
-			} else {
-				navigationSlide.siblings().removeClass("open");
-			};
-			
-			navigationSlide.toggleClass("open");
-		} else {
-			// Show Selected Slide
-			
-			bodyElement.addClass("stop");
-			
-			// If Showing Search Slide
-			if (navigationSlide.attr("id").toLowerCase() == searchSlide.attr("id").toLowerCase()) {
-				searchField.focus();
-			};
-			
-			TweenLite.ticker.fps(60);
-			
-			var showSlide = new TimelineLite();
-				showSlide.set(navigationSlide, {className:'+=open'});
-				showSlide.from(navigationSlide, 0.5, {alpha: 0, ease:Expo.easeOut}, 0.1);
-			
-			return showSlide;
+			return;
 		}
-	});
+		
+		for (var i = 0; i < navigationTabs.length; i++) {
+			if (navigationTabs[i] == tab) {
+				tab.classList.toggle("active");
+				tab.lastElementChild.classList.toggle("open");
+				
+				if (navigationTabs[i].classList.contains("searchTab")) {
+					searchField.value = "";
+					searchField.focus();
+				}
+			} else {
+				navigationTabs[i].classList.remove("active");
+				navigationTabs[i].lastElementChild.classList.remove("open");
+				
+				if (navigationTabs[i].classList.contains("searchTab")) {
+					searchField.blur();
+				}
+			}
+		}
+		
+		body.classList.add("stop");
+	}
 	
 	/*
 	 * Parallax Effect For Interior Pages
 	 */
+	 
 	if (bodyElement.is(".single-post, .page-template-default") && $("article").hasClass("has-post-thumbnail") && !bodyElement.hasClass("home")) {
-		console.log("Parallax time.");
-		
 		var controller = new ScrollMagic.Controller();
 			
 		var tween_parallax = new TimelineMax().add(TweenMax.to($("div.hero"), 0.01, { y: 100, ease: Linear.easeNone }))
@@ -112,46 +86,8 @@ jQuery(document).ready(function( $ ) {
 	}
 	
 	/*
-	 * Project and Blog Tiles
-	 */
-	function setTiles() {
-		tile.each(function() {
-			const thisTile = $(this);
-			
-			$(thisTile).height($(thisTile).width());
-		});
-	}
-	setTiles();
-	
-	$(window).resize(function(){
-	    clearTimeout(resizeTimer);
-	    
-		resizeTimer = setTimeout(setTiles, 0);
-	})
-	
-	/*
 	 * Page Transition Animation
 	 *
 	 * To be built in a future release. Elements of the site have ".high", ".medium", and ".low" classes to create a zoom effect on load.
 	 */
-	
-	/*
-	 * Helper Methods
-	 */
-	function returnNavigationSlideFor(navigationItem) {
-		let selectionID = navigationItem.attr("id");
-		
-		switch (selectionID) {
-			case "workTab":
-				return workSlide;
-			case "blogTab":
-				return blogSlide;
-			case "emailTab":
-				return emailSlide;
-			case "searchTab":
-				return searchSlide;
-			default:
-				return null;
-		}
-	};
 });
