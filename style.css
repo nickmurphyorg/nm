@@ -735,17 +735,14 @@ textarea {
 	width:100%;
 	height:100vh;
 	opacity:1;
-/* 	z-index:11; */
 	top:0;
 	left:0;
-/* 	margin: 0; */
-/* 	padding: 0; */
 	background-color:#000;
 }
 .navigationSlide .container{
 	margin-top:56px;
 }
-.navigationSlide.open{ /* might get rid of this */
+.navigationSlide.open{
 	display: block;
 }
 
@@ -766,13 +763,15 @@ textarea {
 
 @media (max-width: 750px) {
 	.tile {
-		width:50%;
+		width: 50%;
+		padding-bottom: 50%;
 	}
 }
 
 @media (max-width: 400px) {
 	.tile {
-		width:100%;
+		width: 100%;
+		padding-bottom: 100%;
 	}
 }
 
@@ -1220,6 +1219,16 @@ a:active {
 /* Make sure select elements fit in widgets. */
 .widget select {
 	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Search Page
+--------------------------------------------------------------*/
+#searchpage input {
+	margin-top: 60px;
+	margin-bottom: 60px;
+	color: #000000;
+	background-color: #ffffff;
 }
 
 /*--------------------------------------------------------------

@@ -100,7 +100,7 @@
 							</div>
 						</li>
 						<li class="searchTab">
-							<a class="text">
+							<a class="text" href="/search/">
 								<img class="staticMagnifierIcon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.png'">
 								<img class="selectedMagnifierIcon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/x.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/x.png'">
 							</a>
