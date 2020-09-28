@@ -921,7 +921,6 @@ textarea {
 .emailSlide{
 	width:100%;
 	background-color:#000;
-	height:0;
 	overflow-y: scroll;
 }
 #contactForm{
@@ -1222,6 +1221,37 @@ a:active {
 }
 
 /*--------------------------------------------------------------
+# Email Page
+--------------------------------------------------------------*/
+#emailpage .layer{
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+#emailpage #contactForm h4 {
+	color: #000000;
+}
+
+#emailpage #contactForm h3 input {
+	background-color: #ffffff;
+	color: #000000;
+	border-bottom: 1px solid #000000;
+}
+
+#emailpage #contactForm p {
+	margin-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+	margin-bottom: 18px;
+}
+
+#emailpage #contactForm textArea {
+	background-color: #ffffff;
+	color: #000000;
+	border: 1px solid #000000;
+}
+
+/*--------------------------------------------------------------
 # Search Page
 --------------------------------------------------------------*/
 #searchpage input {
@@ -1425,8 +1455,6 @@ a:active {
 .slab .container p{
 	padding-left:8.7%;
 	padding-right:8.7%;
-	margin-before:2em;
-	margin-after:2em;
 	-webkit-margin-before:2em;
 	-webkit-margin-after:2em;
 }

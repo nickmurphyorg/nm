@@ -92,7 +92,7 @@
 							</div>
 						</li>
 						<li class="emailTab">
-							<a class="text">Email</a>
+							<a class="text" href="/email/">Email</a>
 							<div class="navigationSlide emailSlide">
 								<div class="container">
 									<?php echo do_shortcode( '[contact-form-7 id="47" title="Contact Me" html_id="contactForm"]' ); ?>
