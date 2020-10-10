@@ -16,7 +16,7 @@ get_header(); ?>
 			<div id="emailpage">
 				<section class="layer slab high">
 					<div class="container">
- 						<?php echo do_shortcode( '[contact-form-7 id="47" title="Contact Me" html_id="contactForm"]' ); ?>
+ 						<?php echo do_shortcode( '[contact-form-7 id="71" title="Contact Me" html_id="contactForm"]' ); ?>
 					</div><!-- container -->
 				</section>
 			</div><!-- #emailpage -->
