@@ -36,7 +36,7 @@
 <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="<?php echo get_stylesheet_directory_uri(); ?>/favicons/2048x1496.png">
 
 <!-- SEO -->
-<meta name="Description" content="Nick is a software developer with experience in web and iOS development.">
+<meta name="Description" content="Developer / designer with eperience in mobile and web.">
 
 <!-- Social Network -->
 <meta name="twitter:url" content="https://nickmurphy.org">
@@ -59,17 +59,23 @@
 					<a class="homeIcon" href="/">
 						<img id="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/nm.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/nm.png'">
 					</a>
-					<ul class="tabbed-navigation">
-						<li class="workTab">
-							<a class="text" href="/#work">Work</a>
+					<ul class="tabbed-navigation" vocab="https://schema.org/" typeof="BreadcrumbList">
+						<li class="workTab" property="itemListElement" typeof="ListItem">
+							<a class="text" property="item" typeof="WebPage" href="<?php echo get_site_url(); ?>/#work">
+								<span property="name">Work</span>
+							</a>
+							<meta property="position" content="1">
 							<div class="navigationSlide workSlide">
 								<div class="container">
 									<?php get_template_part( 'template-parts/content', 'projects' ); ?>
 								</div>
 							</div>
 						</li>
-						<li class="blogTab">
-							<a class="text" href="/blog/blog/">Blog</a>
+						<li class="blogTab" property="itemListElement" typeof="ListItem">
+							<a class="text" property="item" typeof="WebPage" href="<?php echo get_site_url(); ?>/blog/blog/">
+								<span property="name">Blog</span>
+							</a>
+							<meta property="position" content="2">
 							<div class="navigationSlide blogSlide">
 								<div class="container">
 									<?php 
