@@ -119,11 +119,6 @@
 					</ul><!-- navigation -->
 				</div><!-- container -->
 			</nav><!-- #site-navigation -->
-			
-			<ul id="slides">
-			
-			</ul><!-- slides -->
-				
 		</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

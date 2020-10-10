@@ -76,13 +76,6 @@
 	}
 }
 
-.fakePrjkts{ /* figure out what this is */
-	position:relative;
-	display:block;
-	min-height:100vh;
-	width:100%;
-}
-
 #heroText{
 	position:fixed;
 	z-index:6;
