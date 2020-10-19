@@ -51,74 +51,69 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nm' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content">
+		<?php esc_html_e( 'Skip to content', 'nm' ); ?>
+	</a>
 
 	<header id="masthead" class="site-header" role="banner">
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<div class="container">
-					<a class="homeIcon" href="/">
-						<img id="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/nm.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/nm.png'">
-					</a>
-					<ul class="tabbed-navigation" vocab="https://schema.org/" typeof="BreadcrumbList">
-						<li class="workTab" property="itemListElement" typeof="ListItem">
-							<a class="text" property="item" typeof="WebPage" href="<?php echo get_site_url(); ?>/#work">
-								<span property="name">Work</span>
-							</a>
-							<meta property="position" content="1">
-							<div class="navigationSlide workSlide">
-								<div class="container">
-									<?php get_template_part( 'template-parts/content', 'projects' ); ?>
-								</div>
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<div class="container">
+				<a class="homeIcon" href="/" title="Home">
+					<img id="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/nm.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/nm.png'">
+				</a>
+				<ul itemscope itemtype="https://schema.org/SiteNavigationElement" class="tabbed-navigation" role="menu">
+					<li class="workTab" itemprop="name" role="menuitem">
+						<a class="text" href="<?php echo get_site_url(); ?>/#work" title="Work" itemprop="url">Work</a>
+						<div class="navigationSlide workSlide">
+							<div class="container">
+								<?php get_template_part( 'template-parts/content', 'projects' ); ?>
 							</div>
-						</li>
-						<li class="blogTab" property="itemListElement" typeof="ListItem">
-							<a class="text" property="item" typeof="WebPage" href="<?php echo get_site_url(); ?>/blog/blog/">
-								<span property="name">Blog</span>
-							</a>
-							<meta property="position" content="2">
-							<div class="navigationSlide blogSlide">
-								<div class="container">
-									<?php 
-									// the query
-									$latest_blog_posts = new WP_Query( array( 'posts_per_page' => 3 ) ); ?>
-								
-									<?php if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post(); ?>
-												
-										<?php get_template_part( 'template-parts/content', 'sample' ); ?>
-								
-									<?php endwhile; ?>
+						</div>
+					</li>
+					<li class="blogTab" itemprop="name" role="menuitem">
+						<a class="text" href="<?php echo get_site_url(); ?>/blog/blog/" title="Blog" itemprop="url">Blog</a>
+						<div class="navigationSlide blogSlide">
+							<div class="container">
+								<?php 
+								$latest_blog_posts = new WP_Query( array( 'posts_per_page' => 3 ) ); ?>
+							
+								<?php if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post(); ?>
 											
-									<?php else : ?>
-								
-										<?php get_template_part( 'template-parts/content', 'none' ); ?>
-								
-									<?php endif; ?>
-										<a class="spacebar" href="/blog/blog/">Read More</a>
-								</div>
+									<?php get_template_part( 'template-parts/content', 'sample' ); ?>
+							
+								<?php endwhile; ?>
+										
+								<?php else : ?>
+							
+									<?php get_template_part( 'template-parts/content', 'none' ); ?>
+							
+								<?php endif; ?>
+									<a class="spacebar" href="/blog/blog/">Read More</a>
 							</div>
-						</li>
-						<li class="emailTab">
-							<a class="text" href="/email/">Email</a>
-							<div class="navigationSlide emailSlide">
-								<div class="container">
-									<?php echo do_shortcode( '[contact-form-7 id="71" title="Contact Me" html_id="contactForm"]' ); ?>
-								</div>
+						</div>
+					</li>
+					<li class="emailTab" itemprop="name" role="menuitem">
+						<a class="text" href="/email/" title="Email" itemprop="url">Email</a>
+						<div class="navigationSlide emailSlide">
+							<div class="container">
+								<?php echo do_shortcode( '[contact-form-7 id="71" title="Contact Me" html_id="contactForm"]' ); ?>
 							</div>
-						</li>
-						<li class="searchTab">
-							<a class="text" href="/search/">
-								<img class="staticMagnifierIcon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.png'">
-								<img class="selectedMagnifierIcon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/x.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/x.png'">
-							</a>
-							<div class="navigationSlide searchSlide" class="">
-								<div class="container">
-									<?php get_search_form(); ?>
-								</div>
+						</div>
+					</li>
+					<li class="searchTab" itemprop="name" role="menuitem">
+						<a class="text" href="/search/" title="Search" itemprop="url">
+							<img class="staticMagnifierIcon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.png'">
+							<img class="selectedMagnifierIcon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier-selected.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier-selected.png'">
+						</a>
+						<div class="navigationSlide searchSlide" class="">
+							<div class="container">
+								<?php get_search_form(); ?>
 							</div>
-						</li>
-					</ul><!-- navigation -->
-				</div><!-- container -->
-			</nav><!-- #site-navigation -->
-		</header><!-- #masthead -->
+						</div>
+					</li>
+				</ul><!-- navigation -->
+			</div><!-- container -->
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

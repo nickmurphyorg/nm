@@ -710,16 +710,22 @@ textarea {
 .tabbed-navigation li.active a.text{
 	color:#7ED321;
 }
-[data-whatinput="mouse"] .tabbed-navigation li:hover a.text {
+[data-whatinput="mouse"] .tabbed-navigation li a.text:hover {
 	color:#7ED321;
 }
 .searchTab a .staticMagnifierIcon{
 	width:24px;
 	display:block;
 }
+[data-whatinput="mouse"] .tabbed-navigation li.searchTab a.text:hover .staticMagnifierIcon {
+	display:none;
+}
 .searchTab a .selectedMagnifierIcon{
 	width:24px;
 	display:none;
+}
+[data-whatinput="mouse"] .tabbed-navigation li.searchTab a.text:hover .selectedMagnifierIcon {
+	display:block;
 }
 .searchTab.active .selectedMagnifierIcon{
 	display:block;
