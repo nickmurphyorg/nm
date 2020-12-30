@@ -21,14 +21,12 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<h2><?php esc_html_e( '&mdash;Your search did not have any results. Simply start typing to search again or view the projects below.', 'nm' ); ?></h2>
+			<h2><?php esc_html_e( '&mdash;No results found.', 'nm' ); ?></h2>
 
 		<?php else : ?>
 
-			<p><?php esc_html_e( '&mdash;It seems we can&rsquo;t find what you&rsquo;re looking for. Try searching again or view the projects below.', 'nm' ); ?></p>
+			<p><?php esc_html_e( '&mdash;It seems we cannot find what you are looking for.', 'nm' ); ?></p>
 
 		<?php endif; ?>
-		
-		<?php get_template_part( 'template-parts/content', 'projects' ); ?>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

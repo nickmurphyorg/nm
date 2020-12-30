@@ -10,7 +10,7 @@
 		carousel = $("#heroSlides .carousel"),
 		windowSize = $(window).width(),
 		heroHeight = $("#heroSlides").height(), 
-		aboutHeight = $("#aboutMe").height(),
+		aboutHeight = $("#about").height(),
 		blockHeight = $('#meText').height()/2,
 		typeHeight = $('#aboutText').height()*2,
 		slideHeight = $('#aboutSlide').height()*2,
@@ -29,16 +29,16 @@
 	var parallaxHero = new TimelineMax().add(TweenMax.to($("#heroText"), 0.01, { y: -300, ease: Linear.easeNone }))
 		.add(TweenMax.to($("#heroSlides"), 0.01, { y: -200, ease: Linear.easeNone }), 0)
 	var scene = new ScrollMagic.Scene({
-		triggerElement: "#prjkts",
+		triggerElement: "#work",
 		triggerHook: 100,
 		duration: "100%",
 		tweenChanges: true
 	}).setTween(parallaxHero).addTo(controller);
 	
 	var parallaxAbout = new TimelineMax().add(TweenMax.to($("#aboutText"), 0.01, { y: 600, ease: Linear.easeNone }))
-		.add(TweenMax.to($("#aboutMe .parallax"), 0.01, { y: 400, ease: Linear.easeNone }), 0)
+		.add(TweenMax.to($("#about .parallax"), 0.01, { y: 400, ease: Linear.easeNone }), 0)
 	var scene2 = new ScrollMagic.Scene({
-		triggerElement: "#aboutMe",
+		triggerElement: "#about",
 		triggerHook: 100,
 		duration: "200%",
 		tweenChanges: true
