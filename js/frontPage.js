@@ -8,17 +8,9 @@
 	var titles = $(".titles"),
 		subtitles = $(".subtitles"),
 		carousel = $("#heroSlides .carousel"),
-		windowSize = $(window).width(),
-		heroHeight = $("#heroSlides").height(), 
-		aboutHeight = $("#about").height(),
-		blockHeight = $('#meText').height()/2,
-		typeHeight = $('#aboutText').height()*2,
-		slideHeight = $('#aboutSlide').height()*2,
 		controller = new ScrollMagic.Controller(),
+		aboutText = $("#aboutText"),
 		resizeTimer;
-		
-	// Set About Slides
-	$('#meText').css('margin-top', - blockHeight );
 	
 	// Set Blog Tiles
 	$('.postImage').each(function() {
@@ -35,7 +27,8 @@
 		tweenChanges: true
 	}).setTween(parallaxHero).addTo(controller);
 	
-	var parallaxAbout = new TimelineMax().add(TweenMax.to($("#aboutText"), 0.01, { y: 600, ease: Linear.easeNone }))
+	var parallaxAbout = new TimelineMax().add(TweenMax.from(aboutText, 0.01, { y: 300, ease: Linear.easeNone }))
+		.add(TweenMax.to(aboutText, 0.01, { y: -300, ease: Linear.easeNone}))
 		.add(TweenMax.to($("#about .parallax"), 0.01, { y: 400, ease: Linear.easeNone }), 0)
 	var scene2 = new ScrollMagic.Scene({
 		triggerElement: "#about",

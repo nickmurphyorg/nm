@@ -18,9 +18,9 @@
 	 margin-top:-56px;
  }
  
- .slideWin{
+ .slideWindow{
 	width:100%;
-	height:100vh;
+	min-height:100vh;
 	display:block;
 	position:relative;
  }
@@ -223,9 +223,12 @@
 	overflow: hidden;
 }
 #aboutText{
-	position:absolute;
+	position:relative;
+	display:flex;
+	align-items: center;
 	z-index:4;
-	margin-top:-300px;
+	width:100%;
+	min-height: 100vh;
 	left:0;
 	color:#ffffff;
 }
@@ -235,10 +238,7 @@
 	margin-top:-200px;
 }
 #meText{
-	position:absolute;
-	top:50vh;
-	margin-top:-100px;
-	width: 39.3333333333%;
+	padding-top:1em;
 }
 #meText h6{
 	margin-bottom:0;
