@@ -10,6 +10,7 @@
 		carousel = $("#heroSlides .carousel"),
 		controller = new ScrollMagic.Controller(),
 		aboutText = $("#aboutText"),
+		aboutBackgroundImage = $("#about .parallax"),
 		resizeTimer;
 	
 	// Set Blog Tiles
@@ -27,9 +28,10 @@
 		tweenChanges: true
 	}).setTween(parallaxHero).addTo(controller);
 	
-	var parallaxAbout = new TimelineMax().add(TweenMax.from(aboutText, 0.01, { y: 300, ease: Linear.easeNone }))
-		.add(TweenMax.to(aboutText, 0.01, { y: -300, ease: Linear.easeNone}))
-		.add(TweenMax.to($("#about .parallax"), 0.01, { y: 400, ease: Linear.easeNone }), 0)
+	var parallaxAbout = new TimelineMax().add(TweenMax.from(aboutText, 0.01, { y: -300, ease: Linear.easeNone }))
+		.add(TweenMax.to(aboutText, 0.01, { y: 300, ease: Linear.easeNone}), 0.01)
+		.add(TweenMax.from(aboutBackgroundImage, 0.01, { y: -400, ease: Linear.easeNone }), 0)
+		.add(TweenMax.to(aboutBackgroundImage, 0.01, { y: 400, ease: Linear.easeNone}), 0.01)
 	var scene2 = new ScrollMagic.Scene({
 		triggerElement: "#about",
 		triggerHook: 100,
