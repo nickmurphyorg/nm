@@ -8,42 +8,47 @@
 	var titles = $(".titles"),
 		subtitles = $(".subtitles"),
 		carousel = $("#heroSlides .carousel"),
-		controller = new ScrollMagic.Controller(),
-		aboutText = $("#aboutText"),
-		aboutBackgroundImage = $("#about .parallax"),
-		resizeTimer;
+		controller = new ScrollMagic.Controller();
 	
 	// Set Blog Tiles
 	$('.postImage').each(function() {
 		$(this).height($('.postImage').width());
 	});
 	
-	// Parallax effects
-	var parallaxHero = new TimelineMax().add(TweenMax.to($("#heroText"), 0.01, { y: -300, ease: Linear.easeNone }))
-		.add(TweenMax.to($("#heroSlides"), 0.01, { y: -200, ease: Linear.easeNone }), 0)
+	// Parallax Hero
+	let heroTextSlide = document.getElementById("heroText"),
+		heroSlidesSlide = document.getElementById("heroSlides");
+	var parallaxHero = new TimelineMax().add(TweenMax.to(heroTextSlide, 0.01, { y: -300, ease: Linear.easeNone }))
+		.add(TweenMax.to(heroSlidesSlide, 0.01, { y: -200, ease: Linear.easeNone }), 0);
 	var scene = new ScrollMagic.Scene({
 		triggerElement: "#work",
 		triggerHook: 100,
 		duration: "100%",
 		tweenChanges: true
 	}).setTween(parallaxHero).addTo(controller);
+
+	// Parallax About
+	let mainElement = document.getElementById("main"),
+		aboutText = document.getElementById("aboutText"),
+		aboutBackgroundImage = document.getElementById("aboutBackgroundImage"),
+		aboutSection = document.getElementById("about");
+
+	mainElement.appendChild(aboutText);
+	mainElement.appendChild(aboutBackgroundImage);
+
+	aboutText.style.position = "fixed";
+	aboutBackgroundImage.style.position = "fixed";
 	
-	var parallaxAbout = new TimelineMax().add(TweenMax.from(aboutText, 0.01, { y: -300, ease: Linear.easeNone }))
-		.add(TweenMax.to(aboutText, 0.01, { y: 300, ease: Linear.easeNone}), 0.01)
-		.add(TweenMax.from(aboutBackgroundImage, 0.01, { y: -400, ease: Linear.easeNone }), 0)
-		.add(TweenMax.to(aboutBackgroundImage, 0.01, { y: 400, ease: Linear.easeNone}), 0.01)
+	var parallaxAbout = new TimelineMax().add(TweenMax.from(aboutText, 0.01, { y: 300, ease: Linear.easeNone }))
+		.add(TweenMax.to(aboutText, 0.01, { y: -300, ease: Linear.easeNone}), 0.01)
+		.add(TweenMax.from(aboutBackgroundImage, 0.01, { y: 400, ease: Linear.easeNone }), 0)
+		.add(TweenMax.to(aboutBackgroundImage, 0.01, { y: -400, ease: Linear.easeNone}), 0.01);
 	var scene2 = new ScrollMagic.Scene({
-		triggerElement: "#about",
+		triggerElement: aboutSection,
 		triggerHook: 100,
 		duration: "200%",
 		tweenChanges: true
 	}).setTween(parallaxAbout).setClassToggle("#heroText, #heroSlides", "hide").addTo(controller);
-	
-	//Window resize functions
-	$(window).resize(function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(150);
-    });
 
 	// Setup Hero Carousel
 	function setupHeroCarousel() {

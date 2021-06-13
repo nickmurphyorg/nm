@@ -39,7 +39,7 @@ get_header(); ?>
 							</div>
 						</div><!-- container -->
 					</div><!-- about text -->
-					<div class="parallax sheetXL">
+					<div id="aboutBackgroundImage" class="parallax sheetXL">
 						<?php 
 							$frontpage_id = get_option( 'page_on_front' );
 							
