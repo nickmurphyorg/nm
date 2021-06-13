@@ -216,7 +216,6 @@
 		margin-top:-125px;
 	}
 }
-
  
 /* About Text */
 #about{
@@ -233,6 +232,14 @@
 	left:0;
 	color:#ffffff;
 }
+#aboutText h6{
+	margin-bottom:0;
+	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+}
+#aboutText .textWidget{
+	font-size:18px;
+	line-height:26px;
+}
 #aboutBackgroundImage{
 	left:0;
 	z-index:3;
@@ -246,27 +253,6 @@
 	width: 100%;
 	height: auto;
 	object-fit: cover;
-}
-#meText{
-	padding-top:1em;
-}
-#meText h6{
-	margin-bottom:0;
-	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
-}
-#meText .textWidget{
-	font-size:18px;
-	line-height:26px;
-}
-@media (max-width: 550px) {
-	#meText{
-		width:80%;
-	}
-}
-@media (max-width: 400px) {
-	#meText{
-		width:280px;
-	}
 }
 
 /* Blog Styles */

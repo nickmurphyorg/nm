@@ -26,7 +26,7 @@ get_header(); ?>
 					<div id="aboutText">
 						<div class="container">
 							<div class="row">
-								<div id="meText" class="six columns">
+								<div class="six columns">
 									<?php
 										$frontpage_id = get_option( 'page_on_front' );
 										
