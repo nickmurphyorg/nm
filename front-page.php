@@ -22,11 +22,11 @@ get_header(); ?>
 					</div><!-- container -->
 				</section><!-- work -->
 				
-				<section id="about" class="slideWin">
-					<div id="aboutText" class="sheet">
+				<section id="about" class="slideWindow">
+					<div id="aboutText">
 						<div class="container">
 							<div class="row">
-								<div id="meText">
+								<div class="six columns">
 									<?php
 										$frontpage_id = get_option( 'page_on_front' );
 										
@@ -39,7 +39,7 @@ get_header(); ?>
 							</div>
 						</div><!-- container -->
 					</div><!-- about text -->
-					<div class="parallax sheetXL">
+					<div id="aboutBackgroundImage" class="parallax sheetXL">
 						<?php 
 							$frontpage_id = get_option( 'page_on_front' );
 							
