@@ -194,11 +194,9 @@ function nm_scripts() {
 
 	wp_enqueue_script( 'nm-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	
-	wp_enqueue_script( 'nm-greensock', get_template_directory_uri() . '/js/TweenMax.min.js', array(), '1.18.0', true);
-	
-	wp_enqueue_script( 'nm-scrollmagic', get_template_directory_uri() . '/js/ScrollMagic.min.js', array(), '2.0.5', true);
-	
-	wp_enqueue_script( 'nm-animation', get_template_directory_uri() . '/js/animation.gsap.min.js', array(), '2.0.5', true);
+	wp_enqueue_script( 'nm-animation', get_template_directory_uri() . '/js/gsap.min.js', array(), '3.6.1', true);
+
+	wp_enqueue_script( 'nm-scroll-trigger', get_template_directory_uri() . '/js/ScrollTrigger.min.js', array(), '3.6.1', true);
 	
 	wp_enqueue_script( 'nm-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '1.0', false);
 	
@@ -254,7 +252,7 @@ function my_post_image_html( $html, $post_id, $post_image_id ) {
  */
 function custom_login() {
     wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/css/login.css', '1.0', true);
-    wp_enqueue_script( 'nm-greensock', get_template_directory_uri() . '/js/TweenMax.min.js', array(), '1.18.0', true);
+    wp_enqueue_script( 'nm-animation', get_template_directory_uri() . '/js/gsap.min.js', array(), '3.6.1', true);
     wp_enqueue_script( 'custom-login', get_template_directory_uri() . '/js/login.js', array('jquery'), '1.0', true);
 }
 add_action( 'login_enqueue_scripts', 'custom_login' );

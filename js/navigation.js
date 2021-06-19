@@ -73,16 +73,22 @@ jQuery(document).ready(function( $ ) {
 	 */
 	 
 	if (bodyElement.is(".single-post, .page-template-default") && $("article").hasClass("has-post-thumbnail") && !bodyElement.hasClass("home")) {
-		var controller = new ScrollMagic.Controller();
-			
-		var tween_parallax = new TimelineMax().add(TweenMax.to($("div.hero"), 0.01, { y: 100, ease: Linear.easeNone }))
-		var scene = new ScrollMagic.Scene({
-	        triggerElement: ".window",
-	        duration: ($(".window").height()),
-	        tweenChanges: true
-	    }).setTween(tween_parallax).addTo(controller);
-	        
-	    scene.triggerHook(0.05);
+		const heroTimeline = gsap.timeline({
+			scrollTrigger: {
+				trigger: "body",
+				start: "top top",
+				endTrigger: ".window",
+				end: "bottom top",
+				scrub: true
+			}
+		});
+		heroTimeline.to(".hero", {y: 200, ease: "none"}, 0);
+
+		const projectHeroElement = document.querySelector("div.projectHero");
+		
+		if (projectHeroElement) {
+			heroTimeline.to(projectHeroElement, {y: 150, ease: "none"}, 0);
+		}
 	}
 	
 	/*

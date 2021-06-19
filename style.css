@@ -1425,6 +1425,10 @@ a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+.projectHeroWindow {
+	
+}
+
 .projectHero {
 	display: table-cell !important;
 	vertical-align: middle;
