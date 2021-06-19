@@ -13,32 +13,29 @@
 	});
 	
 	// Parallax Hero
-	let heroTextSlide = document.getElementById("heroText"),
-		heroSlidesSlide = document.getElementById("heroSlides"),
-		heroAnimationTimeline = gsap.timeline({
-		scrollTrigger: {
-			trigger: "#hero",
-			start: "top top",
-			end: "bottom top",
-			scrub: true
-		}
-	});
-	heroAnimationTimeline.to(heroTextSlide, {y: 300, ease: "none"}, 0);
-	heroAnimationTimeline.to(heroSlidesSlide, {y: 400, ease: "none"}, 0);
+	let heroAnimationTimeline = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#hero",
+				start: "top top",
+				end: "bottom top",
+				scrub: true
+			}
+		});
+	heroAnimationTimeline.to("#heroText", {y: 300, ease: "none"}, 0);
+	heroAnimationTimeline.to("#heroSlides", {y: 400, ease: "none"}, 0);
+	heroAnimationTimeline.from("#site-navigation", {backgroundColor: "rgba(0, 0, 0, 0)", ease: "none"}, 0);
 
 	// Parallax About
-	let aboutText = document.getElementById("aboutText"),
-		aboutBackgroundImage = document.getElementById("aboutBackgroundImage"),
-		aboutAnimationTimeline = gsap.timeline({
-		scrollTrigger: {
-			trigger: "#about",
-			start: "top bottom",
-			end: "bottom top",
-			scrub: true
-		}
-	});
-	aboutAnimationTimeline.fromTo(aboutText, {y: -300}, {y: 300, ease: "none"}, 0);
-	aboutAnimationTimeline.fromTo(aboutBackgroundImage, {y: -400}, {y: 400, ease: "none"}, 0);
+	let aboutAnimationTimeline = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#about",
+				start: "top bottom",
+				end: "bottom top",
+				scrub: true
+			}
+		});
+	aboutAnimationTimeline.fromTo("#aboutText", {y: -300}, {y: 300, ease: "none"}, 0);
+	aboutAnimationTimeline.fromTo("#aboutBackgroundImage", {y: -400}, {y: 400, ease: "none"}, 0);
 
 	// Setup Hero Carousel
 	let titles = $(".titles"),

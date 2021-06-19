@@ -3,11 +3,7 @@
  */
  
  /* Homepage Overrides */
- #site-navigation{
-	 position:absolute;
-	 background-color:transparent;
- }
- #site-navigation .container{
+ .home #site-navigation .container{
 	 background-color:transparent;
  }
  
