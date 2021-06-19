@@ -65,38 +65,44 @@
 					<li class="workTab" itemprop="name" role="menuitem">
 						<a class="text" href="<?php echo get_site_url(); ?>/#work" title="Work" itemprop="url">Work</a>
 						<div class="navigationSlide workSlide">
-							<div class="container">
-								<?php get_template_part( 'template-parts/content', 'projects' ); ?>
+							<div class="navigationOverflowContainer">
+								<div class="container">
+									<?php get_template_part( 'template-parts/content', 'projects' ); ?>
+								</div>
 							</div>
 						</div>
 					</li>
 					<li class="blogTab" itemprop="name" role="menuitem">
 						<a class="text" href="<?php echo get_site_url(); ?>/blog/blog/" title="Blog" itemprop="url">Blog</a>
 						<div class="navigationSlide blogSlide">
-							<div class="container">
-								<?php 
-								$latest_blog_posts = new WP_Query( array( 'posts_per_page' => 3 ) ); ?>
-							
-								<?php if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post(); ?>
+							<div class="navigationOverflowContainer">
+								<div class="container">
+									<?php 
+									$latest_blog_posts = new WP_Query( array( 'posts_per_page' => 3 ) ); ?>
+								
+									<?php if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post(); ?>
+												
+										<?php get_template_part( 'template-parts/content', 'sample' ); ?>
+								
+									<?php endwhile; ?>
 											
-									<?php get_template_part( 'template-parts/content', 'sample' ); ?>
-							
-								<?php endwhile; ?>
-										
-								<?php else : ?>
-							
-									<?php get_template_part( 'template-parts/content', 'none' ); ?>
-							
-								<?php endif; ?>
-									<a class="spacebar" href="/blog/blog/">Read More</a>
+									<?php else : ?>
+								
+										<?php get_template_part( 'template-parts/content', 'none' ); ?>
+								
+									<?php endif; ?>
+										<a class="spacebar" href="/blog/blog/">Read More</a>
+								</div>
 							</div>
 						</div>
 					</li>
 					<li class="emailTab" itemprop="name" role="menuitem">
 						<a class="text" href="/email/" title="Email" itemprop="url">Email</a>
 						<div class="navigationSlide emailSlide">
-							<div class="container">
-								<?php echo do_shortcode( '[contact-form-7 id="71" title="Contact Me" html_id="contactForm"]' ); ?>
+							<div class="navigationOverflowContainer">
+								<div class="container">
+									<?php echo do_shortcode( '[contact-form-7 id="71" title="Contact Me" html_id="contactForm"]' ); ?>
+								</div>
 							</div>
 						</div>
 					</li>
@@ -105,9 +111,11 @@
 							<img class="staticMagnifierIcon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.png'">
 							<img class="selectedMagnifierIcon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier-selected.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier-selected.png'">
 						</a>
-						<div class="navigationSlide searchSlide" class="">
-							<div class="container">
-								<?php get_search_form(); ?>
+						<div class="navigationSlide searchSlide">
+							<div class="navigationOverflowContainer">
+								<div class="container">
+									<?php get_search_form(); ?>
+								</div>
 							</div>
 						</div>
 					</li>

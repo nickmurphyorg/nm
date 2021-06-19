@@ -744,18 +744,19 @@ textarea {
 	left:0;
 	background-color:#000;
 }
-.navigationSlide .container{
-	margin-top:56px;
-}
 .navigationSlide.open{
 	display: block;
 }
 
-/* Work Slide */
-.workSlide{
+.navigationOverflowContainer{
+	margin-top: 56px;
+	padding-bottom: 56px;
+	width: 100%;
+	height: 100%;
 	overflow-y: scroll;
 }
 
+/* Work Slide */
 .tile{
 	background-color:#fff;
 	width:33.3%;
@@ -840,14 +841,8 @@ textarea {
 	width:106%;
 }
 
-.workSection{
-	overflow-y: scroll;
-}
-
-
 /* Blog Slide */
 .blogSlide{
-	overflow-y: scroll;
 	color:#ffffff;
 }
 .squareShot a{
@@ -926,7 +921,6 @@ textarea {
 .emailSlide{
 	width:100%;
 	background-color:#000;
-	overflow-y: scroll;
 }
 #contactForm{
 	color:#FFFFFF;
@@ -1425,10 +1419,6 @@ a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.projectHeroWindow {
-	
-}
-
 .projectHero {
 	display: table-cell !important;
 	vertical-align: middle;
