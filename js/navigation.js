@@ -73,15 +73,22 @@ jQuery(document).ready(function( $ ) {
 	 */
 	 
 	if (bodyElement.is(".single-post, .page-template-default") && $("article").hasClass("has-post-thumbnail") && !bodyElement.hasClass("home")) {
-		const tl = gsap.timeline({
+		const heroTimeline = gsap.timeline({
 			scrollTrigger: {
-				trigger: ".window",
+				trigger: "body",
 				start: "top top",
+				endTrigger: ".window",
 				end: "bottom top",
 				scrub: true
 			}
 		});
-		tl.to(".hero", {y: 100, ease: "none"}, 0);
+		heroTimeline.to(".hero", {y: 200, ease: "none"}, 0);
+
+		const projectHeroElement = document.querySelector("div.projectHero");
+		
+		if (projectHeroElement) {
+			heroTimeline.to(projectHeroElement, {y: 150, ease: "none"}, 0);
+		}
 	}
 	
 	/*

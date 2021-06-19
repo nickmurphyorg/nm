@@ -44,10 +44,14 @@
 	position:absolute;
 }
  
-/* Special Styles */
+/* Hero Section */
+#hero {
+	overflow:hidden;
+}
+
 .heroData{
 	display:none;
-	visibility: hidden;
+	visibility:hidden;
 }
 
 .nudge{
@@ -55,66 +59,38 @@
 	height:30px;
 	width:100%;
 	left:0;
-	background-color:#fff;
-}
-
-#work{
-	margin-top:100vh;
-	min-height:100vh;
-	width:100%;
-	background-color:#fff;
-}
-
-#work .container{
-	padding-top:10%;
-	padding-bottom:10%;
-}
-@media (max-width: 550px) {
-	#work .container{
-		padding-top:4%;
-		padding-bottom:4%;
-	}
+	bottom:-30px;
+	z-index:7;
+	background-color:#ffffff;
 }
 
 #heroText{
-	position:fixed;
 	z-index:6;
 	top:0;
 	left:0;
 }
-#heroText.hide{
-	z-index:2;
-}
- 
-#heroSlides{
-	position:fixed;
-	z-index:5;
-	top:0;
-	left:0;
-	background-color:#000;
-}
-#heroSlides.hide{
-	z-index:1;
-}
-
 #heroText .container .row .twelve{
 	position:absolute;
 	top:50vh;
 	margin-top:-191px;
 	color:#ffffff;
 }
-
 #heroText .tick{
 	font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
 }
-
 #heroText h1{
 	margin-bottom:0.1em;
 	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 }
-
 #heroText h2{
 	font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+}
+
+#heroSlides{
+	z-index:5;
+	top:0;
+	left:0;
+	background-color:#000000;
 }
 
 /* Carousel CSS */
@@ -216,13 +192,31 @@
 		margin-top:-125px;
 	}
 }
- 
+
+/* Work Section */
+#work{
+	min-height:100vh;
+	width:100%;
+	background-color:#fff;
+}
+
+#work .container{
+	padding-top:10%;
+	padding-bottom:10%;
+}
+
+@media (max-width: 550px) {
+	#work .container{
+		padding-top:4%;
+		padding-bottom:4%;
+	}
+}
+
 /* About Text */
 #about{
 	overflow: hidden;
 }
 #aboutText{
-	position:absolute;
 	top:0;
 	display:flex;
 	align-items: center;

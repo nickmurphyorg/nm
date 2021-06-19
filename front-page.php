@@ -15,15 +15,36 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div id="slate" class="high">
-				<section id="work">
+				<section id="hero" class="slideWindow">
+					<div id="heroText" class="parallax sheet mid">
+						<div class="container">
+							<div class="row">
+								<div class="twelve columns">
+									<h3 class="tick"></h3>
+									<ol class="titles"></ol>
+									<ol class="subtitles"></ol>
+								</div>
+							</div><!-- row -->
+						</div><!-- container -->
+					</div><!-- hero text -->
+				
+					<div id="heroSlides" class="parallax sheet low">
+						<?php if ( is_active_sidebar( 'hero' ) ) : ?>
+							<?php dynamic_sidebar( 'hero' ); ?>
+						<?php endif; ?>
+					</div><!-- hero slides -->
+
 					<div class="nudge"></div>
+				</section>
+
+				<section id="work">
 					<div class="container">
 						<?php get_template_part( 'template-parts/content', 'projects' ); ?>
 					</div><!-- container -->
 				</section><!-- work -->
 				
 				<section id="about" class="slideWindow">
-					<div id="aboutText">
+					<div id="aboutText" class="parallax">
 						<div class="container">
 							<div class="row">
 								<div class="six columns">
@@ -39,6 +60,7 @@ get_header(); ?>
 							</div>
 						</div><!-- container -->
 					</div><!-- about text -->
+					
 					<div id="aboutBackgroundImage" class="parallax sheetXL">
 						<?php 
 							$frontpage_id = get_option( 'page_on_front' );
@@ -83,24 +105,6 @@ get_header(); ?>
 					</div><!-- container -->
 				</section><!-- blogs -->
 			</div><!-- slate -->
-			
-			<div id="heroText" class="sheet mid">
-				<div class="container">
-					<div class="row">
-						<div class="twelve columns">
-							<h3 class="tick"></h3>
-							<ol class="titles"></ol>
-							<ol class="subtitles"></ol>
-						</div>
-					</div><!-- row -->
-				</div><!-- container -->
-			</div><!-- hero text -->
-			
-			<div id="heroSlides" class="sheet low">
-				<?php if ( is_active_sidebar( 'hero' ) ) : ?>
-					<?php dynamic_sidebar( 'hero' ); ?>
-				<?php endif; ?>
-			</div><!-- hero slides -->  
 			
 		</main><!-- #main -->
 	</div><!-- #primary -->

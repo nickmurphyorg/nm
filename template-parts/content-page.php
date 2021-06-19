@@ -12,11 +12,13 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 	<?php if ( has_post_thumbnail() ) : ?>
-		<section class="layer window projectHero">
-			<div class="container">
-				<header class="entry-header">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				</header><!-- .entry-header -->
+		<section>
+			<div class="layer window projectHero">
+				<div class="container">
+					<header class="entry-header">
+						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					</header><!-- .entry-header -->
+				</div>
 			</div>
 		</section>
 	<?php endif; ?>

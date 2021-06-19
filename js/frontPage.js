@@ -5,10 +5,7 @@
  */
 
 ( function( $ ) {
-	var titles = $(".titles"),
-		subtitles = $(".subtitles"),
-		carousel = $("#heroSlides .carousel"),
-		controller = new ScrollMagic.Controller();
+	let carousel = $("#heroSlides .carousel");
 	
 	// Set Blog Tiles
 	$('.postImage').each(function() {
@@ -17,40 +14,36 @@
 	
 	// Parallax Hero
 	let heroTextSlide = document.getElementById("heroText"),
-		heroSlidesSlide = document.getElementById("heroSlides");
-	var parallaxHero = new TimelineMax().add(TweenMax.to(heroTextSlide, 0.01, { y: -300, ease: Linear.easeNone }))
-		.add(TweenMax.to(heroSlidesSlide, 0.01, { y: -200, ease: Linear.easeNone }), 0);
-	var scene = new ScrollMagic.Scene({
-		triggerElement: "#work",
-		triggerHook: 100,
-		duration: "100%",
-		tweenChanges: true
-	}).setTween(parallaxHero).addTo(controller);
+		heroSlidesSlide = document.getElementById("heroSlides"),
+		heroAnimationTimeline = gsap.timeline({
+		scrollTrigger: {
+			trigger: "#hero",
+			start: "top top",
+			end: "bottom top",
+			scrub: true
+		}
+	});
+	heroAnimationTimeline.to(heroTextSlide, {y: 300, ease: "none"}, 0);
+	heroAnimationTimeline.to(heroSlidesSlide, {y: 400, ease: "none"}, 0);
 
 	// Parallax About
-	let mainElement = document.getElementById("main"),
-		aboutText = document.getElementById("aboutText"),
+	let aboutText = document.getElementById("aboutText"),
 		aboutBackgroundImage = document.getElementById("aboutBackgroundImage"),
-		aboutSection = document.getElementById("about");
-
-	mainElement.appendChild(aboutText);
-	mainElement.appendChild(aboutBackgroundImage);
-
-	aboutText.style.position = "fixed";
-	aboutBackgroundImage.style.position = "fixed";
-	
-	var parallaxAbout = new TimelineMax().add(TweenMax.from(aboutText, 0.01, { y: 300, ease: Linear.easeNone }))
-		.add(TweenMax.to(aboutText, 0.01, { y: -300, ease: Linear.easeNone}), 0.01)
-		.add(TweenMax.from(aboutBackgroundImage, 0.01, { y: 400, ease: Linear.easeNone }), 0)
-		.add(TweenMax.to(aboutBackgroundImage, 0.01, { y: -400, ease: Linear.easeNone}), 0.01);
-	var scene2 = new ScrollMagic.Scene({
-		triggerElement: aboutSection,
-		triggerHook: 100,
-		duration: "200%",
-		tweenChanges: true
-	}).setTween(parallaxAbout).setClassToggle("#heroText, #heroSlides", "hide").addTo(controller);
+		aboutAnimationTimeline = gsap.timeline({
+		scrollTrigger: {
+			trigger: "#about",
+			start: "top bottom",
+			end: "bottom top",
+			scrub: true
+		}
+	});
+	aboutAnimationTimeline.fromTo(aboutText, {y: -300}, {y: 300, ease: "none"}, 0);
+	aboutAnimationTimeline.fromTo(aboutBackgroundImage, {y: -400}, {y: 400, ease: "none"}, 0);
 
 	// Setup Hero Carousel
+	let titles = $(".titles"),
+		subtitles = $(".subtitles");
+		
 	function setupHeroCarousel() {
 		carousel.children('li').each(function(i) {
 			let currentSlide = $(this);
@@ -64,12 +57,13 @@
 	
 	// Run Hero Carousel
 	function runHeroCarousel(){
-        var sheets = $(".carousel li");
-        var titles = $(".titles li");
-        var subtitles = $(".subtitles li");
-        var tick = $(".tick");
-        var nmbr = sheets.length;
-        var currentSlide = 0;
+        let sheets = $(".carousel li"),
+        	titles = $(".titles li"),
+        	subtitles = $(".subtitles li"),
+        	tick = $(".tick"),
+        	nmbr = sheets.length,
+        	currentSlide = 0,
+			nudge = document.getElementsByClassName("nudge")[0];
                 
 		TweenLite.set(sheets.filter(":gt(0)"), {alpha:"0"});
 		TweenLite.set(titles.filter(":gt(0)"), {top:"100%"});
@@ -96,10 +90,11 @@
 		}
 		
 		function tickr() {
-			$(".tick").html( '0' + (currentSlide+1) + '/0' + nmbr );
+			tick.html( '0' + (currentSlide+1) + '/0' + nmbr );
 		}
 		
-		TweenLite.to($(".nudge"), 1.5, { y:"-30px" }).delay(2.5);
+		const nudgeHeight = nudge.getBoundingClientRect().height;
+		TweenLite.to(nudge, 1.5, { y: - nudgeHeight + "px" }).delay(2.5);
 	}
 	
 	setupHeroCarousel();
