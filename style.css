@@ -710,6 +710,9 @@ textarea {
 .tabbed-navigation li.active a.text{
 	color:#7ED321;
 }
+.tabbed-navigation li.active .navigationSlide{
+	display:block;
+}
 [data-whatinput="mouse"] .tabbed-navigation li a.text:hover {
 	color:#7ED321;
 }
@@ -742,20 +745,18 @@ textarea {
 	opacity:1;
 	top:0;
 	left:0;
-	background-color:#000;
+	background-color:#000000;
 }
-.navigationSlide .container{
-	margin-top:56px;
-}
-.navigationSlide.open{
-	display: block;
+
+.navigationOverflowContainer{
+	position: absolute;
+	top: 56px;
+	width: 100%;
+	height: calc(100vh - 56px);
+	overflow-y: overlay;
 }
 
 /* Work Slide */
-.workSlide{
-	overflow-y: scroll;
-}
-
 .tile{
 	background-color:#fff;
 	width:33.3%;
@@ -840,14 +841,8 @@ textarea {
 	width:106%;
 }
 
-.workSection{
-	overflow-y: scroll;
-}
-
-
 /* Blog Slide */
 .blogSlide{
-	overflow-y: scroll;
 	color:#ffffff;
 }
 .squareShot a{
@@ -926,7 +921,6 @@ textarea {
 .emailSlide{
 	width:100%;
 	background-color:#000;
-	overflow-y: scroll;
 }
 #contactForm{
 	color:#FFFFFF;
@@ -1425,10 +1419,6 @@ a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.projectHeroWindow {
-	
-}
-
 .projectHero {
 	display: table-cell !important;
 	vertical-align: middle;

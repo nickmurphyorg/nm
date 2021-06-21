@@ -198,8 +198,6 @@ function nm_scripts() {
 
 	wp_enqueue_script( 'nm-scroll-trigger', get_template_directory_uri() . '/js/ScrollTrigger.min.js', array(), '3.6.1', true);
 	
-	wp_enqueue_script( 'nm-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '1.0', false);
-	
 	wp_enqueue_script( 'nm-what-input', get_template_directory_uri() . '/js/what-input.min.js', array(), '2.0.1', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -211,6 +209,14 @@ function nm_scripts() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'nm_scripts' );
+
+/**
+ * Add Scripts to Footer.
+ */
+function nm_footer_scripts() {
+	wp_enqueue_script( 'nm-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.1', false);
+}
+add_action('wp_footer', 'nm_footer_scripts');
 
 /**
  * Implement the Custom Header feature.
