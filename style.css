@@ -753,8 +753,7 @@ textarea {
 	top: 56px;
 	width: 100%;
 	height: calc(100vh - 56px);
-	overflow-y: scroll;
-
+	overflow-y: overlay;
 }
 
 /* Work Slide */

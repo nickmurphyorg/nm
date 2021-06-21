@@ -79,24 +79,34 @@ for (var i = 0; i < navigationTabs.length; i++) {
 }
 
 /* Remote Navigation Anchors */
-// let navigationBarRemoteAnchors = document.querySelectorAll("a[data-remote-navigation]");
-// let handleRemoteNavigationClick = (event) => {
-// 	switch (event.currentTarget.dataset.navigationTab) {
-// 		case "email":
-// 			event.preventDefault();
-// 			toggleNavigationTabs(document.querySelector("li.emailTab"));
-// 			break;
+let handleRemoteNavigationClick = (event) => {
+	switch (event.currentTarget.dataset.remoteNavigation) {
+		case "work":
+			event.preventDefault();
+			toggleNavigationTabs(document.querySelector("li.workTab"));
+			break;
 
-// 		case "work":
-// 			event.preventDefault();
-// 			toggleNavigationTabs(document.querySelector("li.workTab"));
-// 			break;
+		case "blog":
+			event.preventDefault();
+			toggleNavigationTabs(document.querySelector("li.blogTab"));
+			break;
+
+		case "email":
+			event.preventDefault();
+			toggleNavigationTabs(document.querySelector("li.emailTab"));
+			break;
+
+		case "search":
+			event.preventDefault();
+			toggleNavigationTabs(document.querySelector("li.searchTab"));
+			break;
 	
-// 		default:
-// 			console.log("Remote navigation not configured for this tab.");
-// 			break;
-// 	}
-// }
+		default:
+			console.log("Remote navigation not configured for this tab.");
+			break;
+	}
+}
+let navigationBarRemoteAnchors = document.querySelectorAll("[data-remote-navigation]");
 
 for (var i = 0; i < navigationBarRemoteAnchors.length; i++) {
 	navigationBarRemoteAnchors[i].addEventListener("click", handleRemoteNavigationClick, false);
