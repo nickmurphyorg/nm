@@ -257,7 +257,7 @@ function my_post_image_html( $html, $post_id, $post_image_id ) {
  * Login Screen Mods.
  */
 function custom_login() {
-    wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/css/login.css', '1.0', true);
+    wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/style.css', '1.0', true);
     wp_enqueue_script( 'nm-animation', get_template_directory_uri() . '/js/gsap.min.js', array(), '3.6.1', true);
     wp_enqueue_script( 'custom-login', get_template_directory_uri() . '/js/login.js', array('jquery'), '1.0', true);
 }

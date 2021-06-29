@@ -2082,6 +2082,130 @@ section.error-404{
 }
 
 /*--------------------------------------------------------------
+## Login
+--------------------------------------------------------------*/
+body.login{
+	background-color:#000000;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body.login input:-webkit-autofill, body.login textarea:-webkit-autofill, body.login select:-webkit-autofill {
+	background-color: transparent;
+    background-image: none;
+    -webkit-box-shadow: 0 0 0px 100px white inset;
+}
+
+body.login h1 a{
+	background-image: url("./images/nm.png");
+	background-image: url("./images/nm.svg");
+	background-size:80px;
+	height:34px;
+}
+
+body.login div#login p.message {
+	background-color: #000000;
+	color: #808080;
+	border-left: 2px solid #7ed321;
+	padding: 0 24px;
+	margin-bottom: 0px;
+}
+
+body.login div#login #login_error {
+	background-color: #000000;
+	color: #808080;
+	padding: 0 24px;
+	margin-bottom: 0px;
+}
+
+body.login div#login #login_error a {
+	color: #7ed321;
+}
+
+body.login div#login form#loginform {
+	margin-top: 0px;
+	background-color:transparent;
+	border:none;
+	padding:26px 24px 26px;
+}
+
+body.login div#login form#loginform p label {
+	color:#808080;
+}
+
+body.login div#login form#loginform input {
+	background-color:transparent;
+	border:none;
+	border-bottom:1px solid #ffffff;
+	border-radius:0;
+	color:#ffffff;
+}
+body.login div#login form#loginform input:focus{
+	border-bottom-color: #7ed321;
+	outline:none;
+}
+
+body.login div#login form#loginform p.forgetmenot {
+	width:100%;
+	margin-bottom:2em;
+}
+
+body.login div#login form#loginform p.submit {
+	text-align:center;
+}
+
+body.login div#login form#loginform p.submit input#wp-submit {
+	background:#7ed321;
+	border:1px solid #7ed321;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	-o-border-radius:4px;
+	border-radius:4px;
+	box-shadow:none;
+	text-shadow:none;
+	padding-left:30px;
+	padding-right:30px;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:20px;
+	line-height:22px;
+	height:43px;
+	float:none;
+}
+
+body.login div#login form#loginform p.submit input#wp-submit:hover{
+	background-color:transparent;
+	color:#7ed321;
+}
+
+body.login div#login form#loginform p.forgetmenot input#rememberme {
+	border:1px solid #ffffff;
+	-webkit-border-radius:12px;
+	-moz-border-radius:12px;
+	-o-border-radius:12px;
+	border-radius:12px;
+}
+
+body.login input[type=checkbox]:checked:before{
+	color:#7ed321;
+}
+
+body.login div#login p#nav a {
+	color:#808080;
+}
+
+body.login div#login p#nav a:hover {
+	color:#7ED321;
+}
+
+body.login div#login p#backtoblog a {
+	color:#808080;
+}
+
+body.login div#login p#backtoblog a:hover {
+	color:#7ED321;
+}
+
+/*--------------------------------------------------------------
 ## Archive
 --------------------------------------------------------------*/
 .arch{
