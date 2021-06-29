@@ -109,6 +109,4 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	
-	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/css/home.css">
-	
 <?php get_footer(); ?>
