@@ -1053,10 +1053,10 @@ textarea {
 
     a {
       color: $white-color;
-    }
 
-    a:hover {
-      color: $silver-color;
+      &:hover {
+        color: $silver-color;
+      }
     }
   }
   .entry-meta {
@@ -1068,10 +1068,10 @@ textarea {
 
     .entry-date {
       color: $white-color;
-    }
 
-    .entry-date:hover {
-      color: $silver-color;
+      &:hover {
+        color: $silver-color;
+      }
     }
   }
 
@@ -1083,9 +1083,10 @@ textarea {
       margin-top: 6px;
       margin-bottom: 18px;
       color: $accent-color;
-    }
-    a:hover {
-      color: $silver-color;
+
+      &:hover {
+        color: $silver-color;
+      }
     }
   }
 }
@@ -1118,11 +1119,11 @@ textarea {
       -ms-border-radius: 4px;
       -o-border-radius: 4px;
       border-radius: 4px;
-    }
 
-    .spacebar:hover {
-      background-color: $silver-color;
-      color: $white-color;
+      &:hover {
+        background-color: $silver-color;
+        color: $white-color;
+      }
     }
   }
 }
@@ -1252,11 +1253,13 @@ a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-  margin: 0 0 1.5em;
-  overflow: hidden;
+.site-main {
+  &.comment-navigation,
+  &.posts-navigation,
+  &.post-navigation {
+    margin: 0 0 1.5em;
+    overflow: hidden;
+  }
 }
 
 .comment-navigation .nav-previous,
