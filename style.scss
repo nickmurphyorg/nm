@@ -30,6 +30,12 @@ $light-font-stack: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
 $regular-font-stack: "Helvetica Neue Roman", Helvetica, Arial, sans-serif;
 $medium-font-stack: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 
+$breakpoint-xl: 1440px;
+$breakpoint-l: 1020px;
+$breakpoint-m: 750px;
+$breakpoint-s: 550px;
+$breakpoint-xs: 430px;
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -338,8 +344,7 @@ This CSS resource incorporates links to font software which is the valuable copy
   padding-top: 56px;
 }
 
-/* For devices larger than 550px */
-@media (min-width: 550px) {
+@media (min-width: $breakpoint-s) {
   .container {
     width: 90%;
   }
@@ -517,7 +522,7 @@ h6 {
 }
 
 /* Larger than phablet */
-@media (min-width: 550px) {
+@media (min-width: $breakpoint-s) {
   h1 {
     font-size: 140px;
     line-height: 160px;
@@ -540,7 +545,7 @@ h6 {
   }
 }
 /* Larger than tablet */
-@media (min-width: 750px) {
+@media (min-width: $breakpoint-m) {
   h1 {
     font-size: 200px;
     line-height: 220px;
@@ -578,7 +583,7 @@ blockquote {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-s) {
   blockquote {
     padding-top: 2em;
     margin-bottom: 2em;
@@ -685,7 +690,7 @@ hr {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-s) {
   .entry-content h3 {
     margin-bottom: 0.25em;
   }
@@ -852,7 +857,7 @@ textarea {
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: $breakpoint-xs) {
   .main-navigation {
     li {
       margin-left: 18px;
@@ -962,14 +967,14 @@ textarea {
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: $breakpoint-m) {
   .tile {
     width: 50%;
     padding-bottom: 50%;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: $breakpoint-xs) {
   .tile {
     width: 100%;
     padding-bottom: 100%;
@@ -1091,7 +1096,7 @@ textarea {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-s) {
   .descrip {
     margin-top: 2em;
     margin-bottom: 1em;
@@ -1206,13 +1211,13 @@ span.wpcf7-not-valid-tip {
 ::-webkit-input-placeholder {
   color: $silver-color;
 }
-@media (max-width: 750px) {
+@media (max-width: $breakpoint-m) {
   #search {
     font-size: 100px;
     line-height: 123px;
   }
 }
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-s) {
   #search {
     margin-top: 64px;
     font-size: 45px;
@@ -1575,7 +1580,7 @@ a:active {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-s) {
   .resultTxt {
     .entry-header {
       margin-top: 1em;
@@ -1693,7 +1698,7 @@ body.blog {
   }
 }
 
-@media (max-width: 1020px) {
+@media (max-width: $breakpoint-l) {
   .postPreface {
     .entry-content {
       p {
@@ -1703,7 +1708,7 @@ body.blog {
     }
   }
 }
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-s) {
   .postPreface {
     padding-top: 2em;
 
@@ -1906,7 +1911,7 @@ body.home {
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: $breakpoint-m) {
   .titles {
     height: 138px;
   }
@@ -1920,7 +1925,7 @@ body.home {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-s) {
   .titles {
     height: 50px;
   }
@@ -1941,7 +1946,7 @@ body.home {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-s) {
   #work {
     .container {
       padding-top: 4%;
@@ -2058,7 +2063,7 @@ body.home {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-s) {
   #blog {
     h6 {
       padding-top: 0.75em;
@@ -2173,7 +2178,7 @@ body.home {
   background-color: $white-color;
 }
 
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-s) {
   .slab {
     .container {
       p {
@@ -2351,7 +2356,7 @@ section.error-404 {
   border-radius: 40px;
 }
 
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-s) {
   .comment-author {
     margin-left: -32px;
 
@@ -2421,7 +2426,7 @@ section.error-404 {
   padding-left: 8.7%;
   padding-right: 8.7%;
 }
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-s) {
   #respond {
     padding-left: 0%;
     padding-right: 0%;
@@ -2622,7 +2627,7 @@ body.login select:-webkit-autofill {
   }
 }
 
-@media (min-width: 750px) {
+@media (min-width: $breakpoint-m) {
   .arch {
     .page-title {
       font-size: 100px;
@@ -2630,7 +2635,7 @@ body.login select:-webkit-autofill {
     }
   }
 }
-@media (min-width: 1020px) {
+@media (min-width: $breakpoint-l) {
   .arch {
     .page-title {
       font-size: 140px;
@@ -2784,7 +2789,7 @@ object {
   }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: $breakpoint-xl) {
   #nextProject {
     .container {
       padding-top: 45px;
@@ -2792,7 +2797,7 @@ object {
     }
   }
 }
-@media (max-width: 1020px) {
+@media (max-width: $breakpoint-l) {
   #nextProject {
     .container {
       padding-top: 30px;
@@ -2844,7 +2849,7 @@ object {
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: $breakpoint-m) {
   .footerFirst {
     width: 100% !important;
   }
@@ -2859,7 +2864,7 @@ object {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-s) {
   .footerPosts {
     width: 100% !important;
   }
@@ -2916,7 +2921,7 @@ object {
   }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: $breakpoint-xl) {
   .postHero {
     height: 500px;
   }
@@ -2927,7 +2932,7 @@ object {
     height: 500px;
   }
 }
-@media (max-width: 1020px) {
+@media (max-width: $breakpoint-l) {
   .postHero {
     height: 350px;
   }
@@ -2938,12 +2943,12 @@ object {
     height: 350px;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: $breakpoint-m) {
   .postHero {
     height: 400px;
   }
 }
-@media (max-width: 550px) {
+@media (max-width: $breakpoint-s) {
   .postHero {
     height: 200px;
   }
