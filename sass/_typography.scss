@@ -1,0 +1,206 @@
+@use './variables';
+
+/*--------------------------------------------------------------
+# Fonts
+
+This CSS resource incorporates links to font software which is the valuable copyrighted property of Monotype and/or its suppliers. You may not attempt to copy, install, redistribute, convert, modify or reverse engineer this font software. Please contact Monotype with any questions regarding Web Fonts: https://www.linotype.com
+--------------------------------------------------------------*/
+@font-face {
+  font-family: "Helvetica Neue Light";
+  src: url("Fonts/1488880/8827e223-8d96-4750-8b0c-8ef828fb1f0f.eot?#iefix");
+  src: url("Fonts/1488880/8827e223-8d96-4750-8b0c-8ef828fb1f0f.eot?#iefix")
+      format("eot"),
+    url("Fonts/1488880/0128d8b7-d00b-4315-8daa-970f97ecac64.woff2")
+      format("woff2"),
+    url("Fonts/1488880/803af1a9-a09b-4de5-ba36-e3d228fb5bc4.woff")
+      format("woff"),
+    url("Fonts/1488880/831880ae-4958-487d-bc2f-aa2c1a0636e7.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "Helvetica Neue Roman";
+  src: url("Fonts/1488892/285b0922-a3d2-4550-b29d-b4f74a9611e4.eot?#iefix");
+  src: url("Fonts/1488892/285b0922-a3d2-4550-b29d-b4f74a9611e4.eot?#iefix")
+      format("eot"),
+    url("Fonts/1488892/823e6839-53d8-41b9-a5a1-5f05833acd12.woff2")
+      format("woff2"),
+    url("Fonts/1488892/92679273-9798-4d27-893b-d53dfd2bb4c7.woff")
+      format("woff"),
+    url("Fonts/1488892/e4fb2994-44c3-40fe-bec7-9c4fa593b799.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "Helvetica Neue Medium";
+  src: url("Fonts/1488904/5abe98e8-3e80-4fd6-b27b-6ec4c6385461.eot?#iefix");
+  src: url("Fonts/1488904/5abe98e8-3e80-4fd6-b27b-6ec4c6385461.eot?#iefix")
+      format("eot"),
+    url("Fonts/1488904/c86f4d57-4caf-4c6f-9554-7926dd67e3f1.woff2")
+      format("woff2"),
+    url("Fonts/1488904/92c69f6c-0185-4eb2-800e-1ee3947ca4dd.woff")
+      format("woff"),
+    url("Fonts/1488904/e11c48d3-bed3-4b35-9d1e-1a5c7afe80e3.ttf")
+      format("truetype");
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body,
+textarea {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  font-family: variables.$regular-font-stack;
+  color: variables.$black-color;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-family: variables.$medium-font-stack;
+  font-weight: 600;
+}
+h1 {
+  font-size: 48px;
+  line-height: 58px;
+}
+.subHeader h1 {
+  font-size: 22px;
+  line-height: 27px;
+}
+h2 {
+  font-size: 22px;
+  line-height: 27px;
+}
+h3 {
+  font-size: 20px;
+  line-height: 25px;
+}
+h4 {
+  font-size: 18px;
+  line-height: 30px;
+}
+h5 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+h6 {
+  font-size: 48px;
+  line-height: 58px;
+}
+
+/* Larger than phablet */
+@media (min-width: variables.$breakpoint-s) {
+  h1 {
+    font-size: 140px;
+    line-height: 160px;
+  }
+  .subHeader h1 {
+    font-size: 30px;
+    line-height: 37px;
+  }
+  h2 {
+    font-size: 30px;
+    line-height: 37px;
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 29px;
+  }
+  h6 {
+    font-size: 100px;
+    line-height: 120px;
+  }
+}
+/* Larger than tablet */
+@media (min-width: variables.$breakpoint-m) {
+  h1 {
+    font-size: 200px;
+    line-height: 220px;
+  }
+  .subHeader h1 {
+    font-size: 40px;
+    line-height: 49px;
+  }
+  h2 {
+    font-size: 40px;
+    line-height: 49px;
+  }
+  h6 {
+    font-size: 140px;
+    line-height: 160px;
+  }
+}
+
+p {
+  margin-top: 0;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 0px;
+  border-left: 2px solid;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+@media (max-width: variables.$breakpoint-s) {
+  blockquote {
+    padding-top: 2em;
+    margin-bottom: 2em;
+  }
+}
+
+address {
+  margin: 0 0 1.5em;
+}
+
+pre {
+  background: variables.$light-grey-color;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted variables.$silver-color;
+  cursor: help;
+}
+
+mark,
+ins {
+  background: variables.$accent-color;
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
