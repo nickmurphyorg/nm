@@ -1,0 +1,136 @@
+@use './variables';
+
+/*--------------------------------------------------------------
+## Login
+--------------------------------------------------------------*/
+body.login {
+  background-color: variables.$black-color;
+  font-family: variables.$regular-font-stack;
+
+  h1 {
+    a {
+      background-image: url("./images/nm.png");
+      background-image: url("./images/nm.svg");
+      background-size: 80px;
+      height: 34px;
+    }
+  }
+
+  #login {
+    p.message {
+      background-color: variables.$black-color;
+      color: variables.$silver-color;
+      border-left: 2px solid variables.$accent-color;
+      padding: 0 24px;
+      margin-bottom: 0px;
+    }
+
+    #login_error {
+      background-color: variables.$black-color;
+      color: variables.$silver-color;
+      padding: 0 24px;
+      margin-bottom: 0px;
+
+      a {
+        color: variables.$accent-color;
+      }
+    }
+
+    #loginform {
+      margin-top: 0px;
+      background-color: transparent;
+      border: none;
+      padding: 26px 24px 26px;
+
+      label {
+        color: variables.$silver-color;
+      }
+
+      input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid variables.$white-color;
+        border-radius: 0;
+        color: variables.$white-color;
+
+        &:focus {
+          border-bottom-color: variables.$accent-color;
+          outline: none;
+        }
+      }
+
+      #rememberme {
+        border: 1px solid variables.$white-color;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -o-border-radius: 12px;
+        border-radius: 12px;
+      }
+
+      #wp-submit {
+        background: variables.$accent-color;
+        border: 1px solid variables.$accent-color;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+        box-shadow: none;
+        text-shadow: none;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 20px;
+        line-height: 22px;
+        height: 43px;
+        float: none;
+
+        &:hover {
+          background-color: transparent;
+          color: variables.$accent-color;
+        }
+      }
+
+      .forgetmenot {
+        width: 100%;
+        margin-bottom: 2em;
+      }
+
+      .submit {
+        text-align: center;
+      }
+    }
+  }
+
+  input[type="checkbox"]:checked:before {
+    color: variables.$accent-color;
+  }
+
+  #nav {
+    a {
+      color: variables.$silver-color;
+
+      &:hover {
+        color: variables.$accent-color;
+      }
+    }
+  }
+
+  #backtoblog {
+    a {
+      color: variables.$silver-color;
+
+      &:hover {
+        color: variables.$accent-color;
+      }
+    }
+  }
+}
+
+body.login input:-webkit-autofill,
+body.login textarea:-webkit-autofill,
+body.login select:-webkit-autofill {
+  background-color: transparent;
+  background-image: none;
+  -webkit-box-shadow: 0 0 0px 100px white inset;
+}

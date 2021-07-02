@@ -1,0 +1,352 @@
+@use './variables';
+
+/*--------------------------------------------------------------
+## Homepage
+--------------------------------------------------------------*/
+body.home {
+  #site-navigation {
+    .container {
+      background-color: transparent;
+    }
+  }
+}
+
+#slate {
+  position: relative;
+  z-index: 7;
+  margin-top: -56px;
+}
+
+.slideWindow {
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  position: relative;
+}
+.sheet {
+  width: 100%;
+  height: 100vh;
+}
+
+.sheetXL {
+  height: 106vh;
+  top: -3vh;
+  width: 100%;
+}
+
+.special {
+  width: 100%;
+  height: 125vh;
+}
+
+.parallax {
+  position: absolute;
+}
+
+/* Hero Section */
+#hero {
+  overflow: hidden;
+}
+
+.heroData {
+  display: none;
+  visibility: hidden;
+}
+
+.nudge {
+  position: absolute;
+  height: 30px;
+  width: 100%;
+  left: 0;
+  bottom: -30px;
+  z-index: 7;
+  background-color: variables.$white-color;
+}
+
+#heroText {
+  z-index: 6;
+  top: 0;
+  left: 0;
+
+  h1 {
+    margin-bottom: 0.1em;
+    font-family: variables.$medium-font-stack;
+  }
+
+  h2 {
+    font-family: variables.$medium-font-stack;
+  }
+
+  .twelve {
+    position: absolute;
+    top: 50vh;
+    margin-top: -191px;
+    color: variables.$white-color;
+  }
+
+  .tick {
+    font-family: variables.$light-font-stack;
+  }
+}
+
+#heroSlides {
+  z-index: 5;
+  top: 0;
+  left: 0;
+  background-color: variables.$black-color;
+}
+
+/* Carousel CSS */
+.carousel {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    position: absolute !important;
+    top: 0;
+
+    picture {
+      display: flex;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.titles {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  li {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    h1 {
+      line-height: 80%;
+    }
+
+    a {
+      display: block;
+    }
+
+    &.white {
+      color: variables.$white-color;
+
+      h1 {
+        color: variables.$white-color;
+      }
+    }
+
+    &.black {
+      color: variables.$black-color;
+
+      h1 {
+        color: variables.$black-color;
+      }
+    }
+
+    &:hover h1 {
+      color: variables.$silver-color;
+    }
+  }
+}
+
+.subtitles {
+  height: 42px;
+  width: 100%;
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin-top: 20px;
+
+  li {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    h2 {
+      line-height: 80%;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: variables.$breakpoint-m) {
+  .titles {
+    height: 138px;
+  }
+  .subtitles {
+    height: 32px;
+  }
+  #heroText {
+    .twelve {
+      margin-top: -125px;
+    }
+  }
+}
+
+@media (max-width: variables.$breakpoint-s) {
+  .titles {
+    height: 50px;
+  }
+  .subtitles {
+    height: 24px;
+  }
+}
+
+/* Work Section */
+#work {
+  min-height: 100vh;
+  width: 100%;
+  background-color: variables.$white-color;
+
+  .container {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+}
+
+@media (max-width: variables.$breakpoint-s) {
+  #work {
+    .container {
+      padding-top: 4%;
+      padding-bottom: 4%;
+    }
+  }
+}
+
+/* About Text */
+#about {
+  overflow: hidden;
+}
+#aboutText {
+  top: 0;
+  display: flex;
+  align-items: center;
+  z-index: 4;
+  width: 100%;
+  min-height: 100vh;
+  left: 0;
+  color: variables.$white-color;
+
+  h6 {
+    margin-bottom: 0;
+    font-family: variables.$medium-font-stack;
+  }
+
+  .textWidget {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+#aboutBackgroundImage {
+  left: 0;
+  z-index: 3;
+
+  picture {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
+
+/* Blog Styles */
+#blog {
+  background-color: variables.$white-color;
+
+  h6 {
+    font-family: variables.$medium-font-stack;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-bottom: 0;
+    display: inline-block;
+
+    a {
+      color: variables.$black-color;
+    }
+
+    &:hover {
+      a {
+        color: variables.$silver-color;
+      }
+    }
+  }
+}
+
+.captionThis {
+  padding-bottom: 1em;
+
+  .entry-summary {
+    a {
+      display: inline-block;
+      font-family: variables.$medium-font-stack;
+      font-size: 18px;
+      margin-top: 6px;
+      color: variables.$accent-color;
+
+      &:hover {
+        color: variables.$silver-color;
+      }
+    }
+  }
+
+  .entry-meta {
+    margin-bottom: 2em;
+  }
+
+  .entry-title {
+    a {
+      color: variables.$black-color;
+
+      &:hover {
+        color: variables.$silver-color;
+      }
+    }
+  }
+
+  .posted-on {
+    font-weight: 300;
+
+    a {
+      color: variables.$black-color;
+
+      &:hover {
+        color: variables.$accent-color;
+      }
+    }
+  }
+}
+
+@media (max-width: variables.$breakpoint-s) {
+  #blog {
+    h6 {
+      padding-top: 0.75em;
+      padding-bottom: 0.75em;
+    }
+  }
+  .captionThis {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+}
