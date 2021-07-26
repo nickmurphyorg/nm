@@ -39,11 +39,19 @@
 
 .slab {
   .container {
+    .entry-content {
+      padding-top: 2em;
+    }
+
+    h3 {
+      padding-left: 8.7%;
+      padding-right: 8.7%;
+    }
+
     p {
       padding-left: 8.7%;
       padding-right: 8.7%;
-      -webkit-margin-before: 2em;
-      -webkit-margin-after: 2em;
+      margin-bottom: 2em;
 
       img {
         max-width: none;
@@ -90,6 +98,15 @@
   }
 }
 
+.post-password-form {
+  input[type=password] {
+    border: none;
+    border-bottom: 1px solid variables.$black-color;
+    border-radius: 0;
+    margin-right: 10px;
+  }
+}
+
 .entry-meta {
   .byline {
     display: none;
@@ -105,6 +122,11 @@
 @media (max-width: variables.$breakpoint-s) {
   .slab {
     .container {
+      h3 {
+        padding-left: 0%;
+        padding-right: 0%;
+      }
+
       p {
         padding-left: 0%;
         padding-right: 0%;

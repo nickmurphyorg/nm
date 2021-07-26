@@ -1248,11 +1248,17 @@ body.home #site-navigation .container {
   display: inline;
 }
 
+.slab .container .entry-content {
+  padding-top: 2em;
+}
+.slab .container h3 {
+  padding-left: 8.7%;
+  padding-right: 8.7%;
+}
 .slab .container p {
   padding-left: 8.7%;
   padding-right: 8.7%;
-  -webkit-margin-before: 2em;
-  -webkit-margin-after: 2em;
+  margin-bottom: 2em;
 }
 .slab .container p img {
   max-width: none;
@@ -1290,6 +1296,13 @@ body.home #site-navigation .container {
   margin: 0 0 1.5em;
 }
 
+.post-password-form input[type=password] {
+  border: none;
+  border-bottom: 1px solid #000000;
+  border-radius: 0;
+  margin-right: 10px;
+}
+
 .entry-meta .byline {
   display: none;
 }
@@ -1301,6 +1314,10 @@ body.home #site-navigation .container {
 }
 
 @media (max-width: 550px) {
+  .slab .container h3 {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
   .slab .container p {
     padding-left: 0%;
     padding-right: 0%;
