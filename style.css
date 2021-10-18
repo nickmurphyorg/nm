@@ -2002,11 +2002,8 @@ body.blog .postHero a img {
 #heroText .twelve {
   position: absolute;
   top: 50vh;
-  margin-top: -191px;
+  margin-top: -131px;
   color: #ffffff;
-}
-#heroText .tick {
-  font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
 }
 
 #heroSlides {
@@ -2103,7 +2100,7 @@ body.blog .postHero a img {
   }
 
   #heroText .twelve {
-    margin-top: -125px;
+    margin-top: -95px;
   }
 }
 @media (max-width: 550px) {
@@ -2113,6 +2110,10 @@ body.blog .postHero a img {
 
   .subtitles {
     height: 24px;
+  }
+
+  #heroText .twelve {
+    margin-top: -47px;
   }
 }
 /* Work Section */

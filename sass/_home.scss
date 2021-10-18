@@ -72,12 +72,8 @@
   .twelve {
     position: absolute;
     top: 50vh;
-    margin-top: -191px;
+    margin-top: -131px;
     color: variables.$white-color;
-  }
-
-  .tick {
-    font-family: variables.$light-font-stack;
   }
 }
 
@@ -187,7 +183,7 @@
   }
   #heroText {
     .twelve {
-      margin-top: -125px;
+      margin-top: -95px;
     }
   }
 }
@@ -198,6 +194,11 @@
   }
   .subtitles {
     height: 24px;
+  }
+  #heroText {
+    .twelve {
+      margin-top: -47px;
+    }
   }
 }
 

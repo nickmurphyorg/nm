@@ -56,7 +56,6 @@
         let sheets = $(".carousel li"),
         	titles = $(".titles li"),
         	subtitles = $(".subtitles li"),
-        	tick = $(".tick"),
         	nmbr = sheets.length,
         	currentSlide = 0,
 			nudge = document.getElementsByClassName("nudge")[0];
@@ -64,7 +63,6 @@
 		TweenLite.set(sheets.filter(":gt(0)"), {alpha:"0"});
 		TweenLite.set(titles.filter(":gt(0)"), {top:"100%"});
 		TweenLite.set(subtitles.filter(":gt(0)"), {top:"100%"});
-		TweenLite.delayedCall(0, tickr );	
 		TweenLite.delayedCall(4, nextSlide);				
 			
 		function nextSlide(){					
@@ -81,12 +79,7 @@
 				TweenLite.fromTo( sheets.eq(currentSlide), 1, {alpha: "0"}, {alpha:"1"} );
 				TweenLite.fromTo( titles.eq(currentSlide), 1, {top: "100%"}, {top:"0px"} );
 				TweenLite.fromTo( subtitles.eq(currentSlide), 1, {top: "100%"}, {top:"0px"} );
-				TweenLite.delayedCall(0, tickr );
 				TweenLite.delayedCall(6, nextSlide);								
-		}
-		
-		function tickr() {
-			tick.html( '0' + (currentSlide+1) + '/0' + nmbr );
 		}
 		
 		const nudgeHeight = nudge.getBoundingClientRect().height;
