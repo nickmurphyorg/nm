@@ -23,7 +23,6 @@
 		});
 	heroAnimationTimeline.to("#heroText", {y: 300, ease: "none"}, 0);
 	heroAnimationTimeline.to("#heroSlides", {y: 400, ease: "none"}, 0);
-	heroAnimationTimeline.from("#site-navigation", {backgroundColor: "rgba(0, 0, 0, 0.5)", ease: "none"}, 0);
 
 	// Parallax About
 	let aboutAnimationTimeline = gsap.timeline({
