@@ -20,7 +20,6 @@ get_header(); ?>
 						<div class="container">
 							<div class="row">
 								<div class="twelve columns">
-									<h3 class="tick"></h3>
 									<ol class="titles"></ol>
 									<ol class="subtitles"></ol>
 								</div>
