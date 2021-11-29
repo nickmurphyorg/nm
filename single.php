@@ -18,8 +18,8 @@ get_header(); ?>
 			
 			<section class="letter high">
 				<!-- next post widget -->
-				<div class="container">
-					<div id="previousPost">
+				<div class="container contentPostNavigation">
+					<div class="navigationPostTile">
 						<?php $previous_post = get_previous_post();
 							
 						if (!empty( $previous_post )): ?>
@@ -34,7 +34,7 @@ get_header(); ?>
 						<?php endif; ?>
 					</div><!-- previous post -->
 					
-					<div id="nextPost">
+					<div class="navigationPostTile">
 						<?php $next_post = get_next_post();
 							
 						if (!empty( $next_post )): ?>

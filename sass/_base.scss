@@ -374,76 +374,61 @@ a:active {
   width: 50%;
 }
 
-#nextPost {
-  width: 50%;
-  display: inline-block;
-  position: relative;
-  float: right;
+.contentPostNavigation {
+  display: flex;
+  flex-wrap: wrap;
+  
+  .navigationPostTile {
+    display:inline-block;
+    width: 50%;
 
-  .postNavigationTitle {
-    display: inline-block;
-    font-family: variables.$medium-font-stack;
-    width: 100%;
-    text-align: right;
-    padding-left: 10px;
-  }
+    .postNavigationImage {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    
+      a {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+    
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
 
-  &:hover {
-    h3 {
-      color: variables.$silver-color;
+    .postNavigationTitle {
+      width: 100%;
+      padding-right: 10px;
+      font-family: variables.$medium-font-stack;
+      color: variables.$black-color;
+
+      a {
+        color: variables.$black-color;
+      }
+
+      h3 {
+        padding-top: 10px;
+      }
+    }
+  
+    &:hover {
+      a {
+        color: variables.$silver-color;
+      }
     }
   }
 }
 
-#previousPost {
-  width: 50%;
-  display: inline-block;
-  position: relative;
-  float: left;
-
-  .postNavigationImage {
-    img {
-      float: right;
+@media (max-width: variables.$breakpoint-s) {
+  .contentPostNavigation {
+    .navigationPostTile {
+      width: 100%;
     }
-  }
-
-  .postNavigationTitle {
-    display: inline-block;
-    font-family: variables.$medium-font-stack;
-    width: 100%;
-    text-align: left;
-    float: right;
-    padding-right: 10px;
-  }
-
-  &:hover {
-    h3 {
-      color: variables.$silver-color;
-    }
-  }
-}
-
-.postNavigationImage {
-  width: 100%;
-  height: 200px;
-
-  a {
-    display: flex;
-    width: 100%;
-    height: 100%;
-  }
-
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
-  }
-}
-
-.postNavigationTitle {
-  h3 {
-    color: variables.$black-color;
-    padding-top: 10px;
   }
 }
 
