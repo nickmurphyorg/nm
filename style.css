@@ -4,7 +4,7 @@ Theme URI: https://nickmurphy.org
 Author: Nick Murphy
 Author URI: https://nickmurphy.org
 Description: nm Portfolio Theme, All Rights Reserved.
-Version: 1.1.0
+Version: 1.1.1
 License: Attribution-NonCommercial-NoDerivatives 4.0 International
 License URI: http://creativecommons.org/licenses/by-nc-nd/4.0/
 Text Domain: nm
@@ -457,14 +457,15 @@ a:active {
 }
 .contentPostNavigation .navigationPostTile .postNavigationImage a {
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
 }
 .contentPostNavigation .navigationPostTile .postNavigationImage img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  object-position: center;
 }
 .contentPostNavigation .navigationPostTile .postNavigationTitle {
   width: 100%;
@@ -1587,12 +1588,13 @@ big {
 
 /* Work Slide */
 .tile {
-  background-color: #ffffff;
+  display: block;
+  position: relative;
+  float: left;
   width: 33.3%;
   height: 0px;
   padding-bottom: 33.3%;
-  display: block;
-  float: left;
+  background-color: #ffffff;
   overflow: hidden;
 }
 .tile .textwidget a {
@@ -1841,13 +1843,15 @@ span.wpcf7-not-valid-tip {
 --------------------------------------------------------------*/
 body.blog .postHero a {
   display: flex;
+  align-items: center;
+  align-content: center;
   width: 100%;
   height: 100%;
 }
 body.blog .postHero a img {
   object-fit: cover;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .whiteDivide {
@@ -2280,8 +2284,6 @@ body.blog .postHero a img {
   padding: 20px;
   background: #002b36;
   color: #839496;
-  margin-left: -20px;
-  margin-right: -20px;
   max-width: none;
 }
 .slab .wp-block-embed-vimeo .wp-block-embed__wrapper {
