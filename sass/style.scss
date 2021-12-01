@@ -1,15 +1,6 @@
-/*
-Theme Name: nm
-Author: Nick Murphy
-Author URI: https://nickmurphy.org/
-Description: Custom portfolio theme.
-Version: 1.0.0
-Text Domain: nm
-*/
+@use './credits';
 
 @use './base';
-
-@use './credits';
 
 @use './normalize';
 
