@@ -1363,7 +1363,6 @@ h6 {
   h3 {
     font-size: 24px;
     line-height: 29px;
-    margin-bottom: 0.25em;
   }
 
   h6 {
@@ -2261,9 +2260,11 @@ body.blog .postHero a img {
 .slab .container .entry-content {
   padding-top: 2em;
 }
-.slab .container h3 {
+.slab .container h3,
+.slab .container h4 {
   padding-left: 8.7%;
   padding-right: 8.7%;
+  margin-bottom: 0.25em;
 }
 .slab .container p {
   padding-left: 8.7%;
