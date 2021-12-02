@@ -152,12 +152,13 @@
 
 /* Work Slide */
 .tile {
-  background-color: variables.$white-color;
+  display: block;
+  position: relative;
+  float: left;
   width: 33.3%;
   height: 0px;
   padding-bottom: 33.3%;
-  display: block;
-  float: left;
+  background-color: variables.$white-color;
   overflow: hidden;
 
   .textwidget {
@@ -346,6 +347,7 @@
   color: variables.$white-color;
 
   h3 {
+    padding: 0;
     margin-bottom: 0;
 
     input {

@@ -1,3 +1,20 @@
+/*
+Theme Name: nm
+Theme URI: https://nickmurphy.org
+Author: Nick Murphy
+Author URI: https://nickmurphy.org
+Description: nm Portfolio Theme, All Rights Reserved.
+Version: 1.1.1
+License: Attribution-NonCommercial-NoDerivatives 4.0 International
+License URI: http://creativecommons.org/licenses/by-nc-nd/4.0/
+Text Domain: nm
+
+nm is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
 /*--------------------------------------------------------------
 # Grid
 --------------------------------------------------------------*/
@@ -425,64 +442,52 @@ a:active {
   width: 50%;
 }
 
-#nextPost {
+.contentPostNavigation {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contentPostNavigation .navigationPostTile {
+  display: inline-block;
   width: 50%;
-  display: inline-block;
-  position: relative;
-  float: right;
 }
-#nextPost .postNavigationTitle {
-  display: inline-block;
-  font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
-  width: 100%;
-  text-align: right;
-  padding-left: 10px;
-}
-#nextPost:hover h3 {
-  color: #808080;
-}
-
-#previousPost {
-  width: 50%;
-  display: inline-block;
-  position: relative;
-  float: left;
-}
-#previousPost .postNavigationImage img {
-  float: right;
-}
-#previousPost .postNavigationTitle {
-  display: inline-block;
-  font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
-  width: 100%;
-  text-align: left;
-  float: right;
-  padding-right: 10px;
-}
-#previousPost:hover h3 {
-  color: #808080;
-}
-
-.postNavigationImage {
+.contentPostNavigation .navigationPostTile .postNavigationImage {
   width: 100%;
   height: 200px;
+  overflow: hidden;
 }
-.postNavigationImage a {
+.contentPostNavigation .navigationPostTile .postNavigationImage a {
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
 }
-.postNavigationImage img {
-  object-fit: cover;
+.contentPostNavigation .navigationPostTile .postNavigationImage img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
-
-.postNavigationTitle h3 {
+.contentPostNavigation .navigationPostTile .postNavigationTitle {
+  width: 100%;
+  padding-right: 10px;
+  font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
   color: #000000;
+}
+.contentPostNavigation .navigationPostTile .postNavigationTitle a {
+  color: #000000;
+}
+.contentPostNavigation .navigationPostTile .postNavigationTitle h3 {
   padding-top: 10px;
 }
+.contentPostNavigation .navigationPostTile:hover a {
+  color: #808080;
+}
 
+@media (max-width: 550px) {
+  .contentPostNavigation .navigationPostTile {
+    width: 100%;
+  }
+}
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -1019,24 +1024,6 @@ object {
   background-color: #000000 !important;
 }
 
-/*
-Theme Name: nm
-Theme URI: http://www.nickmurphy.org
-Author: Nick Murphy
-Author URI: http://www.nickmurphy.org
-Description: Proprietary Wordpress Theme, All Rights Reserved.
-Version: 1.0.0
-License: Attribution-NonCommercial-NoDerivatives 4.0 International
-License URI: http://creativecommons.org/licenses/by-nc-nd/4.0/
-Text Domain: nm
-Tags:
-
-nm is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-*/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -1376,7 +1363,6 @@ h6 {
   h3 {
     font-size: 24px;
     line-height: 29px;
-    margin-bottom: 0.25em;
   }
 
   h6 {
@@ -1601,12 +1587,13 @@ big {
 
 /* Work Slide */
 .tile {
-  background-color: #ffffff;
+  display: block;
+  position: relative;
+  float: left;
   width: 33.3%;
   height: 0px;
   padding-bottom: 33.3%;
-  display: block;
-  float: left;
+  background-color: #ffffff;
   overflow: hidden;
 }
 .tile .textwidget a {
@@ -1768,6 +1755,7 @@ big {
   color: #ffffff;
 }
 #contactForm h3 {
+  padding: 0;
   margin-bottom: 0;
 }
 #contactForm h3 input {
@@ -1854,13 +1842,15 @@ span.wpcf7-not-valid-tip {
 --------------------------------------------------------------*/
 body.blog .postHero a {
   display: flex;
+  align-items: center;
+  align-content: center;
   width: 100%;
   height: 100%;
 }
 body.blog .postHero a img {
   object-fit: cover;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .whiteDivide {
@@ -2270,9 +2260,11 @@ body.blog .postHero a img {
 .slab .container .entry-content {
   padding-top: 2em;
 }
-.slab .container h3 {
+.slab .container h3,
+.slab .container h4 {
   padding-left: 8.7%;
   padding-right: 8.7%;
+  margin-bottom: 0.25em;
 }
 .slab .container p {
   padding-left: 8.7%;
@@ -2293,8 +2285,6 @@ body.blog .postHero a img {
   padding: 20px;
   background: #002b36;
   color: #839496;
-  margin-left: -20px;
-  margin-right: -20px;
   max-width: none;
 }
 .slab .wp-block-embed-vimeo .wp-block-embed__wrapper {

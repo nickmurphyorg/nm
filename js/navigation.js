@@ -40,6 +40,7 @@ let closeNavigationTab = (tab) => {
 	slideTimeline.eventCallback("onComplete", animationCompleteHandler, null);
 }
 
+//should be converted to event bubbling...
 let navigationTabBar = document.querySelector("ul.tabbed-navigation");
 let toggleNavigationTabs = (tab) => {
 	if (tab.classList.contains("active")) {
@@ -80,7 +81,7 @@ for (var i = 0; i < navigationTabs.length; i++) {
 
 /* Remote Navigation Anchors */
 let handleRemoteNavigationClick = (event) => {
-	switch (event.currentTarget.dataset.remoteNavigation) {
+	switch (event.target.dataset.remoteNavigation) {
 		case "work":
 			event.preventDefault();
 			toggleNavigationTabs(document.querySelector("li.workTab"));
@@ -102,15 +103,11 @@ let handleRemoteNavigationClick = (event) => {
 			break;
 	
 		default:
-			console.log("Remote navigation not configured for this tab.");
 			break;
 	}
 }
-let navigationBarRemoteAnchors = document.querySelectorAll("[data-remote-navigation]");
 
-for (var i = 0; i < navigationBarRemoteAnchors.length; i++) {
-	navigationBarRemoteAnchors[i].addEventListener("click", handleRemoteNavigationClick, false);
-}
+body.addEventListener('click', handleRemoteNavigationClick, false);
 
 /* Parallax Effect For Interior Pages */ 
 if ((body.classList.contains("page-template-default") || body.classList.contains("post-template-default")) && 
@@ -125,14 +122,30 @@ if ((body.classList.contains("page-template-default") || body.classList.contains
 				end: "bottom top",
 				scrub: true
 			}
-	});
-	heroTimeline.to(".hero", {y: 200, ease: "none"}, 0);
+		});
+		
+		const postHeroElement = document.querySelector('div.hero');
+		if (postHeroElement) {
+			heroTimeline.to(postHeroElement, {y: 200, ease: "none"}, 0);
+		}
 
-	const projectHeroElement = document.querySelector("div.projectHero");
-	
-	if (projectHeroElement) {
-		heroTimeline.to(projectHeroElement, {y: 150, ease: "none"}, 0);
-	}
+		const projectHeroElement = document.querySelector('div.projectHero');
+		if (projectHeroElement) {
+			heroTimeline.to(projectHeroElement, {y: 150, ease: "none"}, 0);
+		}
+}
+
+/*
+ * Escape special characters from protected pages
+ */
+const passwordField = document.querySelectorAll('input[name=post_password]');
+
+if (passwordField.length > 0) {
+	passwordField[0].addEventListener('paste', (event) => {
+  	setTimeout(() => {
+			passwordField[0].value = passwordField[0].replace(/^[\r\n]+|\.|[\r\n]+$/g, '');
+    });
+	});
 }
 
 /* Page Transition Animation
