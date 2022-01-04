@@ -325,17 +325,14 @@ button,
 input[type=button],
 input[type=reset],
 input[type=submit] {
-  border: 1px solid #058a00;
-  border-radius: 4px;
-  background: #058a00;
   font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
   font-size: 20px;
   line-height: 20px;
+  padding: 12px 24px;
+  border: 2px solid #058a00;
+  border-radius: 4px;
   color: #ffffff;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  background: #058a00;
 }
 
 button:hover,
@@ -354,14 +351,31 @@ button:active,
 input[type=button]:active,
 input[type=reset]:active,
 input[type=submit]:active {
-  border: 1px solid #058a00;
+  border: 2px solid #058a00;
 }
 
 input[type=text],
 input[type=email],
 input[type=url],
 input[type=password],
-input[type=search],
+input[type=search] {
+  font-family: "Helvetica Neue Roman", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.21;
+  color: #000000;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #000000;
+}
+input[type=text]:hover,
+input[type=email]:hover,
+input[type=url]:hover,
+input[type=password]:hover,
+input[type=search]:hover {
+  border-bottom: 1px solid #058a00;
+}
+
 textarea {
   color: #757575;
   border: 1px solid #e7e7e7;
@@ -1818,42 +1832,34 @@ span.wpcf7-not-valid-tip {
 /* Search Styles */
 .searchSlide {
   overflow: hidden;
+  color: #ffffff;
+}
+.searchSlide .navigationOverflowContainer {
+  padding-top: 20px;
+}
+.searchSlide h4 {
+  margin-bottom: 4px;
 }
 
 #search {
-  margin-top: 124px;
-  left: 0;
   width: 100%;
-  background-color: #000000;
+  margin-bottom: 24px;
+  font-size: 24px;
   color: #ffffff;
-  font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
-  font-size: 140px;
-  line-height: 170px;
-  font-weight: 600;
-  border: 0px none;
+  border-bottom: 1px solid #ffffff;
+}
+#search:hover {
+  border-bottom: 1px solid #058a00;
 }
 
 :-moz-placeholder {
-  color: #757575;
+  color: #e7e7e7;
 }
 
 ::-webkit-input-placeholder {
-  color: #757575;
+  color: #e7e7e7;
 }
 
-@media (max-width: 750px) {
-  #search {
-    font-size: 100px;
-    line-height: 123px;
-  }
-}
-@media (max-width: 550px) {
-  #search {
-    margin-top: 64px;
-    font-size: 45px;
-    line-height: 55px;
-  }
-}
 /*--------------------------------------------------------------
 ## Blog Index
 --------------------------------------------------------------*/

@@ -128,6 +128,7 @@
 						<div class="navigationSlide searchSlide">
 							<div class="navigationOverflowContainer">
 								<div class="container">
+									<h4>Search</h4>
 									<?php get_search_form(); ?>
 								</div>
 							</div>
