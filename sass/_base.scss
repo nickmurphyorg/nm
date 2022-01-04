@@ -379,8 +379,7 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: variables.$silver-color;
-  /*color: variables.$accent-color;*/
+  color: variables.$grey-500;
   text-decoration: none;
 }
 
@@ -903,9 +902,9 @@ object {
 --------------------------------------------------------------*/
 .site-footer {
   width: 100%;
-  background-color: variables.$black-color;
+  background-color: variables.$grey-1000;
   padding-top: 30px;
-  color: variables.$white-color;
+  color: variables.$grey-0;
   position: relative;
   z-index: 9;
 
@@ -917,18 +916,24 @@ object {
 
   li {
     margin-bottom: 10px;
-  }
 
-  a {
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 300;
+    a {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 300;
+      color: variables.$grey-0;
+
+      &:hover {
+        color: variables.$primary-color;
+      }
+    }
   }
 
   h4 {
     font-family: variables.$medium-font-stack;
     margin-bottom: 10px;
     margin-top: 3px;
+    color: variables.$grey-500;
   }
 
   h5 {
