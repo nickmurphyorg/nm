@@ -4,7 +4,7 @@ Theme URI: https://nickmurphy.org
 Author: Nick Murphy
 Author URI: https://nickmurphy.org
 Description: nm Portfolio Theme, All Rights Reserved.
-Version: 1.1.1
+Version: 1.2.1
 License: Attribution-NonCommercial-NoDerivatives 4.0 International
 License URI: http://creativecommons.org/licenses/by-nc-nd/4.0/
 Text Domain: nm
@@ -1665,6 +1665,19 @@ big {
 
 .whiteout {
   background-color: #ffffff;
+}
+
+/* Resume Slide */
+.resumeView .wp-block-file {
+  height: calc(100vh - 56px);
+  margin: 0;
+}
+.resumeView .wp-block-file object {
+  min-height: calc(100vh - 56px);
+  margin: 0;
+}
+.resumeView .wp-block-file > a {
+  display: none !important;
 }
 
 /* Blog Slide */

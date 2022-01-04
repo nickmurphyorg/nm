@@ -72,6 +72,20 @@
 							</div>
 						</div>
 					</li>
+					<li class="resumeTab" itemprop="name" role="menuitem">
+						<a class="text" href="<?php echo get_site_url(); ?>/resume/" title="Resume" itemprop="url">Resume</a>
+						<div class="navigationSlide resumeSlide">
+							<div class="navigationOverflowContainer">
+								<div class="container">
+									<?php if ( is_active_sidebar( 'resume' ) ) : ?>
+										<div class="resumeView">
+											<?php dynamic_sidebar( 'resume' ); ?>
+										</div>
+									<?php endif; ?>
+								</div>
+							</div>
+						</div>
+					</li>
 					<li class="blogTab" itemprop="name" role="menuitem">
 						<a class="text" href="<?php echo get_site_url(); ?>/blog/blog/" title="Blog" itemprop="url">Blog</a>
 						<div class="navigationSlide blogSlide">

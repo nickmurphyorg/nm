@@ -3,10 +3,12 @@
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+$navigation-height: 56px;
+
 #site-navigation {
   position: fixed;
   width: 100%;
-  height: 56px;
+  height: $navigation-height;
   background-color: variables.$black-color;
   z-index: 12;
   -webkit-backface-visibility: hidden;
@@ -144,9 +146,9 @@
 
 .navigationOverflowContainer {
   position: absolute;
-  top: 56px;
+  top: $navigation-height;
   width: 100%;
-  height: calc(100vh - 56px);
+  height: calc(100vh - #{$navigation-height});
   overflow-y: scroll;
 }
 
@@ -237,6 +239,23 @@
 
 .whiteout {
   background-color: variables.$white-color;
+}
+
+/* Resume Slide */
+.resumeView {
+  .wp-block-file {
+    height: calc(100vh - #{$navigation-height});
+    margin: 0;
+
+    object {
+      min-height: calc(100vh - #{$navigation-height});
+      margin: 0;
+    }
+
+    & > a {
+      display: none !important;
+    }
+  }
 }
 
 /* Blog Slide */
