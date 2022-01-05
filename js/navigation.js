@@ -73,11 +73,11 @@ let navigationTabClick = (event) => {
 	event.preventDefault();
 	toggleNavigationTabs(event.currentTarget.parentNode);
 }
-let navigationTabs = navigationTabBar.getElementsByTagName("LI");
+let navigationTabButtons = navigationTabBar.querySelectorAll("a.text");
 
-for (var i = 0; i < navigationTabs.length; i++) {
-	navigationTabs[i].getElementsByClassName("text")[0].addEventListener("click", navigationTabClick, false);
-}
+navigationTabButtons.forEach((button) => {
+	button.addEventListener("click", navigationTabClick, false);
+});
 
 /* Remote Navigation Anchors */
 let handleRemoteNavigationClick = (event) => {

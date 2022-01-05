@@ -111,11 +111,28 @@
 						</div>
 					</li>
 					<li class="emailTab" itemprop="name" role="menuitem">
-						<a class="text" href="/email/" title="Email" itemprop="url">Email</a>
+						<a class="text" href="/contact/" title="Contact" itemprop="url">Contact</a>
 						<div class="navigationSlide emailSlide">
 							<div class="navigationOverflowContainer">
 								<div class="container">
-									<?php echo do_shortcode( '[contact-form-7 id="71" title="Contact Me" html_id="contactForm"]' ); ?>
+									<div class="contentBlock row">
+										<div class="eight columns">
+											<?php if ( is_active_sidebar( 'connect-slide' ) ) : ?>
+												<?php dynamic_sidebar( 'connect-slide' ); ?>
+											<?php endif; ?>
+										</div>
+									</div>
+									<div class="row">
+										<div class="formBlock eight columns">
+											<h3>Send A Letter</h3>
+											<?php echo do_shortcode( '[contact-form-7 id="71" title="Contact Me" html_id="contactForm"]' ); ?>
+										</div>
+										<div class="linksBlock four columns">
+											<?php if ( is_active_sidebar( 'connect-links' ) ) : ?>
+												<?php dynamic_sidebar( 'connect-links' ); ?>
+											<?php endif; ?>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

@@ -192,6 +192,26 @@ function nm_widgets_init() {
 		'before_title'  => '<span style="display:none;">',
 		'after_title'   => '</span>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Connect Slide', 'nm' ),
+		'id'            => 'connect-slide',
+		'description'   => esc_html__( 'Body copy for connect slide.', 'nm' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Connect Links', 'nm' ),
+		'id'            => 'connect-links',
+		'description'   => esc_html__( 'Links for connecting with me.', 'nm' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'nm_widgets_init' );
 

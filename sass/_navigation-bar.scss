@@ -14,7 +14,7 @@ $navigation-height: 56px;
   -webkit-backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
 
-  .container {
+  & > .container {
     background: variables.$black-color;
 
     a {
@@ -44,44 +44,41 @@ $navigation-height: 56px;
     list-style: none;
     margin: 0;
     padding-left: 0;
-  }
-
-  li {
-    float: left;
-    position: relative;
-    margin-left: 35px;
-    padding-top: 17px;
-    height: 56px;
-    display: inline-block;
-  }
-
-  a {
-    color: variables.$white-color;
-    display: block;
-    text-decoration: none;
-  }
-}
-
-@media (max-width: variables.$breakpoint-xs) {
-  .main-navigation {
-    li {
-      margin-left: 18px;
-    }
-  }
+  }  
 }
 
 .tabbed-navigation {
   float: right;
 
-  li {
-    a.text {
-      position: relative;
-      z-index: 15;
-      font-family: variables.$light-font-stack;
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 22px;
+  & > li {
+    float: left;
+    position: relative;
+    margin-left: 35px;
+    padding-top: 17px;
+    height: 56px;
+
+    a {
       color: variables.$white-color;
+      display: block;
+      text-decoration: none;
+
+      &.text {
+        position: relative;
+        z-index: 15;
+        font-family: variables.$light-font-stack;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 22px;
+        color: variables.$white-color;
+      }
+    }
+  }
+
+  @media (max-width: variables.$breakpoint-xs) {
+    .tabbed-navigation {
+      li {
+        margin-left: 18px;
+      }
     }
   }
 
@@ -141,7 +138,6 @@ $navigation-height: 56px;
   opacity: 1;
   top: 0;
   left: 0;
-  background-color: variables.$black-color;
 }
 
 .navigationOverflowContainer {
@@ -149,6 +145,7 @@ $navigation-height: 56px;
   top: $navigation-height;
   width: 100%;
   height: calc(100vh - #{$navigation-height});
+  background-color: variables.$grey-0;
   overflow-y: scroll;
 }
 
@@ -356,26 +353,32 @@ $navigation-height: 56px;
   }
 }
 
-/* Email Styles */
+/* Contact Styles */
 .emailSlide {
-  width: 100%;
-  background-color: variables.$black-color;
+  .navigationOverflowContainer {
+    padding-top: 48px;
+  }
+
+  .contentBlock {
+    padding-bottom: 30px;
+  }
+
+  .formBlock {
+    padding-bottom: 30px;
+  }
+
+  .linksBlock {
+    padding-bottom: 40px;
+  }
 }
 
 #contactForm {
-  color: variables.$white-color;
-
   h3 {
     padding: 0;
     margin-bottom: 0;
 
     input {
-      background-color: variables.$black-color;
-      border: none;
       width: 100%;
-      color: variables.$white-color;
-      border-bottom: 1px solid variables.$white-color;
-      border-radius: 0px;
     }
   }
 
@@ -389,13 +392,7 @@ $navigation-height: 56px;
   }
 
   textarea {
-    background-color: variables.$black-color;
-    border: 1px solid variables.$white-color;
-    color: variables.$white-color;
-    font-size: 24px;
-    line-height: 29px;
     height: 150px;
-    border-radius: 0px;
   }
 }
 
@@ -411,6 +408,21 @@ span.wpcf7-not-valid-tip {
   line-height: 18px !important;
   font-weight: 500;
   margin-left: 5px;
+}
+
+#menu-connect {
+  li {
+    margin-bottom: 8px;
+  }
+  a {
+    font-size: 18px;
+    font-family: variables.$medium-font-stack;
+    color: variables.$primary-color;
+
+    &:hover {
+      color: variables.$grey-500;
+    }
+  }
 }
 
 /* Search Styles */
