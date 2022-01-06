@@ -105,7 +105,12 @@
 										<?php get_template_part( 'template-parts/content', 'none' ); ?>
 								
 									<?php endif; ?>
-										<a class="spacebar" href="/blog/blog/">Read More</a>
+									
+									<div class="row">
+										<div class="seven offset-by-five columns">
+											<a class="primary" href="/blog/blog/">View More</a>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

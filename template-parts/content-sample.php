@@ -30,6 +30,6 @@
 			<div class="entry-summary">
 				<?php the_content('Continue'); ?>
 			</div><!-- .entry-summary -->
-		</div><!-- six columns -->
+		</div><!-- seven columns -->
 	</div><!-- row -->
 </article><!-- #post-## -->

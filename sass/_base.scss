@@ -386,8 +386,30 @@ input[type="search"] {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: variables.$grey-500;
+  color: variables.$primary-color;
   text-decoration: none;
+
+  &.primary {
+    padding: 12px 24px;
+    font-family: variables.$medium-font-stack;
+    font-size: 20px;
+    color: variables.$grey-0;
+    background: variables.$primary-color;
+    border: 2px solid variables.$primary-color;
+    border-radius: 4px;
+
+    &:hover {
+      color: variables.$primary-color;
+      background-color: transparent;
+      border: 2px solid variables.$primary-color;
+    }
+  }
+
+  &.secondary,
+  &.more-link {
+    font-family: variables.$medium-font-stack;
+    font-size: 18px;
+  }
 }
 
 /* TBD
@@ -399,7 +421,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-  color: variables.$accent-color;
+  color: variables.$grey-500;
 }
 
 a:focus {
