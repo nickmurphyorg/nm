@@ -49,6 +49,7 @@ $navigation-height: 56px;
 
 .tabbed-navigation {
   float: right;
+  z-index: 12;
 
   & > li {
     float: left;
@@ -72,23 +73,64 @@ $navigation-height: 56px;
         color: variables.$white-color;
       }
     }
-  }
 
-  @media (max-width: variables.$breakpoint-xs) {
-    .tabbed-navigation {
-      li {
-        margin-left: 18px;
+    &.active {
+      a.text {
+        color: variables.$accent-color;
       }
     }
   }
+}
 
-  li.active {
-    a.text {
-      color: variables.$accent-color;
+.menuButton {
+  display: none;
+  position: relative;
+  z-index: 13;
+  float: right;
+  margin-top: 13px;
+}
+
+@media (max-width: variables.$breakpoint-m) {
+  .tabbed-navigation {
+    display: none;
+    position: fixed;
+    top: $navigation-height;
+    left: 0;
+    width: 100%;
+    padding: 12px 0;
+    background-color: variables.$grey-1000;
+    
+    & > li {
+      float: none;
+      width: 90%;
+      max-width: 960px;
+      height: auto;
+      margin: 0 auto;
+      padding: 8px 20px;
     }
 
-    .navigationSlide {
+    &.active {
       display: block;
+    }
+  }
+
+  .menuButton {
+    display: inline-block;
+
+    &.active {
+      color: variables.$primary-color;
+
+      &:hover {
+        color: variables.$grey-0;
+      }
+    }
+  }
+}
+
+@media (max-width: variables.$breakpoint-s) {
+  .tabbed-navigation {
+    & > li {
+      width: 100%;
     }
   }
 }
@@ -130,6 +172,12 @@ $navigation-height: 56px;
   }
 }
 
+.slideContainer {
+  display: block;
+  width: 100%;
+  height: 0;
+}
+
 .navigationSlide {
   display: none;
   position: fixed;
@@ -138,6 +186,10 @@ $navigation-height: 56px;
   opacity: 1;
   top: 0;
   left: 0;
+
+  &.active {
+    display: block;
+  }
 }
 
 .navigationOverflowContainer {
@@ -150,6 +202,12 @@ $navigation-height: 56px;
 }
 
 /* Work Slide */
+.workSlide {
+  .navigationOverflowContainer {
+    padding: 48px 0;
+  }
+}
+
 .tile {
   display: block;
   position: relative;
@@ -291,13 +349,13 @@ $navigation-height: 56px;
       }
     }
   }
+}
 
-  .entry-meta {
-    margin-bottom: 2em;
+.entry-meta {
+  margin-bottom: 2em;
 
-    .posted-on {
-      font-weight: 300;
-    }
+  .posted-on {
+    font-weight: 300;
 
     .entry-date {
       color: variables.$grey-1000;

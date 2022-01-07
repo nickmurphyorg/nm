@@ -11,7 +11,7 @@
 
 
 <?php if ( is_active_sidebar( 'projects' ) ) : ?>
-	<div id="tileHolder">
+	<div class="tileHolder">
 		<?php dynamic_sidebar( 'projects' ); ?>
 	</div>
 <?php endif; ?>

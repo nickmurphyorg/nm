@@ -317,14 +317,35 @@ input[type="submit"] {
   border-radius: 4px;
   color: variables.$grey-0;
   background: variables.$primary-color;
-}
 
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-  color: variables.$primary-color;
-  background: transparent;
+  &:hover {
+    color: variables.$primary-color;
+    background: transparent;
+  }
+
+  &.secondary {
+    padding: 8px 0;
+    border: none;
+    color: variables.$primary-color;
+    background: transparent;
+
+    &:hover {
+      color: variables.$grey-500;
+    }
+  }
+
+  &.navigation {
+    padding: 4px 0;
+    font-family: variables.$light-font-stack;
+    font-size: 18px;
+    border: none;
+    color: variables.$grey-0;
+    background: transparent;
+
+    &:hover {
+      color: variables.$primary-color;
+    }
+  }
 }
 
 button:focus,
@@ -336,6 +357,11 @@ input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
   border: 2px solid variables.$primary-color;
+
+  &.secondary,
+  &.navigation {
+    border: none;
+  }
 }
 
 input[type="text"],
