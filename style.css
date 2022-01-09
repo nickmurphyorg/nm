@@ -2074,16 +2074,6 @@ body.blog .postHero a img {
   visibility: hidden;
 }
 
-.nudge {
-  position: absolute;
-  height: 30px;
-  width: 100%;
-  left: 0;
-  bottom: -30px;
-  z-index: 7;
-  background-color: #ffffff;
-}
-
 #heroText {
   z-index: 6;
   top: 0;

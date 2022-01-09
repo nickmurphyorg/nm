@@ -57,8 +57,7 @@
         	titles = $(".titles li"),
         	subtitles = $(".subtitles li"),
         	nmbr = sheets.length,
-        	currentSlide = 0,
-			nudge = document.getElementsByClassName("nudge")[0];
+        	currentSlide = 0;
                 
 		TweenLite.set(sheets.filter(":gt(0)"), {alpha:"0"});
 		TweenLite.set(titles.filter(":gt(0)"), {top:"100%"});
@@ -81,9 +80,6 @@
 				TweenLite.fromTo( subtitles.eq(currentSlide), 1, {top: "100%"}, {top:"0px"} );
 				TweenLite.delayedCall(6, nextSlide);								
 		}
-		
-		const nudgeHeight = nudge.getBoundingClientRect().height;
-		TweenLite.to(nudge, 1.5, { y: - nudgeHeight + "px" }).delay(2.5);
 	}
 	
 	setupHeroCarousel();

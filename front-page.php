@@ -32,8 +32,6 @@ get_header(); ?>
 							<?php dynamic_sidebar( 'hero' ); ?>
 						<?php endif; ?>
 					</div><!-- hero slides -->
-
-					<div class="nudge"></div>
 				</section>
 
 				<section id="work">
