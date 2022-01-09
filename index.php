@@ -40,22 +40,8 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; ?>
-			<div id="pagination">
-				<?php
-				    global $wp_query;
-				
-				    $big = 999999999; // need an unlikely integer
-				
-				    echo paginate_links( array(
-				        'base'      => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
-				        'format'    => '?paged=%#%',
-				        'current'   => max( 1, get_query_var('paged') ),
-				        'total'     => $wp_query->max_num_pages,
-				        'prev_text' => __('<span class="arrowLeft">&#9668;</span>'),
-				        'next_text' => __('<span class="arrowRight">&#9658;</span>')
-				    ));
-				?>
-			</div>
+
+			<?php get_template_part( 'template-parts/pagination'); ?>
 			
 		<?php else : ?>
 

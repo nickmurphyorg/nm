@@ -2481,59 +2481,56 @@ body.blog .postHero a img {
     padding-left: 10.7%;
   }
 }
-#pagination {
-  text-align: center;
+.paginationControl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-top: 60px;
   padding-bottom: 60px;
   font-size: 20px;
   line-height: 35px;
+  text-align: center;
   background-color: #ffffff;
 }
 
 .page-numbers {
-  margin-right: 5px;
-  margin-left: 5px;
-  color: #7d7d7d;
+  padding: 0 8px;
+  color: #757575;
 }
 .page-numbers:hover {
   color: #058a00;
 }
-
-.arrowRight {
-  color: #000000;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #000000;
-  display: inline-block;
-  border-radius: 40px;
-  text-indent: 4px;
+.page-numbers.current {
+  margin-top: 4px;
+  border-bottom: 4px solid #058a00;
+  color: #757575;
 }
-.arrowRight:hover {
-  background-color: #000000;
-  color: #ffffff;
+.page-numbers.prev, .page-numbers.next {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0px;
+  margin: 0 8px;
+  border-radius: 18px;
+  background: #000000;
 }
-
-.arrowLeft {
-  color: #000000;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #000000;
-  display: inline-block;
-  border-radius: 40px;
-  text-indent: -4px;
+.page-numbers.prev .arrow, .page-numbers.next .arrow {
+  display: inline-flex;
+  width: 8px;
+  margin-left: 2px;
+  background: url("./images/arrow-icon.png") no-repeat center;
+  background: url("./images/arrow-icon.svg") no-repeat center, linear-gradient(transparent, transparent);
+  background-size: 8px auto;
 }
-.arrowLeft:hover {
-  background-color: #000000;
-  color: #ffffff;
+.page-numbers.prev .arrow.left, .page-numbers.next .arrow.left {
+  margin-left: 0;
+  margin-right: 2px;
+  transform: rotate(180deg);
 }
-
-#pagination .current {
-  color: #ffffff;
-  background-color: #058a00;
-  display: inline-block;
-  height: 35px;
-  width: 35px;
-  border-radius: 40px;
+.page-numbers.prev:hover, .page-numbers.next:hover {
+  background: #058a00;
 }
 
 section.error-404 {

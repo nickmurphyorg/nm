@@ -194,63 +194,63 @@
   }
 }
 
-#pagination {
-  text-align: center;
+.paginationControl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-top: 60px;
   padding-bottom: 60px;
   font-size: 20px;
   line-height: 35px;
-  background-color: variables.$white-color;
+  text-align: center;
+  background-color: variables.$grey-0;
 }
 
 .page-numbers {
-  margin-right: 5px;
-  margin-left: 5px;
-  color: #7d7d7d;
+  padding: 0 8px;
+  color: variables.$grey-500;
 
   &:hover {
-    color: variables.$accent-color;
+    color: variables.$primary-color;
   }
-}
 
-.arrowRight {
-  color: variables.$black-color;
-  width: 40px;
-  height: 40px;
-  border: 2px solid variables.$black-color;
-  display: inline-block;
-  border-radius: 40px;
-  text-indent: 4px;
-
-  &:hover {
-    background-color: variables.$black-color;
-    color: variables.$white-color;
+  &.current {
+    margin-top: 4px;
+    border-bottom: 4px solid variables.$primary-color;
+    color: variables.$grey-500;
   }
-}
 
-.arrowLeft {
-  color: variables.$black-color;
-  width: 40px;
-  height: 40px;
-  border: 2px solid variables.$black-color;
-  display: inline-block;
-  border-radius: 40px;
-  text-indent: -4px;
+  &.prev,
+  &.next {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0px;
+    margin: 0 8px;
+    border-radius: 18px;
+    background: variables.$grey-1000;
 
-  &:hover {
-    background-color: variables.$black-color;
-    color: variables.$white-color;
-  }
-}
+    .arrow {
+      display: inline-flex;
+      width: 8px;
+      margin-left: 2px;
+      background: url("./images/arrow-icon.png") no-repeat center;
+      background: url("./images/arrow-icon.svg") no-repeat center,
+        linear-gradient(transparent, transparent);
+      background-size: 8px auto;
 
-#pagination {
-  .current {
-    color: variables.$white-color;
-    background-color: variables.$accent-color;
-    display: inline-block;
-    height: 35px;
-    width: 35px;
-    border-radius: 40px;
+      &.left {
+        margin-left: 0;
+        margin-right: 2px;
+        transform: rotate(180deg);
+      }
+    }
+
+    &:hover {
+      background: variables.$primary-color;
+    }
   }
 }
 
