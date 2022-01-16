@@ -1896,16 +1896,20 @@ big {
   }
 }
 /* Contact Styles */
-.emailSlide .navigationOverflowContainer {
+.emailSlide .navigationOverflowContainer,
+#emailpage .navigationOverflowContainer {
   padding-top: 48px;
 }
-.emailSlide .contentBlock {
+.emailSlide .contentBlock,
+#emailpage .contentBlock {
   padding-bottom: 30px;
 }
-.emailSlide .formBlock {
+.emailSlide .formBlock,
+#emailpage .formBlock {
   padding-bottom: 30px;
 }
-.emailSlide .linksBlock {
+.emailSlide .linksBlock,
+#emailpage .linksBlock {
   padding-bottom: 40px;
 }
 
@@ -1942,15 +1946,23 @@ span.wpcf7-not-valid-tip {
   margin-left: 5px;
 }
 
-#menu-connect li {
+#menu-connect,
+#menu-connect-1 {
+  padding: 0;
+  list-style-type: none;
+}
+#menu-connect li,
+#menu-connect-1 li {
   margin-bottom: 8px;
 }
-#menu-connect a {
+#menu-connect a,
+#menu-connect-1 a {
   font-size: 18px;
   font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
   color: #058a00;
 }
-#menu-connect a:hover {
+#menu-connect a:hover,
+#menu-connect-1 a:hover {
   color: #757575;
 }
 
@@ -2453,18 +2465,17 @@ body.blog .postHero a img {
 .slab .container .entry-content {
   padding-top: 2em;
 }
-.slab .container h3,
-.slab .container h4 {
+.slab .container > h3, .slab .container > h4 {
   padding-left: 8.7%;
   padding-right: 8.7%;
   margin-bottom: 0.25em;
 }
-.slab .container p {
+.slab .container > p {
   padding-left: 8.7%;
   padding-right: 8.7%;
   margin-bottom: 2em;
 }
-.slab .container p img {
+.slab .container > p img {
   max-width: none;
   margin-left: -10.7%;
   width: 121.4%;

@@ -375,7 +375,8 @@ $navigation-height: 56px;
 }
 
 /* Contact Styles */
-.emailSlide {
+.emailSlide,
+#emailpage {
   .navigationOverflowContainer {
     padding-top: 48px;
   }
@@ -431,7 +432,11 @@ span.wpcf7-not-valid-tip {
   margin-left: 5px;
 }
 
-#menu-connect {
+#menu-connect,
+#menu-connect-1 {
+  padding: 0;
+  list-style-type: none;
+
   li {
     margin-bottom: 8px;
   }
