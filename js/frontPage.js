@@ -20,6 +20,7 @@
 			}
 		});
 	heroAnimationTimeline.to("#heroSlides", {y: 400, ease: "none"}, 0);
+	heroAnimationTimeline.to('.heroNavigation', {y: 30, ease: 'none'}, 0);
 
 	// Parallax About
 	let aboutAnimationTimeline = gsap.timeline({
@@ -85,7 +86,7 @@
 
 	const advanceSlide = () => {
 		const nextIndex = currentSlide < (carouselSlideCount - 1) ? currentSlide + 1 : 0;
-		
+
 		changeSlide(nextIndex);
 		carouselTimeout.restart(true);
 	}
