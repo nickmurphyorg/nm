@@ -449,6 +449,44 @@ input[type=search] {
   padding: 3px;
 }
 
+.prev,
+.next {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0px;
+  margin: 0 8px;
+  border: none;
+  border-radius: 18px;
+  background: #000000;
+}
+.prev .arrow,
+.next .arrow {
+  display: inline-flex;
+  width: 8px;
+  margin-left: 2px;
+  background: url("./images/arrow-icon.png") no-repeat center;
+  background: url("./images/arrow-icon.svg") no-repeat center, linear-gradient(transparent, transparent);
+  background-size: 8px auto;
+}
+.prev .arrow.left,
+.next .arrow.left {
+  margin-left: 0;
+  margin-right: 2px;
+  transform: rotate(180deg);
+}
+.prev:focus, .prev:active,
+.next:focus,
+.next:active {
+  border: none;
+}
+.prev:hover,
+.next:hover {
+  background: #058a00;
+}
+
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
@@ -2034,7 +2072,6 @@ body.blog .postHero a img {
 #slate {
   position: relative;
   z-index: 7;
-  margin-top: -56px;
 }
 
 .slideWindow {
@@ -2066,141 +2103,200 @@ body.blog .postHero a img {
 
 /* Hero Section */
 #hero {
+  position: relative;
+  height: 600px;
   overflow: hidden;
 }
 
-.heroData {
-  display: none;
-  visibility: hidden;
-}
-
-#heroText {
-  z-index: 6;
-  top: 0;
-  left: 0;
-}
-#heroText h1 {
-  margin-bottom: 0.1em;
-  font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
-}
-#heroText h2 {
-  font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
-}
-#heroText .twelve {
-  position: absolute;
-  top: 50vh;
-  margin-top: -131px;
-  color: #ffffff;
-}
-
 #heroSlides {
-  z-index: 5;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 600px;
   background-color: #000000;
 }
-
-/* Carousel CSS */
-.carousel {
-  list-style-type: none;
+#heroSlides .carousel {
+  width: 100%;
   padding: 0;
   margin: 0;
+  list-style-type: none;
 }
-.carousel li {
-  position: absolute !important;
+#heroSlides .carousel li {
+  position: absolute;
   top: 0;
+  width: 100%;
+  height: 600px;
 }
-.carousel li picture {
+#heroSlides .carousel li picture {
   display: flex;
   width: 100%;
   height: 100%;
 }
-.carousel li picture img {
+#heroSlides .carousel li picture img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-.titles {
-  height: 200px;
+.heroNavigation {
+  position: absolute;
   width: 100%;
+  left: 0;
+  bottom: 28px;
+}
+.heroNavigation .slideTabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.heroNavigation .slideTabs li {
+  display: flex;
+  align-items: center;
+  padding: 4px 9px;
+  cursor: pointer;
+}
+.heroNavigation .slideTabs li:first-child {
+  padding-left: 0;
+}
+.heroNavigation .slideTabs li:last-child {
+  padding-right: 0;
+}
+.heroNavigation .slideTabs li span {
+  height: 4px;
+  width: 36px;
+  background: #757575;
+}
+.heroNavigation .slideTabs li:hover span {
+  background: #058a00;
+}
+.heroNavigation .slideTabs li.active {
+  cursor: pointer;
+}
+.heroNavigation .slideTabs li.active span {
+  background: #000000;
+}
+.heroNavigation .slideTabs li.active:hover span {
+  background: #000000;
+}
+
+/* Hero Text */
+.heroText {
+  padding: 24px 0;
+  background-color: #ffffff;
+}
+
+.carouselElements {
+  display: flex;
+  flex-direction: row;
+}
+.carouselElements .carouselTypography {
+  width: 100%;
+}
+.carouselElements .carouselSkipButtons {
+  display: flex;
+}
+.carouselElements .carouselSkipButtons button:first-child {
+  margin: 0;
+}
+.carouselElements .carouselSkipButtons button:last-child {
+  margin-left: 26px;
+  margin-right: 0;
+}
+
+@media (max-width: 750px) {
+  #hero {
+    height: 400px;
+  }
+
+  #heroSlides {
+    height: 400px;
+  }
+  #heroSlides .carousel li {
+    height: 400px;
+  }
+}
+@media (max-width: 550px) {
+  #hero {
+    height: 200px;
+  }
+
+  #heroSlides {
+    height: 200px;
+  }
+  #heroSlides .carousel li {
+    height: 200px;
+  }
+
+  .carouselElements {
+    flex-direction: column;
+  }
+  .carouselElements .carouselTypography {
+    margin-bottom: 24px;
+  }
+}
+.titles {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 0 0 12px 0;
+  padding: 0;
   overflow: hidden;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
 }
 .titles li {
   position: absolute;
   top: 0;
   left: 0;
 }
-.titles li h1 {
-  line-height: 80%;
+.titles li h2 {
+  margin-bottom: 0;
 }
 .titles li a {
-  display: block;
-}
-.titles li.white {
-  color: #ffffff;
-}
-.titles li.white h1 {
-  color: #ffffff;
-}
-.titles li.black {
   color: #000000;
 }
-.titles li.black h1 {
-  color: #000000;
-}
-.titles li:hover h1 {
+.titles li a:hover {
   color: #757575;
 }
 
 .subtitles {
-  height: 42px;
+  position: relative;
+  height: 30px;
   width: 100%;
-  overflow: hidden;
-  list-style-type: none;
   margin: 0;
   padding: 0;
-  position: relative;
-  margin-top: 20px;
+  overflow: hidden;
+  list-style-type: none;
 }
 .subtitles li {
   position: absolute;
   top: 0;
   left: 0;
 }
-.subtitles li h2 {
+.subtitles li h3 {
   line-height: 80%;
   margin-bottom: 0;
 }
 
 @media (max-width: 750px) {
   .titles {
-    height: 138px;
+    height: 38px;
   }
 
   .subtitles {
-    height: 32px;
-  }
-
-  #heroText .twelve {
-    margin-top: -95px;
+    height: 20px;
   }
 }
 @media (max-width: 550px) {
   .titles {
-    height: 50px;
+    height: 28px;
   }
 
   .subtitles {
-    height: 24px;
-  }
-
-  #heroText .twelve {
-    margin-top: -47px;
+    height: 16px;
   }
 }
 /* Work Section */
@@ -2494,33 +2590,6 @@ body.blog .postHero a img {
   margin-top: 4px;
   border-bottom: 4px solid #058a00;
   color: #757575;
-}
-.page-numbers.prev, .page-numbers.next {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  width: 36px;
-  height: 36px;
-  padding: 0px;
-  margin: 0 8px;
-  border-radius: 18px;
-  background: #000000;
-}
-.page-numbers.prev .arrow, .page-numbers.next .arrow {
-  display: inline-flex;
-  width: 8px;
-  margin-left: 2px;
-  background: url("./images/arrow-icon.png") no-repeat center;
-  background: url("./images/arrow-icon.svg") no-repeat center, linear-gradient(transparent, transparent);
-  background-size: 8px auto;
-}
-.page-numbers.prev .arrow.left, .page-numbers.next .arrow.left {
-  margin-left: 0;
-  margin-right: 2px;
-  transform: rotate(180deg);
-}
-.page-numbers.prev:hover, .page-numbers.next:hover {
-  background: #058a00;
 }
 
 section.error-404 {

@@ -219,39 +219,6 @@
     border-bottom: 4px solid variables.$primary-color;
     color: variables.$grey-500;
   }
-
-  &.prev,
-  &.next {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width: 36px;
-    height: 36px;
-    padding: 0px;
-    margin: 0 8px;
-    border-radius: 18px;
-    background: variables.$grey-1000;
-
-    .arrow {
-      display: inline-flex;
-      width: 8px;
-      margin-left: 2px;
-      background: url("./images/arrow-icon.png") no-repeat center;
-      background: url("./images/arrow-icon.svg") no-repeat center,
-        linear-gradient(transparent, transparent);
-      background-size: 8px auto;
-
-      &.left {
-        margin-left: 0;
-        margin-right: 2px;
-        transform: rotate(180deg);
-      }
-    }
-
-    &:hover {
-      background: variables.$primary-color;
-    }
-  }
 }
 
 section.error-404 {

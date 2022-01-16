@@ -142,7 +142,7 @@
 							</div>
 							<div class="row">
 								<div class="formBlock eight columns">
-									<h3>Send A Letter</h3>
+									<h3>Send A Note</h3>
 									<?php echo do_shortcode( '[contact-form-7 id="71" title="Contact Me" html_id="contactForm"]' ); ?>
 								</div>
 								<div class="linksBlock four columns">

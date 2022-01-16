@@ -14,25 +14,42 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<div id="slate" class="high">
-				<section id="hero" class="slideWindow">
-					<div id="heroText" class="parallax sheet mid">
-						<div class="container">
-							<div class="row">
-								<div class="twelve columns">
-									<ol class="titles"></ol>
-									<ol class="subtitles"></ol>
-								</div>
-							</div><!-- row -->
-						</div><!-- container -->
-					</div><!-- hero text -->
-				
-					<div id="heroSlides" class="parallax sheet low">
+			<div id="slate">
+				<section id="hero">
+					<div id="heroSlides" class="parallax">
 						<?php if ( is_active_sidebar( 'hero' ) ) : ?>
 							<?php dynamic_sidebar( 'hero' ); ?>
 						<?php endif; ?>
 					</div><!-- hero slides -->
-				</section>
+					<div class="heroNavigation">
+						<div class="container">
+							<div class="row">
+								<ul class="slideTabs twelve columns"></ul>
+							</div>
+						</div>
+					</div><!-- hero navigation -->
+				</section><!-- hero -->
+
+				<section class="heroText">
+					<div class="container">
+						<div class="row">
+							<div class="carouselElements twelve columns">
+								<div class="carouselTypography">
+									<ol class="titles"></ol>
+									<ol class="subtitles"></ol>
+								</div>
+								<div class="carouselSkipButtons">
+									<button class="prev">
+										<span class="arrow left"></span>
+									</button>
+									<button class="next">
+										<span class="arrow"></span>
+									</button>
+								</div>
+							</div>
+						</div><!-- row -->
+					</div><!-- container -->
+				</section><!-- heroText -->
 
 				<section id="work">
 					<div class="container">
