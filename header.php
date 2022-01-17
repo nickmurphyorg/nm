@@ -61,66 +61,91 @@
 				<a class="homeIcon" href="/" title="Home">
 					<img id="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/nm.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/nm.png'">
 				</a>
+
+				<button class="menuButton navigation">Menu</button>
+
 				<ul itemscope itemtype="https://schema.org/SiteNavigationElement" class="tabbed-navigation" role="menu">
-					<li class="workTab" itemprop="name" role="menuitem">
+					<li class="workTab" itemprop="name" role="menuitem" data-id="work">
 						<a class="text" href="<?php echo get_site_url(); ?>/#work" title="Work" itemprop="url">Work</a>
-						<div class="navigationSlide workSlide">
-							<div class="navigationOverflowContainer">
-								<div class="container">
-									<?php get_template_part( 'template-parts/content', 'projects' ); ?>
-								</div>
-							</div>
-						</div>
 					</li>
-					<li class="blogTab" itemprop="name" role="menuitem">
+					<li class="resumeTab" itemprop="name" role="menuitem" data-id="resume">
+						<a class="text" href="<?php echo get_site_url(); ?>/resume/" title="Resume" itemprop="url">Resume</a>
+					</li>
+					<li class="blogTab" itemprop="name" role="menuitem" data-id="blog">
 						<a class="text" href="<?php echo get_site_url(); ?>/blog/blog/" title="Blog" itemprop="url">Blog</a>
-						<div class="navigationSlide blogSlide">
-							<div class="navigationOverflowContainer">
-								<div class="container">
-									<?php 
-									$latest_blog_posts = new WP_Query( array( 'posts_per_page' => 3 ) ); ?>
-								
-									<?php if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post(); ?>
-												
-										<?php get_template_part( 'template-parts/content', 'sample' ); ?>
-								
-									<?php endwhile; ?>
-											
-									<?php else : ?>
-								
-										<?php get_template_part( 'template-parts/content', 'none' ); ?>
-								
-									<?php endif; ?>
-										<a class="spacebar" href="/blog/blog/">Read More</a>
-								</div>
-							</div>
-						</div>
 					</li>
-					<li class="emailTab" itemprop="name" role="menuitem">
-						<a class="text" href="/email/" title="Email" itemprop="url">Email</a>
-						<div class="navigationSlide emailSlide">
-							<div class="navigationOverflowContainer">
-								<div class="container">
-									<?php echo do_shortcode( '[contact-form-7 id="71" title="Contact Me" html_id="contactForm"]' ); ?>
-								</div>
-							</div>
-						</div>
+					<li class="emailTab" itemprop="name" role="menuitem" data-id="email">
+						<a class="text" href="/contact/" title="Contact" itemprop="url">Contact</a>
 					</li>
-					<li class="searchTab" itemprop="name" role="menuitem">
+					<li class="searchTab" itemprop="name" role="menuitem" data-id="search">
 						<a class="text" href="/search/" title="Search" itemprop="url">
 							<img class="staticMagnifierIcon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.png'">
 							<img class="selectedMagnifierIcon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier-selected.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier-selected.png'">
 						</a>
-						<div class="navigationSlide searchSlide">
-							<div class="navigationOverflowContainer">
-								<div class="container">
-									<?php get_search_form(); ?>
-								</div>
-							</div>
-						</div>
 					</li>
 				</ul><!-- navigation -->
 			</div><!-- container -->
+			<div class="slideContainer">
+				<div class="navigationSlide workSlide" data-id="work">
+					<div class="navigationOverflowContainer">
+						<div class="container">
+							<?php get_template_part( 'template-parts/content', 'projects' ); ?>
+						</div>
+					</div>
+				</div>
+				<div class="navigationSlide resumeSlide" data-id="resume">
+					<div class="navigationOverflowContainer">
+						<div class="container">
+							<?php if ( is_active_sidebar( 'resume' ) ) : ?>
+								<div class="resumeView">
+									<?php dynamic_sidebar( 'resume' ); ?>
+								</div>
+							<?php endif; ?>
+						</div>
+					</div>
+				</div>
+				<div class="navigationSlide blogSlide" data-id="blog">
+					<div class="navigationOverflowContainer">
+						<div class="container">
+							<?php 
+							$latest_blog_posts = new WP_Query( array( 'posts_per_page' => 3 ) ); ?>
+						
+							<?php if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post(); ?>
+										
+								<?php get_template_part( 'template-parts/content', 'sample' ); ?>
+						
+							<?php endwhile; ?>
+									
+							<?php else : ?>
+						
+								<?php get_template_part( 'template-parts/content', 'none' ); ?>
+						
+							<?php endif; ?>
+							
+							<div class="row">
+								<div class="seven offset-by-five columns">
+									<a class="primary" href="/blog/blog/">View More</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="navigationSlide emailSlide" data-id="email">
+					<div class="navigationOverflowContainer">
+						<div class="container">
+							<?php get_template_part( 'template-parts/content-contact'); ?>
+						</div>
+					</div>
+				</div>
+				<div class="navigationSlide searchSlide" data-id="search">
+					<div class="navigationOverflowContainer">
+						<div class="container">
+							<h4>Search</h4>
+							<?php get_search_form(); ?>
+						</div>
+					</div>
+				</div>
+			</div><!-- slide container -->
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

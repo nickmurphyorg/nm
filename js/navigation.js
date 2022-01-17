@@ -9,49 +9,68 @@ let body = document.getElementsByTagName("BODY")[0],
 	searchField = document.getElementById("search"),
 	navigationSlideAnimationDuration = 0.8;
 
-let openNavigationTab = (tab) => {
+let openNavigationTab = (tab, slide) => {
 	if (tab.classList.contains("searchTab")) {
 		searchField.value = "";
 		searchField.focus();
 	}
 
 	const animationStartHandler = () => {
+		slide.classList.add("active");
 		tab.classList.add("active");
 		body.classList.add("stop");
 	}
 	const slideTimeline = gsap.timeline();
-	slideTimeline.from(tab.lastElementChild, {opacity: 0, duration: navigationSlideAnimationDuration}, 0);
+	slideTimeline.from(slide, {opacity: 0, duration: navigationSlideAnimationDuration}, 0);
 	slideTimeline.eventCallback("onStart", animationStartHandler, null);
 }
 
-let closeNavigationTab = (tab) => {
+let closeNavigationTab = (tab, slide) => {
 	if (tab.classList.contains("searchTab")) {
 		searchField.blur();
 	}
-		
-	const slide = tab.lastElementChild;
+	
 	const animationCompleteHandler = () => {
+		slide.classList.remove("active");
+		slide.style.opacity = 1;
 		tab.classList.remove("active");
 		body.classList.remove("stop");
-		slide.style.opacity = 1;
 	}
+
 	const slideTimeline = gsap.timeline();
 	slideTimeline.to(slide, {opacity: 0, duration: navigationSlideAnimationDuration}, 0);
 	slideTimeline.eventCallback("onComplete", animationCompleteHandler, null);
 }
 
+/* Mobile Menu */
+const menuButton = document.querySelector("button.menuButton");
+
+const toggleMobileMenu = () => {
+	menuButton.classList.toggle("active");
+	menuButton.innerHTML = menuButton.classList.contains("active") ? 'Close' : 'Menu';
+	navigationTabBar.classList.toggle("active");
+}
+
+menuButton.addEventListener('click', () => {
+	toggleMobileMenu()
+});
+
+/* Navigation Tabs */
 //should be converted to event bubbling...
-let navigationTabBar = document.querySelector("ul.tabbed-navigation");
-let toggleNavigationTabs = (tab) => {
+const navigationTabBar = document.querySelector("ul.tabbed-navigation");
+const navigationSlides = document.querySelector("div.slideContainer");
+
+let toggleNavigationTabs = (tab, slide) => {
 	if (tab.classList.contains("active")) {
-		closeNavigationTab(tab);
+		closeNavigationTab(tab, slide);
 		return;
 	}
 
 	const activeTab = navigationTabBar.querySelector("li.active");
+	const activeSlide = navigationSlides.querySelector("div.navigationSlide.active");
 
 	if (activeTab == null) {
-		openNavigationTab(tab);
+		openNavigationTab(tab, slide);
 		return;
 	}
 
@@ -61,7 +80,10 @@ let toggleNavigationTabs = (tab) => {
 	}
 
 	activeTab.classList.toggle("active");
+	activeSlide.classList.toggle("active");
+
 	tab.classList.toggle("active");
+	slide.classList.toggle("active");
 
 	if (tab.classList.contains("searchTab")) {
 		searchField.value = "";
@@ -71,13 +93,20 @@ let toggleNavigationTabs = (tab) => {
 
 let navigationTabClick = (event) => {
 	event.preventDefault();
-	toggleNavigationTabs(event.currentTarget.parentNode);
-}
-let navigationTabs = navigationTabBar.getElementsByTagName("LI");
 
-for (var i = 0; i < navigationTabs.length; i++) {
-	navigationTabs[i].getElementsByClassName("text")[0].addEventListener("click", navigationTabClick, false);
+	const tab = event.currentTarget.parentNode;
+	const slide = navigationSlides.querySelector(`div[data-id=${tab.dataset.id}]`);
+	toggleNavigationTabs(tab, slide);
+
+	if (navigationTabBar.classList.contains("active")) {
+		toggleMobileMenu();
+	}
 }
+
+let navigationTabButtons = navigationTabBar.querySelectorAll("a.text");
+navigationTabButtons.forEach((button) => {
+	button.addEventListener("click", navigationTabClick, false);
+});
 
 /* Remote Navigation Anchors */
 let handleRemoteNavigationClick = (event) => {

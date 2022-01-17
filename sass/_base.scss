@@ -309,25 +309,43 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid variables.$accent-color;
-  border-radius: 4px;
-  background: variables.$accent-color;
   font-family: variables.$medium-font-stack;
   font-size: 20px;
   line-height: 20px;
-  color: variables.$white-color;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+  padding: 12px 24px;
+  border: 2px solid variables.$primary-color;
+  border-radius: 4px;
+  color: variables.$grey-0;
+  background: variables.$primary-color;
 
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-  color: variables.$accent-color;
-  background: transparent;
+  &:hover {
+    color: variables.$primary-color;
+    background: transparent;
+  }
+
+  &.secondary {
+    padding: 8px 0;
+    border: none;
+    color: variables.$primary-color;
+    background: transparent;
+
+    &:hover {
+      color: variables.$grey-500;
+    }
+  }
+
+  &.navigation {
+    padding: 4px 0;
+    font-family: variables.$light-font-stack;
+    font-size: 18px;
+    border: none;
+    color: variables.$grey-0;
+    background: transparent;
+
+    &:hover {
+      color: variables.$primary-color;
+    }
+  }
 }
 
 button:focus,
@@ -338,18 +356,39 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-  border: 1px solid variables.$accent-color;
+  border: 2px solid variables.$primary-color;
+
+  &.secondary,
+  &.navigation {
+    border: none;
+  }
 }
 
 input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"],
+input[type="search"] {
+  font-family: variables.$regular-font-stack;
+  font-size: 18px;
+  line-height: 1.21;
+  color: variables.$grey-1000;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #{variables.$grey-1000};
+
+  &:hover {
+    border-bottom: 1px solid #{variables.$primary-color};
+  }
+}
+
 textarea {
-  color: variables.$silver-color;
-  border: 1px solid variables.$light-grey-color;
-  border-radius: 3px;
+  width: 100%;
+  max-width: 100%;
+  background: transparent;
+  border: 1px solid variables.$black-color;
+  border-radius: 0;
 }
 
 input[type="text"]:focus,
@@ -369,19 +408,73 @@ input[type="search"] {
   padding: 3px;
 }
 
-textarea {
-  padding-left: 3px;
-  width: 100%;
-  max-width: 100%;
+.prev,
+.next {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0px;
+  margin: 0 8px;
+  border: none;
+  border-radius: 18px;
+  background: variables.$grey-1000;
+
+  .arrow {
+    display: inline-flex;
+    width: 8px;
+    margin-left: 2px;
+    background: url("./images/arrow-icon.png") no-repeat center;
+    background: url("./images/arrow-icon.svg") no-repeat center,
+      linear-gradient(transparent, transparent);
+    background-size: 8px auto;
+
+    &.left {
+      margin-left: 0;
+      margin-right: 2px;
+      transform: rotate(180deg);
+    }
+  }
+
+  &:focus,
+  &:active {
+    border: none;
+  }
+
+  &:hover {
+    background: variables.$primary-color;
+  }
 }
 
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: variables.$silver-color;
-  /*color: variables.$accent-color;*/
+  color: variables.$primary-color;
   text-decoration: none;
+
+  &.primary {
+    padding: 12px 24px;
+    font-family: variables.$medium-font-stack;
+    font-size: 20px;
+    color: variables.$grey-0;
+    background: variables.$primary-color;
+    border: 2px solid variables.$primary-color;
+    border-radius: 4px;
+
+    &:hover {
+      color: variables.$primary-color;
+      background-color: transparent;
+      border: 2px solid variables.$primary-color;
+    }
+  }
+
+  &.secondary,
+  &.more-link {
+    font-family: variables.$medium-font-stack;
+    font-size: 18px;
+  }
 }
 
 /* TBD
@@ -393,7 +486,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-  color: variables.$accent-color;
+  color: variables.$grey-500;
 }
 
 a:focus {
@@ -595,6 +688,35 @@ a:active {
 
   select {
     max-width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Resume Page
+--------------------------------------------------------------*/
+#resumepage {
+  .resumeView {
+    max-width: 100%;
+    box-sizing: border-box;
+    resize: horizontal;
+    overflow: auto;
+
+    .wp-block-file {
+      width: 100%;
+      padding-bottom: 140%;
+      margin: 0;
+
+      object {
+        position: absolute;
+        width: calc(100% - 40px) !important;
+        height: 100% !important;
+        margin: 0;
+      }
+
+      & > a {
+        display: none !important;
+      }
+    }
   }
 }
 
@@ -903,9 +1025,9 @@ object {
 --------------------------------------------------------------*/
 .site-footer {
   width: 100%;
-  background-color: variables.$black-color;
+  background-color: variables.$grey-1000;
   padding-top: 30px;
-  color: variables.$white-color;
+  color: variables.$grey-0;
   position: relative;
   z-index: 9;
 
@@ -917,18 +1039,24 @@ object {
 
   li {
     margin-bottom: 10px;
-  }
 
-  a {
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 300;
+    a {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 300;
+      color: variables.$grey-0;
+
+      &:hover {
+        color: variables.$primary-color;
+      }
+    }
   }
 
   h4 {
     font-family: variables.$medium-font-stack;
     margin-bottom: 10px;
     margin-top: 3px;
+    color: variables.$grey-500;
   }
 
   h5 {

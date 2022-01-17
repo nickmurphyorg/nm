@@ -27,12 +27,12 @@
 					</div>
 				<?php endif; ?>
 				<?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
-					<div class="footerProjects two columns">
+					<div class="footerProjects three columns">
 						<?php dynamic_sidebar( 'footer-3' ); ?>
 					</div>
 				<?php endif; ?>
 				<?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
-					<div class="footerContact three columns">
+					<div class="footerContact two columns">
 						<?php dynamic_sidebar( 'footer-4' ); ?>
 					</div>
 				<?php endif; ?>

@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <g id="magnifier">
-        <path id="Stroke-1" d="M3.398,3.856C6.31,1.045 11.031,1.053 13.933,3.873C16.835,6.694 16.827,11.266 13.915,14.076C11.003,16.887 6.282,16.879 3.38,14.059C0.478,11.239 0.486,6.667 3.398,3.856Z" style="fill:none;stroke:rgb(126,211,33);stroke-width:2.09px;"/>
-        <path id="Stroke-2" d="M13.959,14.036L22.835,22.633" style="fill:none;stroke:rgb(126,211,33);stroke-width:2.09px;"/>
-    </g>
+<svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.68321 3.663C6.35257 0.852153 10.6796 0.859915 13.3398 3.68037C16.0001 6.50095 15.9927 11.0729 13.3234 13.8837C10.6539 16.6945 6.32692 16.6867 3.66665 13.8662C1.00639 11.0457 1.01374 6.47384 3.68321 3.663V3.663Z" stroke="#058A00" stroke-width="2" stroke-linejoin="round"/>
+<path d="M13.3638 13.843L21.5002 22.44" stroke="#058A00" stroke-width="2" stroke-linejoin="round"/>
 </svg>

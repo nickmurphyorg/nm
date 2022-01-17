@@ -3,16 +3,18 @@
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+$navigation-height: 56px;
+
 #site-navigation {
   position: fixed;
   width: 100%;
-  height: 56px;
+  height: $navigation-height;
   background-color: variables.$black-color;
   z-index: 12;
   -webkit-backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
 
-  .container {
+  & > .container {
     background: variables.$black-color;
 
     a {
@@ -42,54 +44,93 @@
     list-style: none;
     margin: 0;
     padding-left: 0;
-  }
+  }  
+}
 
-  li {
+.tabbed-navigation {
+  float: right;
+  z-index: 12;
+
+  & > li {
     float: left;
     position: relative;
     margin-left: 35px;
     padding-top: 17px;
     height: 56px;
-    display: inline-block;
-  }
 
-  a {
-    color: variables.$white-color;
-    display: block;
-    text-decoration: none;
-  }
-}
-
-@media (max-width: variables.$breakpoint-xs) {
-  .main-navigation {
-    li {
-      margin-left: 18px;
-    }
-  }
-}
-
-.tabbed-navigation {
-  float: right;
-
-  li {
-    a.text {
-      position: relative;
-      z-index: 15;
-      font-family: variables.$light-font-stack;
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 22px;
+    & > a {
       color: variables.$white-color;
+      display: block;
+      text-decoration: none;
+
+      &.text {
+        position: relative;
+        z-index: 15;
+        font-family: variables.$light-font-stack;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 22px;
+        color: variables.$white-color;
+      }
+    }
+
+    &.active {
+      a.text {
+        color: variables.$accent-color;
+      }
+    }
+  }
+}
+
+.menuButton {
+  display: none;
+  position: relative;
+  z-index: 13;
+  float: right;
+  margin-top: 13px;
+}
+
+@media (max-width: variables.$breakpoint-m) {
+  .tabbed-navigation {
+    display: none;
+    position: fixed;
+    top: $navigation-height;
+    left: 0;
+    width: 100%;
+    padding: 12px 0;
+    background-color: variables.$grey-1000;
+    
+    & > li {
+      float: none;
+      width: 90%;
+      max-width: 960px;
+      height: auto;
+      margin: 0 auto;
+      padding: 8px 20px;
+    }
+
+    &.active {
+      display: block;
     }
   }
 
-  li.active {
-    a.text {
-      color: variables.$accent-color;
-    }
+  .menuButton {
+    display: inline-block;
 
-    .navigationSlide {
-      display: block;
+    &.active {
+      color: variables.$primary-color;
+
+      &:hover {
+        color: variables.$grey-0;
+      }
+    }
+  }
+}
+
+@media (max-width: variables.$breakpoint-s) {
+  .tabbed-navigation {
+    & > li {
+      width: 100%;
     }
   }
 }
@@ -131,6 +172,12 @@
   }
 }
 
+.slideContainer {
+  display: block;
+  width: 100%;
+  height: 0;
+}
+
 .navigationSlide {
   display: none;
   position: fixed;
@@ -139,18 +186,28 @@
   opacity: 1;
   top: 0;
   left: 0;
-  background-color: variables.$black-color;
+
+  &.active {
+    display: block;
+  }
 }
 
 .navigationOverflowContainer {
   position: absolute;
-  top: 56px;
+  top: $navigation-height;
   width: 100%;
-  height: calc(100vh - 56px);
+  height: calc(100vh - #{$navigation-height});
+  background-color: variables.$grey-0;
   overflow-y: scroll;
 }
 
 /* Work Slide */
+.workSlide {
+  .navigationOverflowContainer {
+    padding: 48px 0;
+  }
+}
+
 .tile {
   display: block;
   position: relative;
@@ -239,14 +296,40 @@
   background-color: variables.$white-color;
 }
 
+/* Resume Slide */
+.resumeSlide {
+  .resumeView {
+    .wp-block-file {
+      height: calc(100vh - #{$navigation-height});
+      margin: 0;
+
+      object {
+        min-height: calc(100vh - #{$navigation-height});
+        margin: 0;
+      }
+
+      & > a {
+        display: none !important;
+      }
+    }
+  }
+}
+
 /* Blog Slide */
 .blogSlide {
-  color: variables.$white-color;
+  .navigationOverflowContainer {
+    padding: 48px 0;
+  }
+
+  .post {
+    padding-bottom: 20px;
+  }
 }
 
 .squareShot {
   a {
     display: block;
+    width: 100%;
     line-height: 0;
   }
 
@@ -261,40 +344,26 @@
     margin-bottom: 0.1em;
 
     a {
-      color: variables.$white-color;
+      color: variables.$grey-1000;
 
       &:hover {
-        color: variables.$silver-color;
+        color: variables.$grey-500;
       }
     }
   }
-  .entry-meta {
-    margin-bottom: 2em;
+}
 
-    .posted-on {
-      font-weight: 300;
-    }
+.entry-meta {
+  margin-bottom: 2em;
+
+  .posted-on {
+    font-weight: 300;
 
     .entry-date {
-      color: variables.$white-color;
+      color: variables.$grey-1000;
 
       &:hover {
-        color: variables.$silver-color;
-      }
-    }
-  }
-
-  .entry-summary {
-    a {
-      display: inline-block;
-      font-family: variables.$medium-font-stack;
-      font-size: 18px;
-      margin-top: 6px;
-      margin-bottom: 18px;
-      color: variables.$accent-color;
-
-      &:hover {
-        color: variables.$silver-color;
+        color: variables.$grey-500;
       }
     }
   }
@@ -302,61 +371,38 @@
 
 @media (max-width: variables.$breakpoint-s) {
   .descrip {
-    margin-top: 2em;
-    margin-bottom: 1em;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 
-.blogSlide {
-  .container {
-    .spacebar {
-      position: relative;
-      float: left;
-      display: block;
-      width: 100%;
-      background-color: variables.$white-color;
-      text-align: center;
-      padding-top: 1em;
-      padding-bottom: 1em;
-      margin-top: 1em;
-      margin-bottom: 1em;
-      color: variables.$black-color;
-      font-family: variables.$medium-font-stack;
-      font-size: 20px;
-      -webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      -ms-border-radius: 4px;
-      -o-border-radius: 4px;
-      border-radius: 4px;
-
-      &:hover {
-        background-color: variables.$silver-color;
-        color: variables.$white-color;
-      }
-    }
+/* Contact Styles */
+.emailSlide,
+#emailpage {
+  .navigationOverflowContainer {
+    padding-top: 48px;
   }
-}
 
-/* Email Styles */
-.emailSlide {
-  width: 100%;
-  background-color: variables.$black-color;
+  .contentBlock {
+    padding-bottom: 30px;
+  }
+
+  .formBlock {
+    padding-bottom: 30px;
+  }
+
+  .linksBlock {
+    padding-bottom: 40px;
+  }
 }
 
 #contactForm {
-  color: variables.$white-color;
-
   h3 {
     padding: 0;
     margin-bottom: 0;
 
     input {
-      background-color: variables.$black-color;
-      border: none;
       width: 100%;
-      color: variables.$white-color;
-      border-bottom: 1px solid variables.$white-color;
-      border-radius: 0px;
     }
   }
 
@@ -370,13 +416,7 @@
   }
 
   textarea {
-    background-color: variables.$black-color;
-    border: 1px solid variables.$white-color;
-    color: variables.$white-color;
-    font-size: 24px;
-    line-height: 29px;
     height: 150px;
-    border-radius: 0px;
   }
 }
 
@@ -394,38 +434,50 @@ span.wpcf7-not-valid-tip {
   margin-left: 5px;
 }
 
+#menu-connect,
+#menu-connect-1 {
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    margin-bottom: 8px;
+  }
+  a {
+    font-size: 18px;
+    font-family: variables.$medium-font-stack;
+    color: variables.$primary-color;
+
+    &:hover {
+      color: variables.$grey-500;
+    }
+  }
+}
+
 /* Search Styles */
 .searchSlide {
   overflow: hidden;
+
+  .navigationOverflowContainer {
+    padding-top: 48px;
+  }
+
+  h4 {
+    margin-bottom: 4px;
+  }
 }
+
 #search {
-  margin-top: 124px;
-  left: 0;
   width: 100%;
-  background-color: variables.$black-color;
-  color: variables.$white-color;
-  font-family: variables.$medium-font-stack;
-  font-size: 140px;
-  line-height: 170px;
-  font-weight: 600;
-  border: 0px none;
+  margin-bottom: 24px;
+  border-bottom: 1px solid variables.$grey-1000;
+
+  &:hover {
+    border-bottom: 1px solid variables.$primary-color;
+  }
 }
 :-moz-placeholder {
-  color: variables.$silver-color;
+  color: variables.$grey-200;
 }
 ::-webkit-input-placeholder {
-  color: variables.$silver-color;
-}
-@media (max-width: variables.$breakpoint-m) {
-  #search {
-    font-size: 100px;
-    line-height: 123px;
-  }
-}
-@media (max-width: variables.$breakpoint-s) {
-  #search {
-    margin-top: 64px;
-    font-size: 45px;
-    line-height: 55px;
-  }
+  color: variables.$grey-200;
 }

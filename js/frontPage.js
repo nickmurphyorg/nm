@@ -5,8 +5,6 @@
  */
 
 ( function( $ ) {
-	let carousel = $("#heroSlides .carousel");
-	
 	// Set Blog Tiles
 	$('.postImage').each(function() {
 		$(this).height($('.postImage').width());
@@ -16,13 +14,13 @@
 	let heroAnimationTimeline = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#hero",
-				start: "top top",
+				start: "top 56px",
 				end: "bottom top",
 				scrub: true
 			}
 		});
-	heroAnimationTimeline.to("#heroText", {y: 300, ease: "none"}, 0);
 	heroAnimationTimeline.to("#heroSlides", {y: 400, ease: "none"}, 0);
+	heroAnimationTimeline.to('.heroNavigation', {y: 30, ease: 'none'}, 0);
 
 	// Parallax About
 	let aboutAnimationTimeline = gsap.timeline({
@@ -36,55 +34,95 @@
 	aboutAnimationTimeline.fromTo("#aboutText", {y: -300}, {y: 300, ease: "none"}, 0);
 	aboutAnimationTimeline.fromTo("#aboutBackgroundImage", {y: -400}, {y: 400, ease: "none"}, 0);
 
+	// Hero Carousel
+	const carousel = document.querySelector('.carousel'),
+		carouselSlides = carousel.querySelectorAll('li'),
+		carouselSlideCount = carouselSlides.length,
+		slideNavigationContainer = document.querySelector('.slideTabs'),
+		titles = document.querySelector('.titles'),
+		subtitles = document.querySelector('.subtitles');
+
 	// Setup Hero Carousel
-	let titles = $(".titles"),
-		subtitles = $(".subtitles");
-		
 	function setupHeroCarousel() {
-		carousel.children('li').each(function(i) {
-			let currentSlide = $(this);
-			
-			$('<li class="' + currentSlide.data('color') + '"><a href="' + currentSlide.data('url') + '"><h1>' + currentSlide.data('name') + '</h1></a></li>').appendTo(titles);
-			$('<li class="' + currentSlide.data('color') + '"><h2>&mdash;' + currentSlide.data('category') + '</h2></li>').appendTo(subtitles);
-		});
-		
-		runHeroCarousel();
-	}
-	
-	// Run Hero Carousel
-	function runHeroCarousel(){
-        let sheets = $(".carousel li"),
-        	titles = $(".titles li"),
-        	subtitles = $(".subtitles li"),
-        	nmbr = sheets.length,
-        	currentSlide = 0,
-			nudge = document.getElementsByClassName("nudge")[0];
-                
-		TweenLite.set(sheets.filter(":gt(0)"), {alpha:"0"});
-		TweenLite.set(titles.filter(":gt(0)"), {top:"100%"});
-		TweenLite.set(subtitles.filter(":gt(0)"), {top:"100%"});
-		TweenLite.delayedCall(4, nextSlide);				
-			
-		function nextSlide(){					
-			TweenLite.to( sheets.eq(currentSlide), 1, {alpha:"0"} );
-			TweenLite.to( titles.eq(currentSlide), 1, {top:"-100%"} );
-			TweenLite.to( subtitles.eq(currentSlide), 1, {top:"-100%"} );		
-						
-			if (currentSlide < sheets.length - 1) {
-				currentSlide++;
-			}
-			else {
-				currentSlide = 0;
-			}
-				TweenLite.fromTo( sheets.eq(currentSlide), 1, {alpha: "0"}, {alpha:"1"} );
-				TweenLite.fromTo( titles.eq(currentSlide), 1, {top: "100%"}, {top:"0px"} );
-				TweenLite.fromTo( subtitles.eq(currentSlide), 1, {top: "100%"}, {top:"0px"} );
-				TweenLite.delayedCall(6, nextSlide);								
+		for (i = 0; i < carouselSlideCount; ++i) {
+			slideNavigationContainer.insertAdjacentHTML('beforeend', '<li data-index="' + i + '"><span data-index="' + i + '"></span></li>');
+			titles.insertAdjacentHTML('beforeend', '<li><a href="' + carouselSlides[i].dataset.url + '"><h2>' + carouselSlides[i].dataset.name + '</h2></a></li>');
+			subtitles.insertAdjacentHTML('beforeend', '<li><h3>' + carouselSlides[i].dataset.category + '</h3></li>');
 		}
-		
-		const nudgeHeight = nudge.getBoundingClientRect().height;
-		TweenLite.to(nudge, 1.5, { y: - nudgeHeight + "px" }).delay(2.5);
 	}
-	
 	setupHeroCarousel();
+	
+	// Hero Carousel
+	let currentSlide = 0;
+	const slideNavigationTabs = slideNavigationContainer.querySelectorAll('li'),
+		titleSlides = titles.querySelectorAll('li'),
+		subtitleSlides = subtitles.querySelectorAll('li');
+
+	for (i = 0; i < carouselSlideCount; ++i) {
+		if (i === 0) { continue; }
+		
+		TweenLite.set(carouselSlides[i], {alpha:"0"});
+		TweenLite.set(titleSlides[i], {top:"100%"});
+		TweenLite.set(subtitleSlides[i], {top:"100%"});
+	}
+
+	slideNavigationTabs[currentSlide].classList.toggle('active');
+
+	const changeSlide = (destinationIndex) => {
+		if (destinationIndex === currentSlide) return;
+
+		TweenLite.to( carouselSlides[currentSlide], 1, {alpha:"0"} );
+		TweenLite.to( titleSlides[currentSlide], 1, {top:"-100%"} );
+		TweenLite.to( subtitleSlides[currentSlide], 1, {top:"-100%"} );
+		slideNavigationTabs[currentSlide].classList.toggle('active');
+
+		TweenLite.fromTo( carouselSlides[destinationIndex], 1, {alpha: "0"}, {alpha:"1"} );
+		TweenLite.fromTo( titleSlides[destinationIndex], 1, {top: "100%"}, {top:"0px"} );
+		TweenLite.fromTo( subtitleSlides[destinationIndex], 1, {top: "100%"}, {top:"0px"} );
+		slideNavigationTabs[destinationIndex].classList.toggle('active');
+
+		currentSlide = destinationIndex;
+	}
+
+	const advanceSlide = () => {
+		const nextIndex = currentSlide < (carouselSlideCount - 1) ? currentSlide + 1 : 0;
+
+		changeSlide(nextIndex);
+		carouselTimeout.restart(true);
+	}
+
+	var carouselTimeout = TweenLite.delayedCall(6, advanceSlide);
+
+	// Navigate Hero Carousel
+	const previousSlideButton = document.querySelector('.carouselSkipButtons .prev'),
+		nextSlideButton = document.querySelector('.carouselSkipButtons .next');
+
+	slideNavigationContainer.addEventListener('click', (event) => {
+		const targetIndex = event.target.dataset.index;
+
+		if (targetIndex !== undefined && targetIndex !== null) {
+			carouselTimeout.restart(true);
+			changeSlide(parseInt(targetIndex));
+		}
+	});
+
+	previousSlideButton.addEventListener('click', () => {
+		carouselTimeout.restart(true);
+
+		if (currentSlide === 0 && (carouselSlideCount > 1)) {
+			changeSlide(carouselSlideCount - 1);
+		} else if (carouselSlideCount > 1) {
+			changeSlide(currentSlide - 1);
+		}
+	});
+
+	nextSlideButton.addEventListener('click', () => {
+		carouselTimeout.restart(true);
+
+		if (currentSlide < carouselSlideCount - 1) {
+			changeSlide(currentSlide + 1);
+		} else {
+			changeSlide(0);
+		}
+	});
 } )( jQuery );
