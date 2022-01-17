@@ -692,6 +692,35 @@ a:active {
 }
 
 /*--------------------------------------------------------------
+# Resume Page
+--------------------------------------------------------------*/
+#resumepage {
+  .resumeView {
+    max-width: 100%;
+    box-sizing: border-box;
+    resize: horizontal;
+    overflow: auto;
+
+    .wp-block-file {
+      width: 100%;
+      padding-bottom: 140%;
+      margin: 0;
+
+      object {
+        position: absolute;
+        width: calc(100% - 40px) !important;
+        height: 100% !important;
+        margin: 0;
+      }
+
+      & > a {
+        display: none !important;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------
 # Email Page
 --------------------------------------------------------------*/
 #emailpage {

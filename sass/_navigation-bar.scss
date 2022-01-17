@@ -297,18 +297,20 @@ $navigation-height: 56px;
 }
 
 /* Resume Slide */
-.resumeView {
-  .wp-block-file {
-    height: calc(100vh - #{$navigation-height});
-    margin: 0;
-
-    object {
-      min-height: calc(100vh - #{$navigation-height});
+.resumeSlide {
+  .resumeView {
+    .wp-block-file {
+      height: calc(100vh - #{$navigation-height});
       margin: 0;
-    }
 
-    & > a {
-      display: none !important;
+      object {
+        min-height: calc(100vh - #{$navigation-height});
+        margin: 0;
+      }
+
+      & > a {
+        display: none !important;
+      }
     }
   }
 }

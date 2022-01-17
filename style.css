@@ -709,6 +709,30 @@ a:active {
 }
 
 /*--------------------------------------------------------------
+# Resume Page
+--------------------------------------------------------------*/
+#resumepage .resumeView {
+  max-width: 100%;
+  box-sizing: border-box;
+  resize: horizontal;
+  overflow: auto;
+}
+#resumepage .resumeView .wp-block-file {
+  width: 100%;
+  padding-bottom: 140%;
+  margin: 0;
+}
+#resumepage .resumeView .wp-block-file object {
+  position: absolute;
+  width: calc(100% - 40px) !important;
+  height: 100% !important;
+  margin: 0;
+}
+#resumepage .resumeView .wp-block-file > a {
+  display: none !important;
+}
+
+/*--------------------------------------------------------------
 # Email Page
 --------------------------------------------------------------*/
 #emailpage .layer {
@@ -1836,15 +1860,15 @@ big {
 }
 
 /* Resume Slide */
-.resumeView .wp-block-file {
+.resumeSlide .resumeView .wp-block-file {
   height: calc(100vh - 56px);
   margin: 0;
 }
-.resumeView .wp-block-file object {
+.resumeSlide .resumeView .wp-block-file object {
   min-height: calc(100vh - 56px);
   margin: 0;
 }
-.resumeView .wp-block-file > a {
+.resumeSlide .resumeView .wp-block-file > a {
   display: none !important;
 }
 
