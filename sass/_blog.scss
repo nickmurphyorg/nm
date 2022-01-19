@@ -83,26 +83,11 @@ body.blog {
   }
 }
 
-@media (max-width: variables.$breakpoint-l) {
-  .postPreface {
-    .entry-content {
-      p {
-        padding-left: 4.7%;
-        padding-right: 4.7%;
-      }
-    }
-  }
-}
 @media (max-width: variables.$breakpoint-s) {
   .postPreface {
     padding-top: 2em;
 
     .entry-content {
-      p {
-        padding-left: 0%;
-        padding-right: 0%;
-      }
-
       .more-link {
         margin-top: 0.5em;
       }

@@ -11,6 +11,7 @@
 	});
 	
 	// Parallax Hero
+	const heroSlides = document.getElementById('heroSlides');
 	let heroAnimationTimeline = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#hero",
@@ -19,7 +20,7 @@
 				scrub: true
 			}
 		});
-	heroAnimationTimeline.to("#heroSlides", {y: 400, ease: "none"}, 0);
+	heroAnimationTimeline.to(heroSlides, {y: heroSlides.offsetHeight * 0.6, ease: "none"}, 0);
 	heroAnimationTimeline.to('.heroNavigation', {y: 30, ease: 'none'}, 0);
 
 	// Parallax About
