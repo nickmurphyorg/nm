@@ -2308,13 +2308,12 @@ body.blog .postHero a img {
 }
 /* Work Section */
 #work {
-  min-height: 100vh;
   width: 100%;
   background-color: #ffffff;
 }
 #work .container {
   padding-top: 10%;
-  padding-bottom: 10%;
+  padding-bottom: calc(10% - 36px);
 }
 
 @media (max-width: 550px) {

@@ -276,13 +276,12 @@ $heroHeightMobile: 200px;
 
 /* Work Section */
 #work {
-  min-height: 100vh;
   width: 100%;
   background-color: variables.$white-color;
 
   .container {
     padding-top: 10%;
-    padding-bottom: 10%;
+    padding-bottom: calc(10% - 36px);
   }
 }
 
