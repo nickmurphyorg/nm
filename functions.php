@@ -158,9 +158,7 @@ function nm_widgets_init() {
 		'id'            => 'projects',
 		'description'   => esc_html__( 'Projects', 'nm' ),
 		'before_widget' => '<div id="%1$s" class="tile %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<span style="display:none;">',
-		'after_title'   => '</span>',
+		'after_widget'  => '</div>'
 	) );
 	
 	register_sidebar( array(
