@@ -45,10 +45,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 @media (min-width: 550px) {
-  .container {
-    width: 90%;
-  }
-
   .column,
 .columns {
     margin-left: 4%;
@@ -2067,16 +2063,16 @@ body.blog .postHero a img {
 /* Hero Section */
 #hero {
   position: relative;
-  height: 600px;
+  height: 500px;
   overflow: hidden;
+  background-color: #ffffff;
 }
 
 #heroSlides {
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 600px;
-  background-color: #000000;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: 500px;
 }
 #heroSlides .carousel {
   width: 100%;
@@ -2088,7 +2084,7 @@ body.blog .postHero a img {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 600px;
+  height: 500px;
 }
 #heroSlides .carousel li picture {
   display: flex;
@@ -2189,6 +2185,8 @@ body.blog .postHero a img {
   }
 
   #heroSlides {
+    left: 0px;
+    width: 100%;
     height: 200px;
   }
   #heroSlides .carousel li {

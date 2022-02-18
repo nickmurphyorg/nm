@@ -16,11 +16,13 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<div id="slate">
 				<section id="hero">
-					<div id="heroSlides" class="parallax">
-						<?php if ( is_active_sidebar( 'hero' ) ) : ?>
-							<?php dynamic_sidebar( 'hero' ); ?>
-						<?php endif; ?>
-					</div><!-- hero slides -->
+					<div class="container">
+						<div id="heroSlides" class="parallax">
+							<?php if ( is_active_sidebar( 'hero' ) ) : ?>
+								<?php dynamic_sidebar( 'hero' ); ?>
+							<?php endif; ?>
+						</div><!-- hero slides -->
+					</div>
 					<div class="heroNavigation">
 						<div class="container">
 							<div class="row">

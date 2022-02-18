@@ -29,9 +29,6 @@
 }
 
 @media (min-width: variables.$breakpoint-s) {
-  .container {
-    width: 90%;
-  }
   .column,
   .columns {
     margin-left: 4%;

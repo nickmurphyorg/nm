@@ -35,7 +35,7 @@
 }
 
 /* Hero Section */
-$heroHeightDesktop: 600px;
+$heroHeightDesktop: 500px;
 $heroHeightTablet: 400px;
 $heroHeightMobile: 200px;
 
@@ -43,14 +43,14 @@ $heroHeightMobile: 200px;
   position: relative;
   height: $heroHeightDesktop;
   overflow: hidden;
+  background-color: variables.$grey-0;
 }
 
 #heroSlides {
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 20px;
+  width: calc(100% - 40px);
   height: $heroHeightDesktop;
-  background-color: variables.$grey-1000;
 
   .carousel {
     width: 100%;
@@ -190,6 +190,8 @@ $heroHeightMobile: 200px;
   }
 
   #heroSlides {
+    left: 0px;
+    width: 100%;
     height: $heroHeightMobile;
 
     .carousel {
