@@ -1061,28 +1061,28 @@ object {
 }
 
 .postHero {
-  position: relative;
-  height: 600px;
-  z-index: 3;
   display: block;
+  position: relative;
+  height: 500px;
+  margin-bottom: 2em;
   overflow: hidden;
 }
 
 /* Blog Post */
 .window {
   position: relative;
-  height: 600px;
+  height: 500px;
   z-index: 3;
   display: block;
 }
 
 .hero {
   position: absolute;
-  z-index: 1;
   top: 0px;
-  height: 600px;
-  margin-top: 56px;
-  width: 100%;
+  left: 20px;
+  height: 500px;
+  width: calc(100% - 40px);
+  z-index: 1;
   overflow: hidden;
 }
 .hero picture {
@@ -1096,34 +1096,16 @@ object {
   object-fit: cover;
 }
 
-@media (max-width: 1440px) {
-  .postHero {
-    height: 500px;
-  }
-
-  .hero {
-    height: 500px;
-  }
-
-  .window {
-    height: 500px;
-  }
-}
-@media (max-width: 1020px) {
-  .postHero {
-    height: 350px;
-  }
-
-  .hero {
-    height: 350px;
-  }
-
-  .window {
-    height: 350px;
-  }
-}
 @media (max-width: 750px) {
   .postHero {
+    height: 400px;
+  }
+
+  .hero {
+    height: 400px;
+  }
+
+  .window {
     height: 400px;
   }
 }
@@ -1133,8 +1115,9 @@ object {
   }
 
   .hero {
+    left: 0px;
     height: 200px;
-    margin-top: 56px;
+    width: 100%;
   }
 
   .window {
@@ -1452,11 +1435,6 @@ h1 {
 h1.xl {
   font-size: 50px;
   line-height: 58px;
-}
-
-.subHeader h1 {
-  font-size: 28px;
-  line-height: 34px;
 }
 
 h2 {
@@ -2367,15 +2345,11 @@ body.blog .postHero a img {
 ## Posts and pages
 --------------------------------------------------------------*/
 .projectHero {
-  display: table-cell !important;
-  vertical-align: middle;
-  width: 100vw !important;
-  text-align: center;
+  background-color: #ffffff;
 }
-.projectHero .container {
-  display: inline-block;
-  width: 100%;
-  text-align: left;
+
+.post .window {
+  background-color: #ffffff;
 }
 
 .page .entry-title {
@@ -2398,7 +2372,7 @@ body.blog .postHero a img {
 }
 
 .slab .container .entry-content {
-  padding-top: 2em;
+  padding-top: 1em;
 }
 .slab .container .entry-content > h3, .slab .container .entry-content > h4 {
   padding-left: 8.7%;
@@ -2446,7 +2420,7 @@ body.blog .postHero a img {
   padding-bottom: 56.25%;
 }
 .slab .entry-header {
-  padding-top: 3em;
+  padding-top: 2em;
   padding-bottom: 1em;
 }
 .slab .entry-header .entry-title {
