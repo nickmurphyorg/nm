@@ -68,8 +68,12 @@ get_header(); ?>
 										$page_title = get_post_field( 'post_title', $frontpage_id );
 										$page_text = get_post_field( 'post_content', $frontpage_id );
 									?>
-									<h6><?=$page_title?></h6>
-									<div class="textWidget"><?=$page_text?></div>
+									<h1 class="xl">
+										<?=$page_title?>
+									</h1>
+									<div class="textWidget">
+										<?=$page_text?>
+									</div>
 								</div>
 							</div>
 						</div><!-- container -->
@@ -96,7 +100,9 @@ get_header(); ?>
 				<section id="blog">
 					<div class="container">
 						<div class="row">
-							<h6><a href="/blog/blog/">Blog</a></h6>
+							<h1 class="xl">
+								<a href="/blog/blog/">Blog</a>
+							</h1>
 						</div>
 						<div class="row">
 							<?php 

@@ -4,7 +4,7 @@ Theme URI: https://nickmurphy.org
 Author: Nick Murphy
 Author URI: https://nickmurphy.org
 Description: nm Portfolio Theme, All Rights Reserved.
-Version: 1.2.3
+Version: 1.2.4
 License: Attribution-NonCommercial-NoDerivatives 4.0 International
 License URI: http://creativecommons.org/licenses/by-nc-nd/4.0/
 Text Domain: nm
@@ -1442,8 +1442,7 @@ textarea {
 h1,
 h2,
 h3,
-h4,
-h6 {
+h4 {
   margin-top: 0;
   margin-bottom: 1rem;
   font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
@@ -1451,88 +1450,45 @@ h6 {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 42px;
+  line-height: 52px;
+}
+h1.xl {
+  font-size: 50px;
   line-height: 58px;
 }
 
 .subHeader h1 {
-  font-size: 22px;
-  line-height: 27px;
+  font-size: 28px;
+  line-height: 34px;
 }
 
 h2 {
-  font-size: 22px;
-  line-height: 27px;
+  font-size: 28px;
+  line-height: 34px;
 }
 
 h3 {
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 24px;
+  line-height: 29px;
 }
 
 h4 {
   font-size: 18px;
-  line-height: 30px;
+  line-height: 22px;
 }
 
 h5 {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 17px;
   font-weight: 500;
-}
-
-h6 {
-  font-size: 48px;
-  line-height: 58px;
 }
 
 /* Larger than phablet */
 @media (min-width: 550px) {
-  h1 {
-    font-size: 140px;
-    line-height: 160px;
-  }
-
-  .subHeader h1 {
-    font-size: 30px;
-    line-height: 37px;
-  }
-
-  h2 {
-    font-size: 30px;
-    line-height: 37px;
-  }
-
-  h3 {
-    font-size: 24px;
-    line-height: 29px;
-  }
-
-  h6 {
-    font-size: 100px;
-    line-height: 120px;
-  }
-}
-/* Larger than tablet */
-@media (min-width: 750px) {
-  h1 {
-    font-size: 200px;
-    line-height: 220px;
-  }
-
-  .subHeader h1 {
-    font-size: 40px;
-    line-height: 49px;
-  }
-
-  h2 {
-    font-size: 40px;
-    line-height: 49px;
-  }
-
-  h6 {
-    font-size: 140px;
-    line-height: 160px;
+  h1.xl {
+    font-size: 62px;
+    line-height: 76px;
   }
 }
 p {
@@ -2205,6 +2161,7 @@ body.blog .postHero a img {
 }
 .carouselElements .carouselSkipButtons {
   display: flex;
+  padding-top: 20px;
 }
 .carouselElements .carouselSkipButtons button:first-child {
   margin: 0;
@@ -2244,10 +2201,13 @@ body.blog .postHero a img {
   .carouselElements .carouselTypography {
     margin-bottom: 24px;
   }
+  .carouselElements .carouselSkipButtons {
+    padding-top: 0px;
+  }
 }
 .titles {
   position: relative;
-  height: 50px;
+  height: 58px;
   width: 100%;
   margin: 0 0 12px 0;
   padding: 0;
@@ -2271,7 +2231,7 @@ body.blog .postHero a img {
 
 .subtitles {
   position: relative;
-  height: 30px;
+  height: 29px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -2288,22 +2248,9 @@ body.blog .postHero a img {
   margin-bottom: 0;
 }
 
-@media (max-width: 750px) {
+@media (min-width: 550px) {
   .titles {
-    height: 38px;
-  }
-
-  .subtitles {
-    height: 20px;
-  }
-}
-@media (max-width: 550px) {
-  .titles {
-    height: 28px;
-  }
-
-  .subtitles {
-    height: 16px;
+    height: 76px;
   }
 }
 /* Work Section */
@@ -2337,10 +2284,6 @@ body.blog .postHero a img {
   left: 0;
   color: #ffffff;
 }
-#aboutText h6 {
-  margin-bottom: 0;
-  font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
-}
 #aboutText .textWidget {
   font-size: 18px;
   line-height: 26px;
@@ -2365,17 +2308,17 @@ body.blog .postHero a img {
 #blog {
   background-color: #ffffff;
 }
-#blog h6 {
+#blog h1 {
   font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-bottom: 0;
   display: inline-block;
 }
-#blog h6 a {
+#blog h1 a {
   color: #000000;
 }
-#blog h6:hover a {
+#blog h1:hover a {
   color: #757575;
 }
 
@@ -2412,7 +2355,7 @@ body.blog .postHero a img {
 }
 
 @media (max-width: 550px) {
-  #blog h6 {
+  #blog h1 {
     padding-top: 0.75em;
     padding-bottom: 0.75em;
   }

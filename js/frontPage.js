@@ -47,7 +47,7 @@
 	function setupHeroCarousel() {
 		for (i = 0; i < carouselSlideCount; ++i) {
 			slideNavigationContainer.insertAdjacentHTML('beforeend', '<li data-index="' + i + '"><span data-index="' + i + '"></span></li>');
-			titles.insertAdjacentHTML('beforeend', '<li><a href="' + carouselSlides[i].dataset.url + '"><h2>' + carouselSlides[i].dataset.name + '</h2></a></li>');
+			titles.insertAdjacentHTML('beforeend', '<li><a href="' + carouselSlides[i].dataset.url + '"><h1 class="xl">' + carouselSlides[i].dataset.name + '</h1></a></li>');
 			subtitles.insertAdjacentHTML('beforeend', '<li><h3>' + carouselSlides[i].dataset.category + '</h3></li>');
 		}
 	}
