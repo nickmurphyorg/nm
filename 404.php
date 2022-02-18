@@ -14,12 +14,14 @@ get_header(); ?>
 
 			<section class="error-404 not-found container">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( '404', 'nm' ); ?></h1>
+					<h1 class="xl">
+						<?php esc_html_e( '404', 'nm' ); ?>
+					</h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content fouro">
 					
-					<h3><?php esc_html_e( '&mdash;The page you are looking for is no longer available, begin typing to search or browse my projects below.', 'nm' ); ?></h3>
+					<h3><?php esc_html_e( '&mdash; The page you are looking for is no longer available, try searching or browse my projects below.', 'nm' ); ?></h3>
 
 					<?php get_template_part( 'template-parts/content', 'projects' ); ?>
 
