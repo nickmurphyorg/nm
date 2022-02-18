@@ -318,6 +318,7 @@ table {
 # Forms
 --------------------------------------------------------------*/
 button,
+button.wp-block-button__link,
 input[type=button],
 input[type=reset],
 input[type=submit] {
@@ -331,6 +332,7 @@ input[type=submit] {
   background: #058a00;
 }
 button:hover,
+button.wp-block-button__link:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
 input[type=submit]:hover {
@@ -338,6 +340,7 @@ input[type=submit]:hover {
   background: transparent;
 }
 button.secondary,
+button.wp-block-button__link.secondary,
 input[type=button].secondary,
 input[type=reset].secondary,
 input[type=submit].secondary {
@@ -347,12 +350,14 @@ input[type=submit].secondary {
   background: transparent;
 }
 button.secondary:hover,
+button.wp-block-button__link.secondary:hover,
 input[type=button].secondary:hover,
 input[type=reset].secondary:hover,
 input[type=submit].secondary:hover {
   color: #757575;
 }
 button.navigation,
+button.wp-block-button__link.navigation,
 input[type=button].navigation,
 input[type=reset].navigation,
 input[type=submit].navigation {
@@ -364,6 +369,7 @@ input[type=submit].navigation {
   background: transparent;
 }
 button.navigation:hover,
+button.wp-block-button__link.navigation:hover,
 input[type=button].navigation:hover,
 input[type=reset].navigation:hover,
 input[type=submit].navigation:hover {
@@ -2525,6 +2531,16 @@ section.error-404 {
 }
 section.error-404 h1.page-title {
   font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+}
+
+/*--------------------------------------------------------------
+## JetPack Feedback Forms
+--------------------------------------------------------------*/
+.wp-block-jetpack-contact-form {
+  width: 100%;
+}
+.wp-block-jetpack-contact-form .grunion-field-wrap {
+  border: none;
 }
 
 /*--------------------------------------------------------------
