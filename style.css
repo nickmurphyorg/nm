@@ -1429,8 +1429,8 @@ h4 {
 }
 
 h1 {
-  font-size: 42px;
-  line-height: 52px;
+  font-size: 34px;
+  line-height: 40px;
 }
 h1.xl {
   font-size: 50px;
@@ -1460,6 +1460,10 @@ h5 {
 
 /* Larger than phablet */
 @media (min-width: 550px) {
+  h1 {
+    font-size: 42px;
+    line-height: 52px;
+  }
   h1.xl {
     font-size: 62px;
     line-height: 76px;
