@@ -4,7 +4,7 @@ Theme URI: https://nickmurphy.org
 Author: Nick Murphy
 Author URI: https://nickmurphy.org
 Description: nm Portfolio Theme, All Rights Reserved.
-Version: 1.2.3
+Version: 1.2.4
 License: Attribution-NonCommercial-NoDerivatives 4.0 International
 License URI: http://creativecommons.org/licenses/by-nc-nd/4.0/
 Text Domain: nm
@@ -45,10 +45,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 @media (min-width: 550px) {
-  .container {
-    width: 90%;
-  }
-
   .column,
 .columns {
     margin-left: 4%;
@@ -322,6 +318,7 @@ table {
 # Forms
 --------------------------------------------------------------*/
 button,
+button.wp-block-button__link,
 input[type=button],
 input[type=reset],
 input[type=submit] {
@@ -335,6 +332,7 @@ input[type=submit] {
   background: #058a00;
 }
 button:hover,
+button.wp-block-button__link:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
 input[type=submit]:hover {
@@ -342,6 +340,7 @@ input[type=submit]:hover {
   background: transparent;
 }
 button.secondary,
+button.wp-block-button__link.secondary,
 input[type=button].secondary,
 input[type=reset].secondary,
 input[type=submit].secondary {
@@ -351,12 +350,14 @@ input[type=submit].secondary {
   background: transparent;
 }
 button.secondary:hover,
+button.wp-block-button__link.secondary:hover,
 input[type=button].secondary:hover,
 input[type=reset].secondary:hover,
 input[type=submit].secondary:hover {
   color: #757575;
 }
 button.navigation,
+button.wp-block-button__link.navigation,
 input[type=button].navigation,
 input[type=reset].navigation,
 input[type=submit].navigation {
@@ -368,6 +369,7 @@ input[type=submit].navigation {
   background: transparent;
 }
 button.navigation:hover,
+button.wp-block-button__link.navigation:hover,
 input[type=button].navigation:hover,
 input[type=reset].navigation:hover,
 input[type=submit].navigation:hover {
@@ -1065,28 +1067,28 @@ object {
 }
 
 .postHero {
-  position: relative;
-  height: 600px;
-  z-index: 3;
   display: block;
+  position: relative;
+  height: 500px;
+  margin-bottom: 2em;
   overflow: hidden;
 }
 
 /* Blog Post */
 .window {
   position: relative;
-  height: 600px;
+  height: 500px;
   z-index: 3;
   display: block;
 }
 
 .hero {
   position: absolute;
-  z-index: 1;
   top: 0px;
-  height: 600px;
-  margin-top: 56px;
-  width: 100%;
+  left: 20px;
+  height: 500px;
+  width: calc(100% - 40px);
+  z-index: 1;
   overflow: hidden;
 }
 .hero picture {
@@ -1100,34 +1102,16 @@ object {
   object-fit: cover;
 }
 
-@media (max-width: 1440px) {
-  .postHero {
-    height: 500px;
-  }
-
-  .hero {
-    height: 500px;
-  }
-
-  .window {
-    height: 500px;
-  }
-}
-@media (max-width: 1020px) {
-  .postHero {
-    height: 350px;
-  }
-
-  .hero {
-    height: 350px;
-  }
-
-  .window {
-    height: 350px;
-  }
-}
 @media (max-width: 750px) {
   .postHero {
+    height: 400px;
+  }
+
+  .hero {
+    height: 400px;
+  }
+
+  .window {
     height: 400px;
   }
 }
@@ -1137,8 +1121,9 @@ object {
   }
 
   .hero {
+    left: 0px;
     height: 200px;
-    margin-top: 56px;
+    width: 100%;
   }
 
   .window {
@@ -1442,8 +1427,7 @@ textarea {
 h1,
 h2,
 h3,
-h4,
-h6 {
+h4 {
   margin-top: 0;
   margin-bottom: 1rem;
   font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
@@ -1451,88 +1435,44 @@ h6 {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 34px;
+  line-height: 40px;
+}
+h1.xl {
+  font-size: 50px;
   line-height: 58px;
 }
 
-.subHeader h1 {
-  font-size: 22px;
-  line-height: 27px;
-}
-
 h2 {
-  font-size: 22px;
-  line-height: 27px;
+  font-size: 28px;
+  line-height: 34px;
 }
 
 h3 {
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 24px;
+  line-height: 29px;
 }
 
 h4 {
   font-size: 18px;
-  line-height: 30px;
+  line-height: 22px;
 }
 
 h5 {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 17px;
   font-weight: 500;
-}
-
-h6 {
-  font-size: 48px;
-  line-height: 58px;
 }
 
 /* Larger than phablet */
 @media (min-width: 550px) {
   h1 {
-    font-size: 140px;
-    line-height: 160px;
+    font-size: 42px;
+    line-height: 52px;
   }
-
-  .subHeader h1 {
-    font-size: 30px;
-    line-height: 37px;
-  }
-
-  h2 {
-    font-size: 30px;
-    line-height: 37px;
-  }
-
-  h3 {
-    font-size: 24px;
-    line-height: 29px;
-  }
-
-  h6 {
-    font-size: 100px;
-    line-height: 120px;
-  }
-}
-/* Larger than tablet */
-@media (min-width: 750px) {
-  h1 {
-    font-size: 200px;
-    line-height: 220px;
-  }
-
-  .subHeader h1 {
-    font-size: 40px;
-    line-height: 49px;
-  }
-
-  h2 {
-    font-size: 40px;
-    line-height: 49px;
-  }
-
-  h6 {
-    font-size: 140px;
-    line-height: 160px;
+  h1.xl {
+    font-size: 62px;
+    line-height: 76px;
   }
 }
 p {
@@ -2111,16 +2051,16 @@ body.blog .postHero a img {
 /* Hero Section */
 #hero {
   position: relative;
-  height: 600px;
+  height: 500px;
   overflow: hidden;
+  background-color: #ffffff;
 }
 
 #heroSlides {
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 600px;
-  background-color: #000000;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: 500px;
 }
 #heroSlides .carousel {
   width: 100%;
@@ -2132,7 +2072,7 @@ body.blog .postHero a img {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 600px;
+  height: 500px;
 }
 #heroSlides .carousel li picture {
   display: flex;
@@ -2205,6 +2145,7 @@ body.blog .postHero a img {
 }
 .carouselElements .carouselSkipButtons {
   display: flex;
+  padding-top: 20px;
 }
 .carouselElements .carouselSkipButtons button:first-child {
   margin: 0;
@@ -2232,6 +2173,8 @@ body.blog .postHero a img {
   }
 
   #heroSlides {
+    left: 0px;
+    width: 100%;
     height: 200px;
   }
   #heroSlides .carousel li {
@@ -2244,10 +2187,13 @@ body.blog .postHero a img {
   .carouselElements .carouselTypography {
     margin-bottom: 24px;
   }
+  .carouselElements .carouselSkipButtons {
+    padding-top: 0px;
+  }
 }
 .titles {
   position: relative;
-  height: 50px;
+  height: 58px;
   width: 100%;
   margin: 0 0 12px 0;
   padding: 0;
@@ -2271,7 +2217,7 @@ body.blog .postHero a img {
 
 .subtitles {
   position: relative;
-  height: 30px;
+  height: 29px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -2288,22 +2234,9 @@ body.blog .postHero a img {
   margin-bottom: 0;
 }
 
-@media (max-width: 750px) {
+@media (min-width: 550px) {
   .titles {
-    height: 38px;
-  }
-
-  .subtitles {
-    height: 20px;
-  }
-}
-@media (max-width: 550px) {
-  .titles {
-    height: 28px;
-  }
-
-  .subtitles {
-    height: 16px;
+    height: 76px;
   }
 }
 /* Work Section */
@@ -2337,10 +2270,6 @@ body.blog .postHero a img {
   left: 0;
   color: #ffffff;
 }
-#aboutText h6 {
-  margin-bottom: 0;
-  font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
-}
 #aboutText .textWidget {
   font-size: 18px;
   line-height: 26px;
@@ -2365,17 +2294,17 @@ body.blog .postHero a img {
 #blog {
   background-color: #ffffff;
 }
-#blog h6 {
+#blog h1 {
   font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-bottom: 0;
   display: inline-block;
 }
-#blog h6 a {
+#blog h1 a {
   color: #000000;
 }
-#blog h6:hover a {
+#blog h1:hover a {
   color: #757575;
 }
 
@@ -2412,7 +2341,7 @@ body.blog .postHero a img {
 }
 
 @media (max-width: 550px) {
-  #blog h6 {
+  #blog h1 {
     padding-top: 0.75em;
     padding-bottom: 0.75em;
   }
@@ -2426,15 +2355,11 @@ body.blog .postHero a img {
 ## Posts and pages
 --------------------------------------------------------------*/
 .projectHero {
-  display: table-cell !important;
-  vertical-align: middle;
-  width: 100vw !important;
-  text-align: center;
+  background-color: #ffffff;
 }
-.projectHero .container {
-  display: inline-block;
-  width: 100%;
-  text-align: left;
+
+.post .window {
+  background-color: #ffffff;
 }
 
 .page .entry-title {
@@ -2457,7 +2382,7 @@ body.blog .postHero a img {
 }
 
 .slab .container .entry-content {
-  padding-top: 2em;
+  padding-top: 1em;
 }
 .slab .container .entry-content > h3, .slab .container .entry-content > h4 {
   padding-left: 8.7%;
@@ -2505,7 +2430,7 @@ body.blog .postHero a img {
   padding-bottom: 56.25%;
 }
 .slab .entry-header {
-  padding-top: 3em;
+  padding-top: 2em;
   padding-bottom: 1em;
 }
 .slab .entry-header .entry-title {
@@ -2606,6 +2531,16 @@ section.error-404 {
 }
 section.error-404 h1.page-title {
   font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+}
+
+/*--------------------------------------------------------------
+## JetPack Feedback Forms
+--------------------------------------------------------------*/
+.wp-block-jetpack-contact-form {
+  width: 100%;
+}
+.wp-block-jetpack-contact-form .grunion-field-wrap {
+  border: none;
 }
 
 /*--------------------------------------------------------------

@@ -281,6 +281,14 @@ function my_post_image_html( $html, $post_id, $post_image_id ) {
 }
 
 /**
+ * Modify Protected Page Title Prefix
+ */
+function change_protected_title_prefix() {
+	return '%s';
+}
+add_filter('protected_title_format', 'change_protected_title_prefix');
+
+/**
  * Login Screen Mods.
  */
 function custom_login() {

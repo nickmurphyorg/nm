@@ -29,9 +29,6 @@
 }
 
 @media (min-width: variables.$breakpoint-s) {
-  .container {
-    width: 90%;
-  }
   .column,
   .columns {
     margin-left: 4%;
@@ -306,6 +303,7 @@ table {
 # Forms
 --------------------------------------------------------------*/
 button,
+button.wp-block-button__link,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -1105,28 +1103,28 @@ object {
 }
 
 .postHero {
-  position: relative;
-  height: 600px;
-  z-index: 3;
   display: block;
+  position: relative;
+  height: 500px;
+  margin-bottom: 2em;
   overflow: hidden;
 }
 
 /* Blog Post */
 .window {
   position: relative;
-  height: 600px;
+  height: 500px;
   z-index: 3;
   display: block;
 }
 
 .hero {
   position: absolute;
-  z-index: 1;
   top: 0px;
-  height: 600px;
-  margin-top: 56px;
-  width: 100%;
+  left: 20px;
+  height: 500px;
+  width: calc(100% - 40px);
+  z-index: 1;
   overflow: hidden;
 
   picture {
@@ -1142,30 +1140,14 @@ object {
   }
 }
 
-@media (max-width: variables.$breakpoint-xl) {
-  .postHero {
-    height: 500px;
-  }
-  .hero {
-    height: 500px;
-  }
-  .window {
-    height: 500px;
-  }
-}
-@media (max-width: variables.$breakpoint-l) {
-  .postHero {
-    height: 350px;
-  }
-  .hero {
-    height: 350px;
-  }
-  .window {
-    height: 350px;
-  }
-}
 @media (max-width: variables.$breakpoint-m) {
   .postHero {
+    height: 400px;
+  }
+  .hero {
+    height: 400px;
+  }
+  .window {
     height: 400px;
   }
 }
@@ -1174,13 +1156,15 @@ object {
     height: 200px;
   }
   .hero {
+    left: 0px;
     height: 200px;
-    margin-top: 56px;
+    width: 100%;
   }
   .window {
     height: 200px;
   }
 }
+
 .iphoneVideo {
   max-width: 375px;
 }

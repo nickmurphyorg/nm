@@ -4,15 +4,12 @@
 ## Posts and pages
 --------------------------------------------------------------*/
 .projectHero {
-  display: table-cell !important;
-  vertical-align: middle;
-  width: 100vw !important;
-  text-align: center;
+  background-color: variables.$grey-0;
+}
 
-  .container {
-    display: inline-block;
-    width: 100%;
-    text-align: left;
+.post {
+  .window {
+    background-color: variables.$grey-0;
   }
 }
 
@@ -40,7 +37,7 @@
 .slab {
   .container {
     .entry-content {
-      padding-top: 2em;
+      padding-top: 1em;
 
       & > h3,
       & > h4 {
@@ -109,7 +106,7 @@
   }
 
   .entry-header {
-    padding-top: 3em;
+    padding-top: 2em;
     padding-bottom: 1em;
 
     .entry-title {
@@ -240,6 +237,17 @@ section.error-404 {
 
   h1.page-title {
     font-family: variables.$medium-font-stack;
+  }
+}
+
+/*--------------------------------------------------------------
+## JetPack Feedback Forms
+--------------------------------------------------------------*/
+.wp-block-jetpack-contact-form {
+  width: 100%;
+
+  .grunion-field-wrap {
+    border: none;
   }
 }
 

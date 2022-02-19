@@ -58,83 +58,49 @@ textarea {
 h1,
 h2,
 h3,
-h4,
-h6 {
+h4{
   margin-top: 0;
   margin-bottom: 1rem;
   font-family: variables.$medium-font-stack;
   font-weight: 600;
 }
 h1 {
-  font-size: 48px;
-  line-height: 58px;
-}
-.subHeader h1 {
-  font-size: 22px;
-  line-height: 27px;
+  font-size: 34px;
+  line-height: 40px;
+
+  &.xl {
+    font-size: 50px;
+    line-height: 58px;
+  }
 }
 h2 {
-  font-size: 22px;
-  line-height: 27px;
+  font-size: 28px;
+  line-height: 34px;
 }
 h3 {
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 24px;
+  line-height: 29px;
 }
 h4 {
   font-size: 18px;
-  line-height: 30px;
+  line-height: 22px;
 }
 h5 {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 17px;
   font-weight: 500;
-}
-h6 {
-  font-size: 48px;
-  line-height: 58px;
 }
 
 /* Larger than phablet */
 @media (min-width: variables.$breakpoint-s) {
   h1 {
-    font-size: 140px;
-    line-height: 160px;
-  }
-  .subHeader h1 {
-    font-size: 30px;
-    line-height: 37px;
-  }
-  h2 {
-    font-size: 30px;
-    line-height: 37px;
-  }
-  h3 {
-    font-size: 24px;
-    line-height: 29px;
-  }
-  h6 {
-    font-size: 100px;
-    line-height: 120px;
-  }
-}
-/* Larger than tablet */
-@media (min-width: variables.$breakpoint-m) {
-  h1 {
-    font-size: 200px;
-    line-height: 220px;
-  }
-  .subHeader h1 {
-    font-size: 40px;
-    line-height: 49px;
-  }
-  h2 {
-    font-size: 40px;
-    line-height: 49px;
-  }
-  h6 {
-    font-size: 140px;
-    line-height: 160px;
+    font-size: 42px;
+    line-height: 52px;
+
+    &.xl {
+      font-size: 62px;
+      line-height: 76px;
+    }
   }
 }
 
