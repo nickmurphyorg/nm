@@ -1,5 +1,56 @@
 @use './variables';
 
+/* Might Be Unnecessary */
+.squareShot {
+  a {
+    display: block;
+    width: 100%;
+    line-height: 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.descrip {
+  .entry-title {
+    margin-bottom: 0.1em;
+
+    a {
+      color: variables.$grey-1000;
+
+      &:hover {
+        color: variables.$grey-500;
+      }
+    }
+  }
+}
+
+.entry-meta {
+  margin-bottom: 2em;
+
+  .posted-on {
+    font-weight: 300;
+
+    .entry-date {
+      color: variables.$grey-1000;
+
+      &:hover {
+        color: variables.$grey-500;
+      }
+    }
+  }
+}
+
+@media (max-width: variables.$breakpoint-s) {
+  .descrip {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
 /*--------------------------------------------------------------
 ## Blog Index
 --------------------------------------------------------------*/

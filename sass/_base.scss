@@ -795,7 +795,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-# Email Page
+# Contact Page
 --------------------------------------------------------------*/
 #emailpage {
   .layer {
@@ -824,9 +824,59 @@ a:active {
     }
 
     textArea {
+      height: 150px;
       background-color: variables.$white-color;
       color: variables.$black-color;
       border: 1px solid variables.$black-color;
+    }
+  }
+
+  .navigationOverflowContainer {
+    padding-top: 48px;
+  }
+
+  .contentBlock {
+    padding-bottom: 30px;
+  }
+
+  .formBlock {
+    padding-bottom: 30px;
+  }
+
+  .linksBlock {
+    padding-bottom: 40px;
+  }
+}
+
+div.wpcf7-response-output {
+  margin: 0;
+  padding: 0;
+  border: none !important;
+  color: variables.$white-color !important;
+  margin-bottom: 1em;
+}
+span.wpcf7-not-valid-tip {
+  font-size: 16px !important;
+  line-height: 18px !important;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+#menu-connect,
+#menu-connect-1 {
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    margin-bottom: 8px;
+  }
+  a {
+    font-size: 18px;
+    font-family: variables.$medium-font-stack;
+    color: variables.$primary-color;
+
+    &:hover {
+      color: variables.$grey-500;
     }
   }
 }
@@ -840,6 +890,16 @@ a:active {
     margin-bottom: 60px;
     color: variables.$black-color;
     background-color: variables.$white-color;
+  }
+}
+
+#search {
+  width: 100%;
+  margin-bottom: 24px;
+  border-bottom: 1px solid variables.$grey-1000;
+
+  &:hover {
+    border-bottom: 1px solid variables.$primary-color;
   }
 }
 
