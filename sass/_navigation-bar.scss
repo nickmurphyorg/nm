@@ -214,18 +214,14 @@ $navigation-height: 56px;
 }
 
 .tile {
-  display: block;
-  position: relative;
-  float: left;
-  width: 33.3%;
-  margin-bottom: 36px;
+  margin-bottom: variables.$space10;
 
   .imageView {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 200px;
+    height: 280px;
     margin-bottom: 4px;
     overflow: hidden;
 

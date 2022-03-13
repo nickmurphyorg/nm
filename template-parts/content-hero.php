@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts.
+ * Template part for displaying results in search pages.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -10,15 +10,16 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<div class="postPreface">
-			<?php if ( has_post_thumbnail() ) : ?>
-				<div class="postHero">
-					<?php the_post_thumbnail(); ?>
-				</div>
-			<?php endif; ?>
+	<div class="row chip heroPost">
+		<?php if ( has_post_thumbnail() ) : ?>
+			<div class="postHero six columns">
+				<?php the_post_thumbnail(); ?>
+			</div>
+		<?php endif; ?>
 
+		<div class="six columns">
 			<header class="entry-header subHeader">
-				<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+				<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		
 				<?php if ( 'post' === get_post_type() ) : ?>
 					<div class="entry-meta">
@@ -45,5 +46,6 @@
 					) );
 				?>
 			</div><!-- .entry-content -->
-		</div><!-- postPreface -->
+		</div><!-- six columns -->
+	</div><!-- row heroPost -->
 </article><!-- #post-## -->

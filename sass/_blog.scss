@@ -3,24 +3,6 @@
 /*--------------------------------------------------------------
 ## Blog Index
 --------------------------------------------------------------*/
-body.blog {
-  .postHero {
-    a {
-      display: flex;
-      align-items: center;
-      align-content: center;
-      width: 100%;
-      height: 100%;
-
-      img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
-}
-
 .whiteDivide {
   position: relative;
   width: 100%;
@@ -28,69 +10,93 @@ body.blog {
   background-color: variables.$white-color;
 }
 
-.postPreface {
-  padding-top: 4em;
-  padding-bottom: 4em;
+.chip {
+  margin-bottom: variables.$space10;
+}
+
+/* Hero Post Tile */
+.heroPost {
+  .postHero {
+    height: 420px;
+    margin-bottom: 0;
+  }
 
   .entry-title {
-    margin-bottom: 0.25em;
+    margin-bottom: variables.$space2;
+  }
+
+  .entry-meta {
+    margin-bottom: variables.$space5;
+
+    h5 {
+      margin: 0;
+    }
+  }
+
+  .entry-content {
+    p {
+      margin-bottom: variables.$space3;
+    }
+  }
+}
+
+/* Standard Post Tile */
+.postPreface {
+  .postHero {
+    height: 320px;
+  }
+
+  .entry-title {
+    margin-bottom: variables.$space2;
 
     a {
-      color: variables.$black-color;
+      color: variables.$grey-1000;
 
       &:hover {
-        color: variables.$silver-color;
+        color: variables.$grey-500;
       }
     }
   }
 
   .entry-meta {
-    margin-bottom: 2em;
-    font-weight: 300;
+    margin-bottom: variables.$space5;
+
+    h5 {
+      margin: 0;
+    }
   }
 
   .entry-content {
-    margin-bottom: 2em;
-
     p {
-      margin-bottom: 0;
-    }
-
-    .more-link {
-      display: inline-block;
-      font-family: variables.$medium-font-stack;
-      font-size: 18px;
-      margin-top: 1em;
-      color: variables.$accent-color;
-
-      &:hover {
-        color: variables.$silver-color;
-      }
+      margin-bottom: variables.$space3;
     }
   }
+}
 
-  .entry-footer {
-    p {
-      margin-bottom: 0;
-      font-weight: 300;
-      font-size: 16px;
-
-      a {
-        font-family: variables.$light-font-stack;
-        padding-right: 1em;
-      }
+@media (max-width: variables.$breakpoint-m) {
+  .heroPost {
+    .postHero {
+      height: 320px;
     }
   }
 }
 
 @media (max-width: variables.$breakpoint-s) {
-  .postPreface {
-    padding-top: 2em;
+  .heroPost {
+    .postHero {
+      height: 248px;
+      margin-bottom: variables.$space5;
+    }
 
-    .entry-content {
-      .more-link {
-        margin-top: 0.5em;
-      }
+    .entry-title {
+      font-size: 28px;
+      line-height: 34px;
+    }
+  }
+
+  .postPreface {
+    .postHero {
+      height: 248px;
     }
   }
 }

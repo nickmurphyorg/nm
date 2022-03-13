@@ -156,19 +156,7 @@ function nm_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Projects', 'nm' ),
 		'id'            => 'projects',
-		'description'   => esc_html__( 'Projects', 'nm' ),
-		'before_widget' => '<div id="%1$s" class="tile %2$s">',
-		'after_widget'  => '</div>'
-	) );
-	
-	register_sidebar( array(
-		'name'          => esc_html__( 'Hero', 'nm' ),
-		'id'            => 'hero',
-		'description'   => esc_html__( 'Hero', 'nm' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '<span style="display:none;">',
-		'after_title'   => '</span>',
+		'description'   => esc_html__( 'Projects', 'nm' )
 	) );
 	
 	register_sidebar( array(
@@ -230,10 +218,6 @@ function nm_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	
-	if ( is_front_page() ) {
-        wp_enqueue_script( 'nm-frontPage', get_template_directory_uri() . '/js/frontPage.js', array( 'jquery' ), '1.0', true );
-    }
 }
 add_action( 'wp_enqueue_scripts', 'nm_scripts' );
 
