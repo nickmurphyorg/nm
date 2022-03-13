@@ -51,14 +51,22 @@
   }
 }
 
-/*--------------------------------------------------------------
-## Blog Index
---------------------------------------------------------------*/
-.whiteDivide {
+.whiteDivide { /* used for archive page */
   position: relative;
   width: 100%;
   height: auto;
   background-color: variables.$white-color;
+}
+
+/*--------------------------------------------------------------
+## Blog Index
+--------------------------------------------------------------*/
+.blogIndexHeader {
+  padding-top: variables.$space31;
+
+  .page-title {
+    margin-bottom: variables.$space31;
+  }
 }
 
 .chip {
@@ -74,6 +82,14 @@
 
   .entry-title {
     margin-bottom: variables.$space2;
+
+    a {
+      color: variables.$black-color;
+
+      &:hover {
+        color: variables.$silver-color;
+      }
+    }
   }
 
   .entry-meta {
@@ -133,6 +149,14 @@
 }
 
 @media (max-width: variables.$breakpoint-s) {
+  .blogIndexHeader {
+    padding-top: variables.$space15;
+  
+    .page-title {
+      margin-bottom: variables.$space15;
+    }
+  }
+  
   .heroPost {
     .postHero {
       height: 248px;

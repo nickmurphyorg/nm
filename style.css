@@ -1852,14 +1852,22 @@ big {
     margin-bottom: 10px;
   }
 }
-/*--------------------------------------------------------------
-## Blog Index
---------------------------------------------------------------*/
 .whiteDivide {
+  /* used for archive page */
   position: relative;
   width: 100%;
   height: auto;
   background-color: #ffffff;
+}
+
+/*--------------------------------------------------------------
+## Blog Index
+--------------------------------------------------------------*/
+.blogIndexHeader {
+  padding-top: 124px;
+}
+.blogIndexHeader .page-title {
+  margin-bottom: 124px;
 }
 
 .chip {
@@ -1873,6 +1881,12 @@ big {
 }
 .heroPost .entry-title {
   margin-bottom: 8px;
+}
+.heroPost .entry-title a {
+  color: #000000;
+}
+.heroPost .entry-title a:hover {
+  color: #757575;
 }
 .heroPost .entry-meta {
   margin-bottom: 20px;
@@ -1913,6 +1927,13 @@ big {
   }
 }
 @media (max-width: 600px) {
+  .blogIndexHeader {
+    padding-top: 60px;
+  }
+  .blogIndexHeader .page-title {
+    margin-bottom: 60px;
+  }
+
   .heroPost .postHero {
     height: 248px;
     margin-bottom: 20px;
@@ -2159,14 +2180,20 @@ big {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 44px;
+  padding-bottom: 84px;
   font-size: 20px;
   line-height: 35px;
   text-align: center;
   background-color: #ffffff;
 }
 
+@media (max-width: 600px) {
+  .paginationControl {
+    padding-top: 20px;
+    padding-bottom: 60px;
+  }
+}
 .page-numbers {
   padding: 0 8px;
   color: #757575;
