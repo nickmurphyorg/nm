@@ -709,6 +709,14 @@ a:active {
 /*--------------------------------------------------------------
 # Work Page
 --------------------------------------------------------------*/
+#workpage {
+  padding-top: 124px;
+  padding-bottom: 84px;
+}
+#workpage h1 {
+  margin-bottom: 124px;
+}
+
 .tileHolder li {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -755,6 +763,14 @@ a:active {
   }
 }
 @media (max-width: 600px) {
+  #workpage {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+  #workpage h1 {
+    margin-bottom: 60px;
+  }
+
   .tileHolder li {
     grid-template-columns: repeat(1, 1fr);
   }

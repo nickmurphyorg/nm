@@ -688,6 +688,15 @@ a:active {
 /*--------------------------------------------------------------
 # Work Page
 --------------------------------------------------------------*/
+#workpage {
+  padding-top: variables.$space31;
+  padding-bottom: variables.$space21;
+
+  h1 {
+    margin-bottom: variables.$space31;
+  }
+}
+
 .tileHolder {
   li {
     display: grid;
@@ -746,6 +755,15 @@ a:active {
 }
 
 @media (max-width: variables.$breakpoint-s) {
+  #workpage {
+    padding-top: variables.$space15;
+    padding-bottom: variables.$space5;
+  
+    h1 {
+      margin-bottom: variables.$space15;
+    }
+  }
+
   .tileHolder {
     li {
       grid-template-columns: repeat(1, 1fr);
