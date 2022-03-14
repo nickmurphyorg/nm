@@ -68,8 +68,8 @@
 					<li class="workTab" itemprop="name" role="menuitem">
 						<a class="text" href="<?php echo get_site_url(); ?>/work/" title="Work" itemprop="url">Work</a>
 					</li>
-					<li class="resumeTab" itemprop="name" role="menuitem">
-						<a class="text" href="<?php echo get_site_url(); ?>/resume/" title="Resume" itemprop="url">Resume</a>
+					<li itemprop="name" role="menuitem">
+						<a class="text" href="<?php echo get_site_url(); ?>/about/" title="About" itemprop="url">About</a>
 					</li>
 					<li class="blogTab" itemprop="name" role="menuitem">
 						<a class="text" href="<?php echo get_site_url(); ?>/blog/" title="Blog" itemprop="url">Blog</a>

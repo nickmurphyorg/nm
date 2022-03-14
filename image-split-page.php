@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Split Page
+ * Template Name: Image Split Page
  *
- * This is a dynamic contact page that displays content on the left.
+ * This is a dynamic contact page that displays the feature image on the right and content on the left.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -19,7 +19,12 @@ get_header(); ?>
 						<h1 class="page-title xl"><?php single_post_title(); ?></h1>
 					</div>
 					<div class="row">
-						<div class="splitColumn columns">
+						<?php if ( has_post_thumbnail() ) : ?>
+							<div class="postHero six columns">
+								<?php the_post_thumbnail(); ?>
+							</div>
+						<?php endif; ?>
+						<div class="six columns">
 							<?php the_content(); ?>
 						</div>
 					</div>

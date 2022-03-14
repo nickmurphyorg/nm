@@ -551,12 +551,20 @@ pre {
   .splitColumn {
     width: 48%;
   }
+
+  .postHero {
+    height: 400px;
+  }
 }
 
 @media (max-width: variables.$breakpoint-m) {
   #splitPage {
     .splitColumn {
       width: 100%;
+    }
+
+    .postHero {
+      height: 300px;
     }
   }
 }
@@ -567,6 +575,10 @@ pre {
   
     .page-title {
       margin-bottom: variables.$space15;
+    }
+
+    .postHero {
+      height: 200px;
     }
   }
 }

@@ -285,6 +285,14 @@ ol {
   list-style: decimal;
 }
 
+ul.bulletFree {
+  padding: 0;
+  list-style-type: none;
+}
+ul.bulletFree li {
+  margin-bottom: 8px;
+}
+
 li > ul,
 li > ol {
   margin-bottom: 0;
@@ -1606,6 +1614,9 @@ p {
   font-size: 18px;
   line-height: 26px;
 }
+p a {
+  font-weight: 600;
+}
 
 dfn,
 cite,
@@ -2494,10 +2505,16 @@ pre code .preprocessing {
 #splitPage .splitColumn {
   width: 48%;
 }
+#splitPage .postHero {
+  height: 400px;
+}
 
 @media (max-width: 768px) {
   #splitPage .splitColumn {
     width: 100%;
+  }
+  #splitPage .postHero {
+    height: 300px;
   }
 }
 @media (max-width: 600px) {
@@ -2506,6 +2523,9 @@ pre code .preprocessing {
   }
   #splitPage .page-title {
     margin-bottom: 60px;
+  }
+  #splitPage .postHero {
+    height: 200px;
   }
 }
 /*--------------------------------------------------------------

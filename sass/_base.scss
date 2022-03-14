@@ -270,6 +270,17 @@ ol {
   list-style: decimal;
 }
 
+ul {
+  &.bulletFree {
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      margin-bottom: variables.$space2;
+    }
+  }
+}
+
 li > ul,
 li > ol {
   margin-bottom: 0;
