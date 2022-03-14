@@ -536,3 +536,37 @@ pre {
     }
   }
 }
+
+/*--------------------------------------------------------------
+## Split Page
+--------------------------------------------------------------*/
+#splitPage {
+  padding-top: variables.$space31;
+  padding-bottom: variables.$space15;
+
+  .page-title {
+    margin-bottom: variables.$space31;
+  }
+
+  .splitColumn {
+    width: 48%;
+  }
+}
+
+@media (max-width: variables.$breakpoint-m) {
+  #splitPage {
+    .splitColumn {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: variables.$breakpoint-s) {
+  #splitPage {
+    padding-top: variables.$space15;
+  
+    .page-title {
+      margin-bottom: variables.$space15;
+    }
+  }
+}

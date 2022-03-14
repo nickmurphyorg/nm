@@ -404,6 +404,7 @@ input[type=email],
 input[type=url],
 input[type=password],
 input[type=search] {
+  width: 100%;
   font-family: "Helvetica Neue Roman", Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 1.21;
@@ -812,58 +813,38 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-# Contact Page
+# Contact Form
 --------------------------------------------------------------*/
-#emailpage .layer {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-#emailpage #contactForm h4 {
+#contactForm h4 {
   color: #000000;
 }
-#emailpage #contactForm h3 input {
+#contactForm h3 input {
   background-color: #ffffff;
   color: #000000;
   border-bottom: 1px solid #000000;
 }
-#emailpage #contactForm p {
+#contactForm p {
   margin-top: 0;
   padding-left: 0;
   padding-right: 0;
   margin-bottom: 18px;
 }
-#emailpage #contactForm textArea {
+#contactForm textArea {
   height: 150px;
   background-color: #ffffff;
   color: #000000;
   border: 1px solid #000000;
 }
-#emailpage .navigationOverflowContainer {
-  padding-top: 48px;
-}
-#emailpage .contentBlock {
-  padding-bottom: 30px;
-}
-#emailpage .formBlock {
-  padding-bottom: 30px;
-}
-#emailpage .linksBlock {
-  padding-bottom: 40px;
-}
 
 div.wpcf7-response-output {
-  margin: 0;
-  padding: 0;
-  border: none !important;
-  color: #ffffff !important;
-  margin-bottom: 1em;
+  display: none;
 }
 
 span.wpcf7-not-valid-tip {
+  margin-top: 4px;
   font-size: 16px !important;
   line-height: 18px !important;
   font-weight: 500;
-  margin-left: 5px;
 }
 
 #menu-connect,
@@ -2500,6 +2481,33 @@ pre code .preprocessing {
   color: #b58900;
 }
 
+/*--------------------------------------------------------------
+## Split Page
+--------------------------------------------------------------*/
+#splitPage {
+  padding-top: 124px;
+  padding-bottom: 60px;
+}
+#splitPage .page-title {
+  margin-bottom: 124px;
+}
+#splitPage .splitColumn {
+  width: 48%;
+}
+
+@media (max-width: 768px) {
+  #splitPage .splitColumn {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  #splitPage {
+    padding-top: 60px;
+  }
+  #splitPage .page-title {
+    margin-bottom: 60px;
+  }
+}
 /*--------------------------------------------------------------
 ## Login
 --------------------------------------------------------------*/
