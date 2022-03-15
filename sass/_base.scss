@@ -13,6 +13,7 @@
 
   &.narrow {
     max-width: 960px;
+    padding: 0;
   }
 }
 .column,
@@ -184,9 +185,7 @@ hr {
 .entry-content {
   ul {
     list-style: disc;
-    padding-left: 8.7%;
-    padding-right: 8.7%;
-    margin-bottom: 2em;
+    margin-bottom: variables.$space10;
 
     &.blocks-gallery-grid {
       margin-bottom: 1em;
@@ -200,9 +199,7 @@ hr {
   }
 
   ol {
-    padding-left: 8.7%;
-    padding-right: 8.7%;
-    margin-bottom: 2em;
+    margin-bottom: variables.$space10;
   }
 
   li {
@@ -1285,9 +1282,9 @@ object {
 .hero {
   position: absolute;
   top: 0px;
-  left: 20px;
+  left: 0px;
   height: 500px;
-  width: calc(100% - 40px);
+  width: 100%;
   z-index: 1;
   overflow: hidden;
 

@@ -3,10 +3,6 @@
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.projectHero {
-  background-color: variables.$grey-0;
-}
-
 .post {
   .window {
     background-color: variables.$grey-0;
@@ -14,8 +10,28 @@
 }
 
 .page {
+  padding-bottom: variables.$space15;
+
   .entry-title {
-    font-family: variables.$medium-font-stack;
+    padding-top: variables.$space31;
+    margin-bottom: variables.$space31;
+  }
+
+  .window {
+    margin-bottom: variables.$space15;
+  }
+}
+
+@media (max-width: variables.$breakpoint-s) {
+  .page {
+    .entry-title {
+      padding-top: variables.$space15;
+      margin-bottom: variables.$space15;
+    }
+
+    .window {
+      margin-bottom: variables.$space7;
+    }
   }
 }
 
@@ -40,15 +56,11 @@
 
       & > h3,
       & > h4 {
-        padding-left: 8.7%;
-        padding-right: 8.7%;
-        margin-bottom: 0.25em;
+        margin-bottom: variables.$space10;
       }
 
       & > p {
-        padding-left: 8.7%;
-        padding-right: 8.7%;
-        margin-bottom: 2em;
+        margin-bottom: variables.$space10;
 
         img {
           max-width: none;
@@ -119,9 +131,7 @@
   }
 
   .entry-footer {
-    padding-left: 8.7%;
-    padding-right: 8.7%;
-    margin-bottom: 2em;
+    margin-bottom: variables.$space10;
     font-weight: 300;
   }
 

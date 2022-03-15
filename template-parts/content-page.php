@@ -10,34 +10,31 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
-	<?php if ( has_post_thumbnail() && !post_password_required() ) : ?>
-		<section class="layer">
-			<div class="window projectHero">
-				<div class="container">
-					<div class="hero">
-						<?php
-							$urlLarge = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'full' );
-							$urlMedium = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'large' );
-							$urlSmall = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'medium' );
-							?>
-							<picture>
-								<source media="(min-width: 1024px)" srcset="<?=$urlLarge?>">
-								<source media="(min-width: 751px)" srcset="<?=$urlMedium?>">
-								<img src="<?=$urlSmall?>">
-							</picture>
-					</div><!-- hero -->
-				</div>
-			</div>
-		</section>
-	<?php endif; ?>
-	
-	<section class="layer slab">
-		<div class="container">
+	<div class="container">
+		<div class="row">
 			<header class="entry-header subHeader">
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				<?php the_title( '<h1 class="entry-title xl">', '</h1>' ); ?>
 			</header><!-- .entry-header -->
+		</div>
+
+		<?php if ( has_post_thumbnail() && !post_password_required() ) : ?>
+			<div class="row window">
+				<div class="hero">
+					<?php
+						$urlLarge = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'full' );
+						$urlMedium = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'large' );
+						$urlSmall = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'medium' );
+						?>
+						<picture>
+							<source media="(min-width: 1024px)" srcset="<?=$urlLarge?>">
+							<source media="(min-width: 751px)" srcset="<?=$urlMedium?>">
+							<img src="<?=$urlSmall?>">
+						</picture>
+				</div><!-- hero -->
+			</div>
+		<?php endif; ?>
 	
+		<div class="container narrow">
 			<div class="entry-content">
 				<?php the_content(); ?>
 				<?php
@@ -61,6 +58,6 @@
 					);
 				?>
 			</footer><!-- .entry-footer -->
-		</div><!-- container -->
-	</section><!-- slab -->
+		</div><!-- Container Narrow -->
+	</div><!-- Container -->
 </article><!-- #post-## -->

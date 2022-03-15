@@ -21,32 +21,6 @@ menuButton.addEventListener('click', () => {
 	toggleMobileMenu()
 });
 
-/* Parallax Effect For Interior Pages - NOW BROKEN */ 
-if ((body.classList.contains("page-template-default") || body.classList.contains("post-template-default")) && 
-	document.querySelector("article").classList.contains("has-post-thumbnail") && 
-	!body.classList.contains("home")
-	) {
-		const heroTimeline = gsap.timeline({
-			scrollTrigger: {
-				trigger: body,
-				start: "top top",
-				endTrigger: ".window",
-				end: "bottom top",
-				scrub: true
-			}
-		});
-		
-		const postHeroElement = document.querySelector('div.hero');
-		if (postHeroElement) {
-			heroTimeline.to(postHeroElement, {y: 200, ease: "none"}, 0);
-		}
-
-		const projectHeroElement = document.querySelector('div.projectHero');
-		if (projectHeroElement) {
-			heroTimeline.to(projectHeroElement, {y: 150, ease: "none"}, 0);
-		}
-}
-
 /*
  * Escape special characters from protected pages
  */
