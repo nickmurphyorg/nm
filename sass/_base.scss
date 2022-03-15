@@ -10,6 +10,10 @@
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
+
+  &.narrow {
+    max-width: 960px;
+  }
 }
 .column,
 .columns {
@@ -798,7 +802,14 @@ a:active {
 /*--------------------------------------------------------------
 # Resume Page
 --------------------------------------------------------------*/
-#resumepage {
+#resumePage {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+
   .resumeView {
     max-width: 100%;
     box-sizing: border-box;
@@ -811,6 +822,7 @@ a:active {
       margin: 0;
 
       object {
+        display: block !important;
         position: absolute;
         width: calc(100% - 40px) !important;
         height: 100% !important;

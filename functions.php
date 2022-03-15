@@ -168,16 +168,6 @@ function nm_widgets_init() {
 		'before_title'  => '<h3>',
 		'after_title'   => '</h3>',
 	) );
-	
-	register_sidebar( array(
-		'name'          => esc_html__( 'Resume', 'nm' ),
-		'id'            => 'resume',
-		'description'   => esc_html__( 'Resume module for navigation bar.', 'nm' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '<span style="display:none;">',
-		'after_title'   => '</span>',
-	) );
 }
 add_action( 'widgets_init', 'nm_widgets_init' );
 

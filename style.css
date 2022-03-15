@@ -26,6 +26,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   padding: 0 20px;
   box-sizing: border-box;
 }
+.container.narrow {
+  max-width: 960px;
+}
 
 .column,
 .columns {
@@ -799,24 +802,33 @@ a:active {
 /*--------------------------------------------------------------
 # Resume Page
 --------------------------------------------------------------*/
-#resumepage .resumeView {
+#resumePage {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+#resumePage .resumeView {
   max-width: 100%;
   box-sizing: border-box;
   resize: horizontal;
   overflow: auto;
 }
-#resumepage .resumeView .wp-block-file {
+#resumePage .resumeView .wp-block-file {
   width: 100%;
   padding-bottom: 140%;
   margin: 0;
 }
-#resumepage .resumeView .wp-block-file object {
+#resumePage .resumeView .wp-block-file object {
+  display: block !important;
   position: absolute;
   width: calc(100% - 40px) !important;
   height: 100% !important;
   margin: 0;
 }
-#resumepage .resumeView .wp-block-file > a {
+#resumePage .resumeView .wp-block-file > a {
   display: none !important;
 }
 
