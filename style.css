@@ -2048,8 +2048,22 @@ big {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+.post .entry-header {
+  padding-top: 124px;
+  padding-bottom: 0;
+  margin-bottom: 124px;
+}
+.post .entry-header h1 {
+  margin: 0;
+}
+.post .entry-header h5 {
+  margin: 0;
+}
 .post .window {
-  background-color: #ffffff;
+  margin-bottom: 60px;
+}
+.post .tags-links {
+  display: block;
 }
 
 .page {
@@ -2064,6 +2078,14 @@ big {
 }
 
 @media (max-width: 600px) {
+  .post .entry-header {
+    padding-top: 60px;
+    margin-bottom: 60px;
+  }
+  .post .window {
+    margin-bottom: 28px;
+  }
+
   .page .entry-title {
     padding-top: 60px;
     margin-bottom: 60px;
@@ -2086,66 +2108,75 @@ big {
   display: inline;
 }
 
-.slab .container .entry-content {
+.container .entry-content {
   padding-top: 1em;
 }
-.slab .container .entry-content > h3, .slab .container .entry-content > h4 {
+.container .entry-content > h3, .container .entry-content > h4 {
   margin-bottom: 40px;
 }
-.slab .container .entry-content > p {
+.container .entry-content > p {
   margin-bottom: 40px;
 }
-.slab .container .entry-content > p img {
+.container .entry-content > p img {
   max-width: none;
   margin-left: -10.7%;
   width: 121.4%;
 }
-.slab .blocks-gallery-grid {
+
+.blocks-gallery-grid {
   padding-left: 0;
   padding-right: 0;
   list-style-type: none;
 }
-.slab .wp-block-code {
+
+.wp-block-code {
   padding: 20px;
   background: #002b36;
   color: #839496;
   max-width: none;
 }
-.slab .wp-block-embed-vimeo .wp-block-embed__wrapper {
+
+.wp-block-embed-vimeo .wp-block-embed__wrapper {
   max-width: 100%;
 }
-.slab .wp-block-embed-vimeo .wp-block-embed__wrapper iframe {
+.wp-block-embed-vimeo .wp-block-embed__wrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.slab .wp-embed-aspect-1-3 .wp-block-embed__wrapper {
+
+.wp-embed-aspect-1-3 .wp-block-embed__wrapper {
   padding-bottom: 300%;
 }
-.slab .wp-embed-aspect-4-3 .wp-block-embed__wrapper {
+
+.wp-embed-aspect-4-3 .wp-block-embed__wrapper {
   padding-bottom: 75%;
 }
-.slab .wp-embed-aspect-16-9 .wp-block-embed__wrapper {
+
+.wp-embed-aspect-16-9 .wp-block-embed__wrapper {
   padding-bottom: 56.25%;
 }
-.slab .entry-header {
+
+.entry-header {
   padding-top: 2em;
   padding-bottom: 1em;
 }
-.slab .entry-header .entry-title {
+.entry-header .entry-title {
   font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 }
-.slab .entry-header .entry-meta {
+.entry-header .entry-meta {
   font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
-.slab .entry-footer {
+
+.entry-footer {
   margin-bottom: 40px;
   font-weight: 300;
 }
-.slab .page-links {
+
+.page-links {
   clear: both;
   margin: 0 0 1.5em;
 }
@@ -2168,29 +2199,31 @@ big {
 }
 
 @media (max-width: 768px) {
-  .slab .container .entry-content > h3, .slab .container .entry-content > h4 {
+  .container .entry-content > h3, .container .entry-content > h4 {
     padding-left: 0%;
     padding-right: 0%;
   }
-  .slab .container .entry-content > p {
+  .container .entry-content > p {
     padding-left: 0%;
     padding-right: 0%;
   }
 }
 @media (max-width: 600px) {
-  .slab .container .entry-content > p {
+  .container .entry-content > p {
     margin-top: 0em;
     -webkit-margin-before: 0em;
   }
-  .slab .container .entry-content > p img {
+  .container .entry-content > p img {
     margin-left: 0%;
     width: 100%;
   }
-  .slab code {
+
+  code {
     margin-left: 0;
     margin-right: 0;
   }
-  .slab .entry-footer {
+
+  .entry-footer {
     padding-left: 0%;
     padding-right: 0%;
   }
@@ -2259,8 +2292,8 @@ section.error-404 h1.page-title {
 ## Comments
 --------------------------------------------------------------*/
 #comments {
-  margin-top: 2em;
-  padding-bottom: 2em;
+  margin-top: 60px;
+  padding-bottom: 60px;
 }
 
 #cancel-comment-reply-link {
