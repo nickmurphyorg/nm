@@ -4,13 +4,17 @@
 ## Posts and pages
 --------------------------------------------------------------*/
 .post {
-  .entry-header {
+  .pageHeader {
     padding-top: variables.$space31;
     padding-bottom: 0;
     margin-bottom: variables.$space31;
 
     h1 {
-      margin: 0;
+      margin-bottom: variables.$space3;
+    }
+
+    .entry-meta {
+      margin-bottom: 0;
     }
 
     h5 {
@@ -30,9 +34,14 @@
 .page {
   padding-bottom: variables.$space15;
 
-  .entry-title {
+  .pageHeader {
     padding-top: variables.$space31;
+    padding-bottom: 0;
     margin-bottom: variables.$space31;
+
+    h1 {
+      margin: 0;
+    }
   }
 
   .window {
@@ -42,7 +51,7 @@
 
 @media (max-width: variables.$breakpoint-s) {
   .post {
-    .entry-header {
+    .pageHeader {
       padding-top: variables.$space15;
       margin-bottom: variables.$space15;
     }
@@ -53,7 +62,7 @@
   }
 
   .page {
-    .entry-title {
+    .pageHeader {
       padding-top: variables.$space15;
       margin-bottom: variables.$space15;
     }
@@ -81,8 +90,6 @@
 
 .container {
   .entry-content {
-    padding-top: 1em;
-
     & > h3,
     & > h4 {
       margin-bottom: variables.$space10;
@@ -146,9 +153,6 @@
 }
 
 .entry-header {
-  padding-top: 2em;
-  padding-bottom: 1em;
-
   .entry-title {
     font-family: variables.$medium-font-stack;
   }

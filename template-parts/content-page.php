@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">
 		<div class="row">
-			<header class="entry-header subHeader">
+			<header class="entry-header subHeader pageHeader">
 				<?php the_title( '<h1 class="entry-title xl">', '</h1>' ); ?>
 			</header><!-- .entry-header -->
 		</div>

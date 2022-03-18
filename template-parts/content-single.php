@@ -11,9 +11,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="row">
-		<header class="entry-header subHeader">
+		<header class="entry-header subHeader pageHeader">
 			<?php the_title( '<h1 class="entry-title xl">', '</h1>' ); ?>
-	
 			<div class="entry-meta">
 				<h5><?php nm_posted_on(); ?></h5>
 			</div><!-- .entry-meta -->

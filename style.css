@@ -1911,7 +1911,7 @@ big {
 .heroPost .entry-meta h5 {
   margin: 0;
 }
-.heroPost .entry-content p {
+.heroPost .chipContent p {
   margin-bottom: 12px;
 }
 
@@ -1934,7 +1934,7 @@ big {
 .postPreface .entry-meta h5 {
   margin: 0;
 }
-.postPreface .entry-content p {
+.postPreface .chipContent p {
   margin-bottom: 12px;
 }
 
@@ -2048,15 +2048,18 @@ big {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.post .entry-header {
+.post .pageHeader {
   padding-top: 124px;
   padding-bottom: 0;
   margin-bottom: 124px;
 }
-.post .entry-header h1 {
-  margin: 0;
+.post .pageHeader h1 {
+  margin-bottom: 12px;
 }
-.post .entry-header h5 {
+.post .pageHeader .entry-meta {
+  margin-bottom: 0;
+}
+.post .pageHeader h5 {
   margin: 0;
 }
 .post .window {
@@ -2069,16 +2072,20 @@ big {
 .page {
   padding-bottom: 60px;
 }
-.page .entry-title {
+.page .pageHeader {
   padding-top: 124px;
+  padding-bottom: 0;
   margin-bottom: 124px;
+}
+.page .pageHeader h1 {
+  margin: 0;
 }
 .page .window {
   margin-bottom: 60px;
 }
 
 @media (max-width: 600px) {
-  .post .entry-header {
+  .post .pageHeader {
     padding-top: 60px;
     margin-bottom: 60px;
   }
@@ -2086,7 +2093,7 @@ big {
     margin-bottom: 28px;
   }
 
-  .page .entry-title {
+  .page .pageHeader {
     padding-top: 60px;
     margin-bottom: 60px;
   }
@@ -2108,9 +2115,6 @@ big {
   display: inline;
 }
 
-.container .entry-content {
-  padding-top: 1em;
-}
 .container .entry-content > h3, .container .entry-content > h4 {
   margin-bottom: 40px;
 }
@@ -2159,10 +2163,6 @@ big {
   padding-bottom: 56.25%;
 }
 
-.entry-header {
-  padding-top: 2em;
-  padding-bottom: 1em;
-}
 .entry-header .entry-title {
   font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
 }

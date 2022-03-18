@@ -18,7 +18,7 @@
 		<?php endif; ?>
 
 		<div class="six columns">
-			<header class="entry-header subHeader">
+			<header class="entry-header subHeader chipHeader">
 				<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		
 				<?php if ( 'post' === get_post_type() ) : ?>
@@ -30,7 +30,7 @@
 				<?php endif; ?>
 			</header><!-- .entry-header -->
 		
-			<div class="entry-content">
+			<div class="chipContent">
 				<?php
 					the_content( sprintf(
 						/* translators: %s: Name of current post. */
@@ -45,7 +45,7 @@
 						'after'  => '</div>',
 					) );
 				?>
-			</div><!-- .entry-content -->
+			</div><!-- .chipContent -->
 		</div><!-- six columns -->
 	</div><!-- row heroPost -->
 </article><!-- #post-## -->
