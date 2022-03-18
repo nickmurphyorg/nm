@@ -2543,6 +2543,29 @@ pre code .preprocessing {
   }
 }
 /*--------------------------------------------------------------
+## Password Page
+--------------------------------------------------------------*/
+.post-password-required .container.narrow {
+  max-width: calc(50% - 10px);
+  margin: 0;
+}
+.post-password-required p {
+  margin-bottom: 40px;
+}
+.post-password-required input[type=password] {
+  margin-bottom: 20px;
+}
+.post-password-required .entry-footer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .post-password-required .container.narrow {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+/*--------------------------------------------------------------
 ## Login
 --------------------------------------------------------------*/
 body.login {

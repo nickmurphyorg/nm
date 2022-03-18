@@ -618,3 +618,38 @@ pre {
     }
   }
 }
+
+/*--------------------------------------------------------------
+## Password Page
+--------------------------------------------------------------*/
+.post-password-required {
+  .container {
+    &.narrow {
+      max-width: calc(50% - 10px);
+      margin: 0;
+    }
+  }
+
+  p {
+    margin-bottom: variables.$space10;
+  }
+
+  input[type="password"] {
+    margin-bottom: variables.$space5;
+  }
+
+  .entry-footer {
+    display: none;
+  }
+}
+
+@media (max-width: variables.$breakpoint-m) {
+  .post-password-required {
+    .container {
+      &.narrow {
+        max-width: 100%;
+        margin: 0;
+      }
+    }
+  }
+}
