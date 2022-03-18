@@ -32,8 +32,6 @@
 }
 
 .page {
-  padding-bottom: variables.$space15;
-
   .pageHeader {
     padding-top: variables.$space31;
     padding-bottom: 0;
@@ -46,6 +44,12 @@
 
   .window {
     margin-bottom: variables.$space15;
+  }
+}
+
+article {
+  &.page {
+    padding-bottom: variables.$space15;
   }
 }
 
@@ -100,8 +104,7 @@
 
       img {
         max-width: none;
-        margin-left: -10.7%;
-        width: 121.4%;
+        width: 100%;
       }
     }
   }
@@ -217,11 +220,6 @@
       & > p {
         margin-top: 0em;
         -webkit-margin-before: 0em;
-
-        img {
-          margin-left: 0%;
-          width: 100%;
-        }
       }
     }
   }

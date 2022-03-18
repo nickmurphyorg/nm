@@ -1215,33 +1215,6 @@ object {
   }
 }
 
-@media (max-width: variables.$breakpoint-m) {
-  .footerFirst {
-    width: 100% !important;
-  }
-  .footerPosts {
-    margin-left: 0;
-  }
-  .footerProjects {
-    width: 22% !important;
-  }
-  .footerContact {
-    width: 30.6666666667% !important;
-  }
-}
-
-@media (max-width: variables.$breakpoint-s) {
-  .footerPosts {
-    width: 100% !important;
-  }
-  .footerProjects {
-    width: 50% !important;
-  }
-  .footerContact {
-    width: 50% !important;
-  }
-}
-
 /*--------------------------------------------------------------
 ## Layering Parallax
 --------------------------------------------------------------*/

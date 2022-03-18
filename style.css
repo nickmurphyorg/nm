@@ -1160,36 +1160,6 @@ object {
   font-size: 14px;
 }
 
-@media (max-width: 768px) {
-  .footerFirst {
-    width: 100% !important;
-  }
-
-  .footerPosts {
-    margin-left: 0;
-  }
-
-  .footerProjects {
-    width: 22% !important;
-  }
-
-  .footerContact {
-    width: 30.6666666667% !important;
-  }
-}
-@media (max-width: 600px) {
-  .footerPosts {
-    width: 100% !important;
-  }
-
-  .footerProjects {
-    width: 50% !important;
-  }
-
-  .footerContact {
-    width: 50% !important;
-  }
-}
 /*--------------------------------------------------------------
 ## Layering Parallax
 --------------------------------------------------------------*/
@@ -2069,9 +2039,6 @@ big {
   display: block;
 }
 
-.page {
-  padding-bottom: 60px;
-}
 .page .pageHeader {
   padding-top: 124px;
   padding-bottom: 0;
@@ -2082,6 +2049,10 @@ big {
 }
 .page .window {
   margin-bottom: 60px;
+}
+
+article.page {
+  padding-bottom: 60px;
 }
 
 @media (max-width: 600px) {
@@ -2123,8 +2094,7 @@ big {
 }
 .container .entry-content > p img {
   max-width: none;
-  margin-left: -10.7%;
-  width: 121.4%;
+  width: 100%;
 }
 
 .blocks-gallery-grid {
@@ -2212,10 +2182,6 @@ big {
   .container .entry-content > p {
     margin-top: 0em;
     -webkit-margin-before: 0em;
-  }
-  .container .entry-content > p img {
-    margin-left: 0%;
-    width: 100%;
   }
 
   code {

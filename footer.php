@@ -17,22 +17,22 @@
 		<div class="container">
 			<div class="row">
 				<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-					<div class="footerFirst two columns">
+					<div class="two columns">
 						<?php dynamic_sidebar( 'footer-1' ); ?>
 					</div>
 				<?php endif; ?>
 				<?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
-					<div class="footerPosts five columns">
+					<div class="four columns">
 						<?php dynamic_sidebar( 'footer-2' ); ?>
 					</div>
 				<?php endif; ?>
 				<?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
-					<div class="footerProjects three columns">
+					<div class="three columns">
 						<?php dynamic_sidebar( 'footer-3' ); ?>
 					</div>
 				<?php endif; ?>
 				<?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
-					<div class="footerContact two columns">
+					<div class="three columns">
 						<?php dynamic_sidebar( 'footer-4' ); ?>
 					</div>
 				<?php endif; ?>
