@@ -158,16 +158,6 @@ function nm_widgets_init() {
 		'id'            => 'projects',
 		'description'   => esc_html__( 'Projects', 'nm' )
 	) );
-	
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sitemap', 'nm' ),
-		'id'            => 'site-map',
-		'description'   => esc_html__( 'HTML Sitemap', 'nm' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '<h3>',
-		'after_title'   => '</h3>',
-	) );
 }
 add_action( 'widgets_init', 'nm_widgets_init' );
 
