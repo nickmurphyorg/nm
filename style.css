@@ -243,16 +243,16 @@ hr {
   max-width: 100%;
 }
 .entry-content .wp-block-image {
-  margin: 0 0 2em;
+  margin: 0 0 40px 0;
 }
 .entry-content .wp-block-embed {
-  margin: 0 0 2em;
+  margin: 0 0 40px 0;
 }
 .entry-content .wp-block-media-text {
-  margin: 0 0 2em;
+  margin: 0 0 40px 0;
 }
 .entry-content .wp-block-table {
-  margin: 0 0 2em;
+  margin: 0 0 40px 0;
 }
 .entry-content .wp-block-table table {
   margin: 0;
@@ -265,6 +265,11 @@ hr {
 }
 .entry-content .wp-block-table tr:last-child {
   border-bottom: none;
+}
+.entry-content .wp-block-table figcaption {
+  padding-top: 4px;
+  border-top: 1px solid #000000;
+  font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
 }
 
 @media (max-width: 600px) {
@@ -563,12 +568,10 @@ a:active {
 }
 
 .contentPostNavigation {
-  display: flex;
-  flex-wrap: wrap;
-}
-.contentPostNavigation .navigationPostTile {
-  display: inline-block;
-  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  column-gap: 20px;
 }
 .contentPostNavigation .navigationPostTile .postNavigationImage {
   width: 100%;
@@ -604,8 +607,8 @@ a:active {
 }
 
 @media (max-width: 600px) {
-  .contentPostNavigation .navigationPostTile {
-    width: 100%;
+  .contentPostNavigation {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 /*--------------------------------------------------------------
@@ -1542,7 +1545,7 @@ h2,
 h3,
 h4 {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
@@ -1605,16 +1608,26 @@ i {
 }
 
 blockquote {
-  margin: 0px;
-  border-left: 2px solid;
-  padding-top: 1px;
-  padding-bottom: 1px;
+  margin: 0px 0px 40px 0px;
+  padding: 10px 0px 10px 40px;
+  border-left: 4px solid #000000;
+}
+blockquote p {
+  margin: 0;
+  font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+}
+blockquote cite {
+  display: inline-block;
+  margin-top: 4px;
+  font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+  font-style: normal;
 }
 
 @media (max-width: 600px) {
   blockquote {
-    padding-top: 2em;
-    margin-bottom: 2em;
+    padding: 10px 0px 10px 20px;
   }
 }
 address {
@@ -1627,7 +1640,8 @@ pre {
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 1.6;
-  margin-bottom: 1.6em;
+  margin-top: 0;
+  margin-bottom: 40px;
   max-width: 100%;
   overflow: auto;
   padding: 1.6em;
@@ -2086,9 +2100,6 @@ article.page {
   display: inline;
 }
 
-.container .entry-content > h3, .container .entry-content > h4 {
-  margin-bottom: 40px;
-}
 .container .entry-content > p {
   margin-bottom: 40px;
 }
@@ -2168,36 +2179,6 @@ article.page {
   background-color: #ffffff;
 }
 
-@media (max-width: 768px) {
-  .container .entry-content > h3, .container .entry-content > h4 {
-    padding-left: 0%;
-    padding-right: 0%;
-  }
-  .container .entry-content > p {
-    padding-left: 0%;
-    padding-right: 0%;
-  }
-}
-@media (max-width: 600px) {
-  .container .entry-content > p {
-    margin-top: 0em;
-    -webkit-margin-before: 0em;
-  }
-
-  code {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .entry-footer {
-    padding-left: 0%;
-    padding-right: 0%;
-  }
-
-  blockquote {
-    padding-left: 10.7%;
-  }
-}
 .paginationControl {
   display: flex;
   align-items: center;

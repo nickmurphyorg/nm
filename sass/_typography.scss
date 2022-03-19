@@ -60,7 +60,7 @@ h2,
 h3,
 h4{
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: variables.$space4;
   font-family: variables.$medium-font-stack;
   font-weight: 600;
 }
@@ -122,15 +122,27 @@ i {
 }
 
 blockquote {
-  margin: 0px;
-  border-left: 2px solid;
-  padding-top: 1px;
-  padding-bottom: 1px;
+  margin: 0px 0px variables.$space10 0px;
+  padding: 10px 0px 10px 40px;
+  border-left: 4px solid variables.$grey-1000;
+
+  p {
+    margin: 0;
+    font-family: variables.$medium-font-stack;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  cite {
+    display: inline-block;
+    margin-top: variables.$space1;
+    font-family: variables.$light-font-stack;
+    font-style: normal;
+  }
 }
 @media (max-width: variables.$breakpoint-s) {
   blockquote {
-    padding-top: 2em;
-    margin-bottom: 2em;
+    padding: 10px 0px 10px 20px;
   }
 }
 
@@ -144,7 +156,8 @@ pre {
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 1.6;
-  margin-bottom: 1.6em;
+  margin-top: 0;
+  margin-bottom: variables.$space10;
   max-width: 100%;
   overflow: auto;
   padding: 1.6em;

@@ -214,19 +214,19 @@ hr {
   }
 
   .wp-block-image {
-    margin: 0 0 2em;
+    margin: 0 0 variables.$space10 0;
   }
 
   .wp-block-embed {
-    margin: 0 0 2em;
+    margin: 0 0 variables.$space10 0;
   }
 
   .wp-block-media-text {
-    margin: 0 0 2em;
+    margin: 0 0 variables.$space10 0;
   }
 
   .wp-block-table {
-    margin: 0 0 2em;
+    margin: 0 0 variables.$space10 0;
 
     table {
       margin: 0;
@@ -242,6 +242,12 @@ hr {
 
     tr:last-child {
       border-bottom: none;
+    }
+
+    figcaption {
+      padding-top: variables.$space1;
+      border-top: 1px solid variables.$grey-1000;
+      font-family: variables.$light-font-stack;
     }
   }
 }
@@ -532,13 +538,12 @@ a:active {
 }
 
 .contentPostNavigation {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: variables.$space5;
+  column-gap: variables.$space5;
   
   .navigationPostTile {
-    display:inline-block;
-    width: 50%;
-
     .postNavigationImage {
       width: 100%;
       height: 200px;
@@ -584,9 +589,7 @@ a:active {
 
 @media (max-width: variables.$breakpoint-s) {
   .contentPostNavigation {
-    .navigationPostTile {
-      width: 100%;
-    }
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
