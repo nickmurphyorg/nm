@@ -381,6 +381,7 @@ a {
   text-decoration: none;
 
   &.primary {
+    display: inline-block;
     padding: 12px 24px;
     font-family: variables.$medium-font-stack;
     font-size: 20px;
@@ -926,13 +927,6 @@ span.wpcf7-not-valid-tip {
   h2 {
     margin-left: 38px;
     text-indent: -38px;
-  }
-}
-
-.fouro {
-  h3 {
-    margin-left: 23px;
-    text-indent: -23px;
   }
 }
 

@@ -384,6 +384,7 @@ a {
   text-decoration: none;
 }
 a.primary {
+  display: inline-block;
   padding: 12px 24px;
   font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
   font-size: 20px;
@@ -855,11 +856,6 @@ span.wpcf7-not-valid-tip {
 .no-results h2 {
   margin-left: 38px;
   text-indent: -38px;
-}
-
-.fouro h3 {
-  margin-left: 23px;
-  text-indent: -23px;
 }
 
 .entry-content {
@@ -2096,13 +2092,21 @@ article.page {
   color: #757575;
 }
 
-section.error-404 {
-  padding: 20px 0;
+.error-404 {
+  padding-bottom: 60px;
 }
-section.error-404 h1.page-title {
-  font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+.error-404 .page-header {
+  padding: 124px 0;
+}
+.error-404 .page-header h1 {
+  margin: 0;
 }
 
+@media (max-width: 600px) {
+  .error-404 .page-header {
+    padding: 60px 0;
+  }
+}
 /*--------------------------------------------------------------
 ## JetPack Feedback Forms
 --------------------------------------------------------------*/
