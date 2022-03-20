@@ -10,13 +10,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="row">
-		<div class="six columns squareShot">
+	<div class="row one-two-column">
+		<div class="squareShot">
 			<?php
 				the_post_thumbnail( 'thumbnail' );
 			?>
-		</div>
-		<div class="six columns resultTxt">
+		</div><!-- squareShot -->
+		<div class="resultTxt">
 			<header class="entry-header subH">
 				<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		
@@ -34,6 +34,6 @@
 			<footer class="entry-footer">
 				<?php nm_entry_footer(); ?>
 			</footer><!-- .entry-footer -->
-		</div><!-- six columns -->
+		</div><!-- resultTxt -->
 	</div><!-- row -->
 </article><!-- #post-## -->

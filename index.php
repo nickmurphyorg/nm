@@ -40,11 +40,11 @@ get_header(); ?>
 
 							<?php if ( $post_index % 2 == (($is_first_page) ? 1 : 0) ) : ?>
 								<!-- row start -->
-								<div class="row">
+								<div class="row two-columns">
 							<?php endif; ?>
 
 							<!-- Add Standard Post -->
-							<div class="chip six columns">
+							<div class="chip">
 								<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 							</div>
 

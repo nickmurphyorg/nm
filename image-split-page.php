@@ -18,16 +18,16 @@ get_header(); ?>
 					<div class="row">
 						<h1 class="page-title xl"><?php single_post_title(); ?></h1>
 					</div>
-					<div class="row">
+					<div class="row two-columns">
 						<?php if ( has_post_thumbnail() ) : ?>
-							<div class="postHero six columns">
+							<div class="postHero">
 								<?php the_post_thumbnail(); ?>
 							</div>
 						<?php endif; ?>
-						<div class="six columns">
+						<div>
 							<?php the_content(); ?>
 						</div>
-					</div>
+					</div><!-- row -->
 				</div><!-- #splitPage -->
 			</main><!-- #main -->
 		</article>

@@ -31,11 +31,22 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   padding: 0;
 }
 
-.column,
-.columns {
-  width: 100%;
-  float: left;
-  box-sizing: border-box;
+.row {
+  display: grid;
+  grid-column-gap: 20px;
+  column-gap: 20px;
+}
+.row.one-half-column {
+  grid-template-columns: repeat(2, 1fr);
+}
+.row.one-two-column {
+  grid-template-columns: 4fr 8fr;
+}
+.row.two-columns {
+  grid-template-columns: repeat(2, 1fr);
+}
+.row.footer-columns {
+  grid-template-columns: 2fr 4fr 3fr 3fr;
 }
 
 #content {
@@ -43,148 +54,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   background-color: #ffffff;
 }
 
-@media (min-width: 600px) {
-  .column,
-.columns {
-    margin-left: 4%;
+@media (max-width: 768px) {
+  .row.one-half-column {
+    grid-template-columns: 1fr;
   }
-
-  .column:first-child,
-.columns:first-child {
-    margin-left: 0;
-  }
-
-  .one.column,
-.one.columns {
-    width: 4.6666666667%;
-  }
-
-  .two.columns {
-    width: 13.3333333333%;
-  }
-
-  .three.columns {
-    width: 22%;
-  }
-
-  .four.columns {
-    width: 30.6666666667%;
-  }
-
-  .five.columns {
-    width: 39.3333333333%;
-  }
-
-  .six.columns {
-    width: 48%;
-  }
-
-  .seven.columns {
-    width: 56.6666666667%;
-  }
-
-  .eight.columns {
-    width: 65.3333333333%;
-  }
-
-  .nine.columns {
-    width: 74%;
-  }
-
-  .ten.columns {
-    width: 82.6666666667%;
-  }
-
-  .eleven.columns {
-    width: 91.3333333333%;
-  }
-
-  .twelve.columns {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .one-third.column {
-    width: 30.6666666667%;
-  }
-
-  .two-thirds.column {
-    width: 65.3333333333%;
-  }
-
-  .one-half.column {
-    width: 48%;
-  }
-
-  /* Offsets */
-  .offset-by-one.column,
-.offset-by-one.columns {
-    margin-left: 8.6666666667%;
-  }
-
-  .offset-by-two.column,
-.offset-by-two.columns {
-    margin-left: 17.3333333333%;
-  }
-
-  .offset-by-three.column,
-.offset-by-three.columns {
-    margin-left: 26%;
-  }
-
-  .offset-by-four.column,
-.offset-by-four.columns {
-    margin-left: 34.6666666667%;
-  }
-
-  .offset-by-five.column,
-.offset-by-five.columns {
-    margin-left: 43.3333333333%;
-  }
-
-  .offset-by-six.column,
-.offset-by-six.columns {
-    margin-left: 52%;
-  }
-
-  .offset-by-seven.column,
-.offset-by-seven.columns {
-    margin-left: 60.6666666667%;
-  }
-
-  .offset-by-eight.column,
-.offset-by-eight.columns {
-    margin-left: 69.3333333333%;
-  }
-
-  .offset-by-nine.column,
-.offset-by-nine.columns {
-    margin-left: 78%;
-  }
-
-  .offset-by-ten.column,
-.offset-by-ten.columns {
-    margin-left: 86.6666666667%;
-  }
-
-  .offset-by-eleven.column,
-.offset-by-eleven.columns {
-    margin-left: 95.3333333333%;
-  }
-
-  .offset-by-one-third.column,
-.offset-by-one-third.columns {
-    margin-left: 34.6666666667%;
-  }
-
-  .offset-by-two-thirds.column,
-.offset-by-two-thirds.columns {
-    margin-left: 69.3333333333%;
-  }
-
-  .offset-by-one-half.column,
-.offset-by-one-half.columns {
-    margin-left: 52%;
+}
+@media (max-width: 600px) {
+  .row.one-two-column, .row.two-columns, .row.footer-columns {
+    grid-template-columns: 1fr;
   }
 }
 /*--------------------------------------------------------------
@@ -1959,6 +1836,10 @@ big {
 #hero {
   padding-bottom: 124px;
 }
+#hero .homeTagline {
+  width: 100%;
+  max-width: 800px;
+}
 #hero .seo-title {
   display: none;
 }
@@ -2497,17 +2378,11 @@ pre code .preprocessing {
 #splitPage .page-title {
   margin-bottom: 124px;
 }
-#splitPage .splitColumn {
-  width: 48%;
-}
 #splitPage .postHero {
   height: 400px;
 }
 
 @media (max-width: 768px) {
-  #splitPage .splitColumn {
-    width: 100%;
-  }
   #splitPage .postHero {
     height: 300px;
   }

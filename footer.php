@@ -15,32 +15,22 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
-			<div class="row">
-				<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-					<div class="two columns">
-						<?php dynamic_sidebar( 'footer-1' ); ?>
-					</div>
-				<?php endif; ?>
-				<?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
-					<div class="four columns">
-						<?php dynamic_sidebar( 'footer-2' ); ?>
-					</div>
-				<?php endif; ?>
-				<?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
-					<div class="three columns">
-						<?php dynamic_sidebar( 'footer-3' ); ?>
-					</div>
-				<?php endif; ?>
-				<?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
-					<div class="three columns">
-						<?php dynamic_sidebar( 'footer-4' ); ?>
-					</div>
-				<?php endif; ?>
-			</div>
-			<div class="row">
-				<div class="footerLegal twelve columns">
-					<h5>Copyright Nick Murphy 2013-<?php echo date("Y"); ?>, all rights reserved. Corporate logos are the copyright of their respective owners. By using this site, you agree to the <a href="/terms-of-service">Terms Of Service</a> and <a href="/privacy-policy">Privacy Policy</a>. The views and opinions expressed on this site do not reflect my employer. <a href="/sitemap">Sitemap</a></h5>
+			<div class="row footer-columns">
+				<div>
+					<?php dynamic_sidebar( 'footer-1' ); ?>
 				</div>
+				<div class="four columns">
+					<?php dynamic_sidebar( 'footer-2' ); ?>
+				</div>
+				<div class="three columns">
+					<?php dynamic_sidebar( 'footer-3' ); ?>
+				</div>
+				<div class="three columns">
+					<?php dynamic_sidebar( 'footer-4' ); ?>
+				</div>
+			</div>
+			<div class="footerLegal">
+				<h5>Copyright Nick Murphy 2013-<?php echo date("Y"); ?>, all rights reserved. Corporate logos are the copyright of their respective owners. By using this site, you agree to the <a href="/terms-of-service">Terms Of Service</a> and <a href="/privacy-policy">Privacy Policy</a>. The views and opinions expressed on this site do not reflect my employer. <a href="/sitemap">Sitemap</a></h5>
 			</div>
 		</div>
 	</footer><!-- #colophon -->

@@ -537,10 +537,6 @@ pre {
     margin-bottom: variables.$space31;
   }
 
-  .splitColumn {
-    width: 48%;
-  }
-
   .postHero {
     height: 400px;
   }
@@ -548,10 +544,6 @@ pre {
 
 @media (max-width: variables.$breakpoint-m) {
   #splitPage {
-    .splitColumn {
-      width: 100%;
-    }
-
     .postHero {
       height: 300px;
     }

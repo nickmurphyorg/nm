@@ -11,6 +11,11 @@
 #hero {
   padding-bottom: variables.$space31;
 
+  .homeTagline {
+    width: 100%;
+    max-width: 800px;
+  }
+
   .seo-title {
     display: none;
   }

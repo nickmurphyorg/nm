@@ -10,14 +10,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="row chip heroPost">
+	<div class="row two-columns chip heroPost">
 		<?php if ( has_post_thumbnail() ) : ?>
-			<div class="postHero six columns">
+			<div class="postHero">
 				<?php the_post_thumbnail(); ?>
 			</div>
 		<?php endif; ?>
 
-		<div class="six columns">
+		<div>
 			<header class="entry-header subHeader chipHeader">
 				<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		
@@ -46,6 +46,6 @@
 					) );
 				?>
 			</div><!-- .chipContent -->
-		</div><!-- six columns -->
+		</div>
 	</div><!-- row heroPost -->
 </article><!-- #post-## -->

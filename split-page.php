@@ -18,8 +18,8 @@ get_header(); ?>
 					<div class="row">
 						<h1 class="page-title xl"><?php single_post_title(); ?></h1>
 					</div>
-					<div class="row">
-						<div class="splitColumn columns">
+					<div class="row one-half-column">
+						<div>
 							<?php the_content(); ?>
 						</div>
 					</div>
