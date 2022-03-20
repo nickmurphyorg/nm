@@ -135,6 +135,7 @@ hr {
   margin: 0;
 }
 .entry-content .wp-block-table td, .entry-content .wp-block-table th {
+  padding: 0 4px 0 0;
   line-height: 2em;
 }
 .entry-content .wp-block-table tr {
@@ -1840,6 +1841,9 @@ big {
 #hero .homeTagline {
   width: 100%;
   max-width: 800px;
+}
+#hero .homeTagline * {
+  margin: 0;
 }
 #hero .seo-title {
   display: none;
