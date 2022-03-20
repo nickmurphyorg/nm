@@ -16,39 +16,58 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+			<div class="container">
+				<?php if ( have_posts() ) : ?>
 
-		<?php if ( have_posts() ) : ?>
+					<?php if ( is_home() && ! is_front_page() ) : ?>
+						<header class="blogIndexHeader row">
+							<h1 class="page-title xl"><?php single_post_title(); ?></h1>
+						</header>
+					<?php endif; ?>
 
-			<?php if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-			<?php endif; ?>
+					<?php /* Start the Loop */ 
+						$post_index = 0;
+						$is_first_page = !is_paged();
+					?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
+						<?php if ( ( $post_index == 0 ) && ($is_first_page) ) : ?>
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
+							<?php get_template_part( 'template-parts/content', 'hero' ); ?>
+
+						<?php else : ?>
+
+							<?php if ( $post_index % 2 == (($is_first_page) ? 1 : 0) ) : ?>
+								<!-- row start -->
+								<div class="row two-columns">
+							<?php endif; ?>
+
+							<!-- Add Standard Post -->
+							<div class="chip">
+								<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+							</div>
+
+							<?php if ( ($post_index % 2 == (($is_first_page) ? 0 : 1)) || (($post_index + 1) == ($wp_query->post_count)) ) : ?>
+								</div>
+								<!-- row end -->
+							<?php endif; ?>
+
+						<?php endif; ?>
+
+						<?php $post_index++; ?>
+					<?php endwhile; ?>
+
+					<div class="row">
+						<?php get_template_part( 'template-parts/pagination'); ?>
+					</div>
 					
-					get_template_part( 'template-parts/content', get_post_format() );
-				?>
+				<?php else : ?>
 
-			<?php endwhile; ?>
+					<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-			<?php get_template_part( 'template-parts/pagination'); ?>
-			
-		<?php else : ?>
-
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-		<?php endif; ?>
-
+				<?php endif; ?>
+			</div><!-- Container -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

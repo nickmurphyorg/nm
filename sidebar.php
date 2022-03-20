@@ -12,6 +12,6 @@ if ( ! is_active_sidebar( 'footer-1' ) ) {
 }
 ?>
 
-<div class="widget-area two columns" role="complementary">
+<div class="widget-area" role="complementary">
 	<?php dynamic_sidebar( 'footer-1' ); ?>
 </div><!-- #secondary -->

@@ -3,20 +3,77 @@
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.projectHero {
-  background-color: variables.$grey-0;
-}
-
 .post {
+  .pageHeader {
+    padding-top: variables.$space31;
+    padding-bottom: 0;
+    margin-bottom: variables.$space31;
+
+    h1 {
+      margin-bottom: variables.$space3;
+    }
+
+    .entry-meta {
+      margin-bottom: 0;
+    }
+
+    h5 {
+      margin: 0;
+    }
+  }
+
   .window {
-    background-color: variables.$grey-0;
+    margin-bottom: variables.$space15;
+  }
+
+  .tags-links {
+    display: block;
   }
 }
 
 .page {
-  .entry-title {
-    font-family: variables.$medium-font-stack;
-    margin-bottom: 0;
+  .pageHeader {
+    padding-top: variables.$space31;
+    padding-bottom: 0;
+    margin-bottom: variables.$space31;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  .window {
+    margin-bottom: variables.$space15;
+  }
+}
+
+article {
+  &.page {
+    padding-bottom: variables.$space15;
+  }
+}
+
+@media (max-width: variables.$breakpoint-s) {
+  .post {
+    .pageHeader {
+      padding-top: variables.$space15;
+      margin-bottom: variables.$space15;
+    }
+  
+    .window {
+      margin-bottom: variables.$space7;
+    }
+  }
+
+  .page {
+    .pageHeader {
+      padding-top: variables.$space15;
+      margin-bottom: variables.$space15;
+    }
+
+    .window {
+      margin-bottom: variables.$space7;
+    }
   }
 }
 
@@ -34,103 +91,84 @@
   display: inline;
 }
 
-.slab {
-  .container {
-    .entry-content {
-      padding-top: 1em;
 
-      & > h3,
-      & > h4 {
-        padding-left: 8.7%;
-        padding-right: 8.7%;
-        margin-bottom: 0.25em;
-      }
+.container {
+  .entry-content {
+    & > p {
+      margin-bottom: variables.$space10;
 
-      & > p {
-        padding-left: 8.7%;
-        padding-right: 8.7%;
-        margin-bottom: 2em;
-
-        img {
-          max-width: none;
-          margin-left: -10.7%;
-          width: 121.4%;
-        }
-      }
-    }
-  }
-
-  .blocks-gallery-grid {
-    padding-left: 0;
-    padding-right: 0;
-    list-style-type: none;
-  }
-
-  .wp-block-code {
-    padding: 20px;
-    background: #002b36;
-    color: #839496;
-    max-width: none;
-  }
-
-  .wp-block-embed-vimeo {
-    .wp-block-embed__wrapper {
-      max-width: 100%;
-
-      iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
+      img {
+        max-width: none;
         width: 100%;
-        height: 100%;
       }
     }
   }
+}
 
-  .wp-embed-aspect-1-3 {
-    .wp-block-embed__wrapper {
-      padding-bottom: 300%;
+.blocks-gallery-grid {
+  padding-left: 0;
+  padding-right: 0;
+  list-style-type: none;
+}
+
+.wp-block-code {
+  padding: 20px;
+  background: #002b36;
+  color: #839496;
+  max-width: none;
+}
+
+.wp-block-embed-vimeo {
+  .wp-block-embed__wrapper {
+    max-width: 100%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   }
+}
 
-  .wp-embed-aspect-4-3 {
-    .wp-block-embed__wrapper {
-      padding-bottom: 75%;
-    }
+.wp-embed-aspect-1-3 {
+  .wp-block-embed__wrapper {
+    padding-bottom: 300%;
+  }
+}
+
+.wp-embed-aspect-4-3 {
+  .wp-block-embed__wrapper {
+    padding-bottom: 75%;
+  }
+}
+
+.wp-embed-aspect-16-9 {
+  .wp-block-embed__wrapper {
+    padding-bottom: 56.25%;
+  }
+}
+
+.entry-header {
+  .entry-title {
+    font-family: variables.$medium-font-stack;
   }
 
-  .wp-embed-aspect-16-9 {
-    .wp-block-embed__wrapper {
-      padding-bottom: 56.25%;
-    }
-  }
-
-  .entry-header {
-    padding-top: 2em;
-    padding-bottom: 1em;
-
-    .entry-title {
-      font-family: variables.$medium-font-stack;
-      margin-bottom: 0.25em;
-    }
-
-    .entry-meta {
-      font-family: variables.$light-font-stack;
-      font-weight: 300;
-    }
-  }
-
-  .entry-footer {
-    padding-left: 8.7%;
-    padding-right: 8.7%;
-    margin-bottom: 2em;
+  .entry-meta {
+    font-family: variables.$light-font-stack;
     font-weight: 300;
   }
+}
 
-  .page-links {
-    clear: both;
-    margin: 0 0 1.5em;
-  }
+.entry-footer {
+  margin-bottom: variables.$space10;
+  font-weight: 300;
+}
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
 }
 
 .post-password-form {
@@ -154,67 +192,23 @@
   background-color: variables.$white-color;
 }
 
-@media (max-width: variables.$breakpoint-m) {
-  .slab {
-    .container {
-      .entry-content {
-        & > h3,
-        & > h4 {
-          padding-left: 0%;
-          padding-right: 0%;
-        }
-
-        & > p {
-          padding-left: 0%;
-          padding-right: 0%;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: variables.$breakpoint-s) {
-  .slab {
-    .container {
-      .entry-content {
-        & > p {
-          margin-top: 0em;
-          -webkit-margin-before: 0em;
-
-          img {
-            margin-left: 0%;
-            width: 100%;
-          }
-        }
-      }
-    }
-
-    code {
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .entry-footer {
-      padding-left: 0%;
-      padding-right: 0%;
-    }
-  }
-
-  blockquote {
-    padding-left: 10.7%;
-  }
-}
-
 .paginationControl {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: variables.$space11;
+  padding-bottom: variables.$space21;
   font-size: 20px;
   line-height: 35px;
   text-align: center;
   background-color: variables.$grey-0;
+}
+
+@media (max-width: variables.$breakpoint-s) {
+  .paginationControl {
+    padding-top: variables.$space5;
+    padding-bottom: variables.$space15;
+  }
 }
 
 .page-numbers {
@@ -263,8 +257,8 @@ section.error-404 {
 ## Comments
 --------------------------------------------------------------*/
 #comments {
-  margin-top: 2em;
-  padding-bottom: 2em;
+  margin-top: variables.$space15;
+  padding-bottom: variables.$space15;
 }
 
 #cancel-comment-reply-link {
@@ -528,6 +522,79 @@ pre {
 
     .preprocessing {
       color: #b58900;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+## Split Page
+--------------------------------------------------------------*/
+#splitPage {
+  padding-top: variables.$space31;
+  padding-bottom: variables.$space15;
+
+  .page-title {
+    margin-bottom: variables.$space31;
+  }
+
+  .postHero {
+    height: 400px;
+  }
+}
+
+@media (max-width: variables.$breakpoint-m) {
+  #splitPage {
+    .postHero {
+      height: 300px;
+    }
+  }
+}
+
+@media (max-width: variables.$breakpoint-s) {
+  #splitPage {
+    padding-top: variables.$space15;
+  
+    .page-title {
+      margin-bottom: variables.$space15;
+    }
+
+    .postHero {
+      height: 200px;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+## Password Page
+--------------------------------------------------------------*/
+.post-password-required {
+  .container {
+    &.narrow {
+      max-width: calc(50% - 10px);
+      margin: 0;
+    }
+  }
+
+  p {
+    margin-bottom: variables.$space10;
+  }
+
+  input[type="password"] {
+    margin-bottom: variables.$space5;
+  }
+
+  .entry-footer {
+    display: none;
+  }
+}
+
+@media (max-width: variables.$breakpoint-m) {
+  .post-password-required {
+    .container {
+      &.narrow {
+        max-width: 100%;
+        margin: 0;
+      }
     }
   }
 }

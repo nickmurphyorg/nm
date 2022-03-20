@@ -3,345 +3,43 @@
 /*--------------------------------------------------------------
 ## Homepage
 --------------------------------------------------------------*/
-#slate {
-  position: relative;
-  z-index: 7;
-}
-
-.slideWindow {
-  width: 100%;
-  min-height: 100vh;
-  display: block;
-  position: relative;
-}
-.sheet {
-  width: 100%;
-  height: 100vh;
-}
-
-.sheetXL {
-  height: 106vh;
-  top: -3vh;
-  width: 100%;
-}
-
-.special {
-  width: 100%;
-  height: 125vh;
-}
-
-.parallax {
-  position: absolute;
+.homepage {
+  padding-top: variables.$space31;
 }
 
 /* Hero Section */
-$heroHeightDesktop: 500px;
-$heroHeightTablet: 400px;
-$heroHeightMobile: 200px;
-
 #hero {
-  position: relative;
-  height: $heroHeightDesktop;
-  overflow: hidden;
-  background-color: variables.$grey-0;
-}
+  padding-bottom: variables.$space31;
 
-#heroSlides {
-  top: 0;
-  left: 20px;
-  width: calc(100% - 40px);
-  height: $heroHeightDesktop;
-
-  .carousel {
+  .homeTagline {
     width: 100%;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-  
-    li {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: $heroHeightDesktop;
-  
-      picture {
-        display: flex;
-        width: 100%;
-        height: 100%;
-  
-        img {
-          width: 100%;
-          height: auto;
-          object-fit: cover;
-        }
-      }
-    }
-  }
-}
-
-.heroNavigation {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: 28px;
-
-  .slideTabs {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-
-    li {
-      display: flex;
-      align-items: center;
-      padding: 4px 9px;
-      cursor: pointer;
-
-      &:first-child {
-        padding-left: 0;
-      }
-  
-      &:last-child {
-        padding-right: 0;
-      }
-
-      span {
-        height: 4px;
-        width: 36px;
-        background: variables.$grey-500;
-      }
-
-      &:hover {
-        span {
-          background: variables.$primary-color;
-        }
-      }
-
-      &.active {
-        cursor: pointer;
-
-        span {
-          background: variables.$grey-1000;
-        }
-
-        &:hover {
-          span {
-            background: variables.$grey-1000;
-          }
-        }
-      }
-    }
-  }
-}
-
-/* Hero Text */
-.heroText {
-  padding: 24px 0;
-  background-color: variables.$grey-0;
-}
-
-.carouselElements {
-  display: flex;
-  flex-direction: row;
-
-  .carouselTypography {
-    width: 100%;
+    max-width: 800px;
   }
 
-  .carouselSkipButtons {
-    display: flex;
-    padding-top: 20px;
-
-    button {
-      &:first-child {
-        margin: 0;
-      }
-
-      &:last-child {
-        margin-left: 26px;
-        margin-right: 0;
-      }
-    }
-  }
-}
-
-@media (max-width: variables.$breakpoint-m) {
-  #hero {
-    height: $heroHeightTablet;
-  }
-
-  #heroSlides {
-    height: $heroHeightTablet;
-
-    .carousel {
-      li {
-        height: $heroHeightTablet;
-      }
-    }
-  }
-}
-
-@media (max-width: variables.$breakpoint-s) {
-  #hero {
-    height: $heroHeightMobile;
-  }
-
-  #heroSlides {
-    left: 0px;
-    width: 100%;
-    height: $heroHeightMobile;
-
-    .carousel {
-      li {
-        height: $heroHeightMobile;
-      }
-    }
-  }
-
-  .carouselElements {
-    flex-direction: column;
-
-    .carouselTypography {
-      margin-bottom: 24px;
-    }
-
-    .carouselSkipButtons {
-      padding-top: 0px;
-    }
-  }
-}
-
-.titles {
-  position: relative;
-  height: 58px;
-  width: 100%;
-  margin: 0 0 12px 0;
-  padding: 0;
-  overflow: hidden;
-  list-style-type: none;
-
-  li {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    h2 {
-      margin-bottom: 0;
-    }
-
-    a {
-      color: variables.$grey-1000;
-
-      &:hover {
-        color: variables.$grey-500;
-      }
-    }
-  }
-}
-
-.subtitles {
-  position: relative;
-  height: 29px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  list-style-type: none;
-
-  li {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    h3 {
-      line-height: 80%;
-      margin-bottom: 0;
-    }
-  }
-}
-
-@media (min-width: variables.$breakpoint-s) {
-  .titles {
-    height: 76px;
+  .seo-title {
+    display: none;
   }
 }
 
 /* Work Section */
 #work {
   width: 100%;
-  background-color: variables.$white-color;
-
-  .container {
-    padding-top: 10%;
-    padding-bottom: calc(10% - 36px);
-  }
-}
-
-@media (max-width: variables.$breakpoint-s) {
-  #work {
-    .container {
-      padding-top: 4%;
-      padding-bottom: 4%;
-    }
-  }
-}
-
-/* About Text */
-#about {
-  overflow: hidden;
-}
-#aboutText {
-  top: 0;
-  display: flex;
-  align-items: center;
-  z-index: 4;
-  width: 100%;
-  min-height: 100vh;
-  left: 0;
-  color: variables.$white-color;
-
-  .textWidget {
-    font-size: 18px;
-    line-height: 26px;
-  }
-}
-#aboutBackgroundImage {
-  left: 0;
-  z-index: 3;
-
-  picture {
-    display: flex;
-    width: 100%;
-    height: 100%;
-
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-  }
+  padding-bottom: variables.$space21;
 }
 
 /* Blog Styles */
 #blog {
-  background-color: variables.$white-color;
+  padding-bottom: variables.$space21;
+
+  .blogTitle {
+    margin-bottom: variables.$space10;
+  }
 
   h1 {
-    font-family: variables.$medium-font-stack;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    margin-bottom: 0;
-    display: inline-block;
-
     a {
       color: variables.$black-color;
-    }
 
-    &:hover {
-      a {
+      &:hover {
         color: variables.$silver-color;
       }
     }
@@ -363,10 +61,6 @@ $heroHeightMobile: 200px;
         color: variables.$silver-color;
       }
     }
-  }
-
-  .entry-meta {
-    margin-bottom: 2em;
   }
 
   .entry-title {
@@ -393,14 +87,19 @@ $heroHeightMobile: 200px;
 }
 
 @media (max-width: variables.$breakpoint-s) {
-  #blog {
-    h1 {
-      padding-top: 0.75em;
-      padding-bottom: 0.75em;
-    }
+  .homepage {
+    padding-top: variables.$space15;
   }
-  .captionThis {
-    margin-top: 2em;
-    margin-bottom: 2em;
+
+  #hero {
+    padding-bottom: variables.$space15;
+  }
+
+  #work {
+    padding-bottom: variables.$space5;
+  }
+  
+  #blog {
+    padding-bottom: variables.$space5;
   }
 }

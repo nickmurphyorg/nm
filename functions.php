@@ -156,59 +156,7 @@ function nm_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Projects', 'nm' ),
 		'id'            => 'projects',
-		'description'   => esc_html__( 'Projects', 'nm' ),
-		'before_widget' => '<div id="%1$s" class="tile %2$s">',
-		'after_widget'  => '</div>'
-	) );
-	
-	register_sidebar( array(
-		'name'          => esc_html__( 'Hero', 'nm' ),
-		'id'            => 'hero',
-		'description'   => esc_html__( 'Hero', 'nm' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '<span style="display:none;">',
-		'after_title'   => '</span>',
-	) );
-	
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sitemap', 'nm' ),
-		'id'            => 'site-map',
-		'description'   => esc_html__( 'HTML Sitemap', 'nm' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '<h3>',
-		'after_title'   => '</h3>',
-	) );
-	
-	register_sidebar( array(
-		'name'          => esc_html__( 'Resume', 'nm' ),
-		'id'            => 'resume',
-		'description'   => esc_html__( 'Resume module for navigation bar.', 'nm' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '<span style="display:none;">',
-		'after_title'   => '</span>',
-	) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Connect Slide', 'nm' ),
-		'id'            => 'connect-slide',
-		'description'   => esc_html__( 'Body copy for connect slide.', 'nm' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Connect Links', 'nm' ),
-		'id'            => 'connect-links',
-		'description'   => esc_html__( 'Links for connecting with me.', 'nm' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '<h3>',
-		'after_title'   => '</h3>',
+		'description'   => esc_html__( 'Projects', 'nm' )
 	) );
 }
 add_action( 'widgets_init', 'nm_widgets_init' );
@@ -230,10 +178,6 @@ function nm_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	
-	if ( is_front_page() ) {
-        wp_enqueue_script( 'nm-frontPage', get_template_directory_uri() . '/js/frontPage.js', array( 'jquery' ), '1.0', true );
-    }
 }
 add_action( 'wp_enqueue_scripts', 'nm_scripts' );
 

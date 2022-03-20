@@ -2,7 +2,7 @@
 /**
  * Template Name: Resume Page
  *
- * Static page to show my resume.
+ * Static page to a resume.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -13,17 +13,13 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<div id="resumepage">
-				<section class="layer slab">
-					<div class="container">
-            <?php if ( is_active_sidebar( 'resume' ) ) : ?>
-              <div class="resumeView">
-                <?php dynamic_sidebar( 'resume' ); ?>
-              </div>
-            <?php endif; ?>
-					</div><!-- container -->
-				</section>
-			</div><!-- #resumepage -->
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<div id="resumePage" class="container narrow">
+					<div class="resumeView">
+						<?php the_content(); ?>
+					</div><!-- resumeView -->
+				</div><!-- #resumePage -->
+			</article>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

@@ -1,39 +1,87 @@
 @use './variables';
 
-/*--------------------------------------------------------------
-## Blog Index
---------------------------------------------------------------*/
-body.blog {
-  .postHero {
-    a {
-      display: flex;
-      align-items: center;
-      align-content: center;
-      width: 100%;
-      height: 100%;
+/* Might Be Unnecessary */
+.squareShot {
+  a {
+    display: block;
+    width: 100%;
+    line-height: 0;
+  }
 
-      img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.descrip {
+  .entry-title {
+    margin-bottom: 0.1em;
+
+    a {
+      color: variables.$grey-1000;
+
+      &:hover {
+        color: variables.$grey-500;
       }
     }
   }
 }
 
-.whiteDivide {
+.entry-meta {
+  margin-bottom: 2em;
+
+  .posted-on {
+    font-weight: 300;
+
+    .entry-date {
+      color: variables.$grey-1000;
+
+      &:hover {
+        color: variables.$grey-500;
+      }
+    }
+  }
+}
+
+@media (max-width: variables.$breakpoint-s) {
+  .descrip {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.whiteDivide { /* used for archive page */
   position: relative;
   width: 100%;
   height: auto;
   background-color: variables.$white-color;
 }
 
-.postPreface {
-  padding-top: 4em;
-  padding-bottom: 4em;
+/*--------------------------------------------------------------
+## Blog Index
+--------------------------------------------------------------*/
+.blogIndexHeader {
+  padding-top: variables.$space31;
+
+  .page-title {
+    margin-bottom: variables.$space31;
+  }
+}
+
+.chip {
+  margin-bottom: variables.$space10;
+}
+
+/* Hero Post Tile */
+.heroPost {
+  .postHero {
+    height: 420px;
+    margin-bottom: 0;
+  }
 
   .entry-title {
-    margin-bottom: 0.25em;
+    margin-bottom: variables.$space2;
 
     a {
       color: variables.$black-color;
@@ -45,52 +93,85 @@ body.blog {
   }
 
   .entry-meta {
-    margin-bottom: 2em;
-    font-weight: 300;
+    margin-bottom: variables.$space5;
+
+    h5 {
+      margin: 0;
+    }
   }
 
-  .entry-content {
-    margin-bottom: 2em;
-
+  .chipContent {
     p {
-      margin-bottom: 0;
+      margin-bottom: variables.$space3;
     }
+  }
+}
 
-    .more-link {
-      display: inline-block;
-      font-family: variables.$medium-font-stack;
-      font-size: 18px;
-      margin-top: 1em;
-      color: variables.$accent-color;
+/* Standard Post Tile */
+.postPreface {
+  .postHero {
+    height: 320px;
+  }
+
+  .entry-title {
+    margin-bottom: variables.$space2;
+
+    a {
+      color: variables.$grey-1000;
 
       &:hover {
-        color: variables.$silver-color;
+        color: variables.$grey-500;
       }
     }
   }
 
-  .entry-footer {
-    p {
-      margin-bottom: 0;
-      font-weight: 300;
-      font-size: 16px;
+  .entry-meta {
+    margin-bottom: variables.$space5;
 
-      a {
-        font-family: variables.$light-font-stack;
-        padding-right: 1em;
-      }
+    h5 {
+      margin: 0;
+    }
+  }
+
+  .chipContent {
+    p {
+      margin-bottom: variables.$space3;
+    }
+  }
+}
+
+@media (max-width: variables.$breakpoint-m) {
+  .heroPost {
+    .postHero {
+      height: 320px;
     }
   }
 }
 
 @media (max-width: variables.$breakpoint-s) {
-  .postPreface {
-    padding-top: 2em;
+  .blogIndexHeader {
+    padding-top: variables.$space15;
+  
+    .page-title {
+      margin-bottom: variables.$space15;
+    }
+  }
+  
+  .heroPost {
+    .postHero {
+      height: 248px;
+      margin-bottom: variables.$space5;
+    }
 
-    .entry-content {
-      .more-link {
-        margin-top: 0.5em;
-      }
+    .entry-title {
+      font-size: 28px;
+      line-height: 34px;
+    }
+  }
+
+  .postPreface {
+    .postHero {
+      height: 248px;
     }
   }
 }
