@@ -9,25 +9,22 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area high">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
-			<section class="error-404 not-found container">
+			<div class="error-404 not-found container">
 				<header class="page-header">
 					<h1 class="xl">
 						<?php esc_html_e( '404', 'nm' ); ?>
 					</h1>
 				</header><!-- .page-header -->
 
-				<div class="page-content fouro">
-					
-					<h3><?php esc_html_e( '&mdash; The page you are looking for is no longer available, try searching or browse my projects below.', 'nm' ); ?></h3>
-
-					<?php get_template_part( 'template-parts/content', 'projects' ); ?>
-
+				<div class="page-content row one-half-column">
+					<div>
+						<p>This content is archived, under construction, or never existed. Visit the homepage to view the latest.</p>
+						<a class="primary" href="<?php echo get_site_url(); ?>">Home</a>
+					</div>
 				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
+			</div><!-- .error-404 -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

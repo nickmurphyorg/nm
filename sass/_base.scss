@@ -146,6 +146,7 @@ hr {
     }
 
     td, th {
+      padding: 0 variables.$space1 0 0;
       line-height: 2em;
     }
 
@@ -381,6 +382,7 @@ a {
   text-decoration: none;
 
   &.primary {
+    display: inline-block;
     padding: 12px 24px;
     font-family: variables.$medium-font-stack;
     font-size: 20px;
@@ -929,13 +931,6 @@ span.wpcf7-not-valid-tip {
   }
 }
 
-.fouro {
-  h3 {
-    margin-left: 23px;
-    text-indent: -23px;
-  }
-}
-
 .entry-content {
   display: block;
   max-width: 100%;
@@ -1167,7 +1162,7 @@ object {
 /* Blog Post */
 .window {
   position: relative;
-  height: 500px;
+  height: 750px;
   z-index: 3;
   display: block;
 }
@@ -1176,7 +1171,7 @@ object {
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 500px;
+  height: 750px;
   width: 100%;
   z-index: 1;
   overflow: hidden;
@@ -1198,11 +1193,11 @@ object {
   .postHero {
     height: 400px;
   }
-  .hero {
-    height: 400px;
-  }
   .window {
-    height: 400px;
+    height: 450px;
+  }
+  .hero {
+    height: 450px;
   }
 }
 @media (max-width: variables.$breakpoint-s) {
@@ -1211,11 +1206,11 @@ object {
   }
   .hero {
     left: 0px;
-    height: 200px;
+    height: 250px;
     width: 100%;
   }
   .window {
-    height: 200px;
+    height: 250px;
   }
 }
 

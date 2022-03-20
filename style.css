@@ -4,7 +4,7 @@ Theme URI: https://nickmurphy.org
 Author: Nick Murphy
 Author URI: https://nickmurphy.org
 Description: nm Portfolio Theme, All Rights Reserved.
-Version: 7.0.0
+Version: 7.0.1
 License: Attribution-NonCommercial-NoDerivatives 4.0 International
 License URI: http://creativecommons.org/licenses/by-nc-nd/4.0/
 Text Domain: nm
@@ -135,6 +135,7 @@ hr {
   margin: 0;
 }
 .entry-content .wp-block-table td, .entry-content .wp-block-table th {
+  padding: 0 4px 0 0;
   line-height: 2em;
 }
 .entry-content .wp-block-table tr {
@@ -384,6 +385,7 @@ a {
   text-decoration: none;
 }
 a.primary {
+  display: inline-block;
   padding: 12px 24px;
   font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
   font-size: 20px;
@@ -857,11 +859,6 @@ span.wpcf7-not-valid-tip {
   text-indent: -38px;
 }
 
-.fouro h3 {
-  margin-left: 23px;
-  text-indent: -23px;
-}
-
 .entry-content {
   display: block;
   max-width: 100%;
@@ -1075,7 +1072,7 @@ object {
 /* Blog Post */
 .window {
   position: relative;
-  height: 500px;
+  height: 750px;
   z-index: 3;
   display: block;
 }
@@ -1084,7 +1081,7 @@ object {
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 500px;
+  height: 750px;
   width: 100%;
   z-index: 1;
   overflow: hidden;
@@ -1105,12 +1102,12 @@ object {
     height: 400px;
   }
 
-  .hero {
-    height: 400px;
+  .window {
+    height: 450px;
   }
 
-  .window {
-    height: 400px;
+  .hero {
+    height: 450px;
   }
 }
 @media (max-width: 600px) {
@@ -1120,12 +1117,12 @@ object {
 
   .hero {
     left: 0px;
-    height: 200px;
+    height: 250px;
     width: 100%;
   }
 
   .window {
-    height: 200px;
+    height: 250px;
   }
 }
 .iphoneVideo {
@@ -1845,6 +1842,9 @@ big {
   width: 100%;
   max-width: 800px;
 }
+#hero .homeTagline * {
+  margin: 0;
+}
 #hero .seo-title {
   display: none;
 }
@@ -2096,13 +2096,21 @@ article.page {
   color: #757575;
 }
 
-section.error-404 {
-  padding: 20px 0;
+.error-404 {
+  padding-bottom: 60px;
 }
-section.error-404 h1.page-title {
-  font-family: "Helvetica Neue Medium", Helvetica, Arial, sans-serif;
+.error-404 .page-header {
+  padding: 124px 0;
+}
+.error-404 .page-header h1 {
+  margin: 0;
 }
 
+@media (max-width: 600px) {
+  .error-404 .page-header {
+    padding: 60px 0;
+  }
+}
 /*--------------------------------------------------------------
 ## JetPack Feedback Forms
 --------------------------------------------------------------*/

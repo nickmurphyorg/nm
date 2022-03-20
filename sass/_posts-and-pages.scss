@@ -226,11 +226,23 @@ article {
   }
 }
 
-section.error-404 {
-  padding: 20px 0;
+.error-404 {
+  padding-bottom: variables.$space15;
 
-  h1.page-title {
-    font-family: variables.$medium-font-stack;
+  .page-header {
+    padding: variables.$space31 0;
+
+    h1 {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: variables.$breakpoint-s) {
+  .error-404 {
+    .page-header {
+      padding: variables.$space15 0;
+    }
   }
 }
 
