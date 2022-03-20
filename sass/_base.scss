@@ -627,6 +627,10 @@ a:active {
 }
 
 .tileHolder {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
   li {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
