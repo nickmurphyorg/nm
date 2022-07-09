@@ -43,7 +43,6 @@
 <meta name="twitter:creator" content="@nickmurphyorg">
 <meta name="twitter:site" content="https://twitter.com/nickmurphyorg">
 
-<!-- Google Analytics -->
 <?php include('analyticstracking.php') ?>
 
 <?php wp_head(); ?>
