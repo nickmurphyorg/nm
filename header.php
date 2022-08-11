@@ -43,6 +43,8 @@
 <meta name="twitter:creator" content="@nickmurphyorg">
 <meta name="twitter:site" content="https://twitter.com/nickmurphyorg">
 
+<?php include('analytics.php') ?>
+
 <?php wp_head(); ?>
 </head>
 
