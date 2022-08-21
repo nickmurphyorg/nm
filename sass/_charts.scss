@@ -1,0 +1,81 @@
+@use './variables';
+
+/* Charts Beta Library */
+
+$line-color: variables.$grey-200;
+$bar-color: variables.$blue-500;
+$chart-color: variables.$grey-1000;
+
+.chartLibrary {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+  border-collapse: collapse;
+  color: $chart-color;
+  
+  td {
+    padding: 0;
+  }
+}
+
+td.leftLabel {
+  padding: 2px 4px;
+  text-align: right;
+}
+
+td.bottomLabel {
+  padding: 4px 2px;
+  border-top: 1px solid $chart-color;
+  text-align: center;
+}
+
+.line {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0) calc(50% - 1px), 
+    $line-color calc(50% - 1px) 50%, 
+    rgba(255, 255, 255, 0) 50%
+  );
+
+  &.base {
+    background: linear-gradient(
+      rgba(255, 255, 255, 0) calc(50% - 1px), 
+      $chart-color calc(50% - 1px) 50%, 
+      rgba(255, 255, 255, 0) 50%
+    );
+  }
+}
+
+.segment {
+  background: $bar-color;
+  
+  &.topHalf {
+    background: linear-gradient(
+      $bar-color 50%,
+      rgba(255, 255, 255, 0) 50%
+    );
+  }
+  
+  &.bottomHalf {
+    background: linear-gradient(
+      rgba(255, 255, 255, 0) calc(50% - 1px),
+      $line-color calc(50% - 1px) 50%,
+      $bar-color 50%,
+    );
+
+    &.base {
+      background: linear-gradient(
+        rgba(255, 255, 255, 0) calc(50% - 1px),
+        $chart-color calc(50% - 1px) 50%,
+        $bar-color 50%,
+      );
+    }
+  }
+}
+
+.baseline {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0) calc(50% - 2px),
+    $bar-color calc(50% - 2px) calc(50% + 1px),
+    rgba(255, 255, 255, 0) calc(50% + 1px)
+  )
+}
