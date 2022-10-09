@@ -30,7 +30,7 @@
 				</div>
 			</div>
 			<div class="footerLegal">
-				<h5>Copyright Nick Murphy 2013-<?php echo date("Y"); ?>, all rights reserved. Corporate logos are the copyright of their respective owners. By using this site, you agree to the <a href="/terms-of-service">Terms Of Service</a> and <a href="/privacy-policy">Privacy Policy</a>. The views and opinions expressed on this site do not reflect my employer. <a href="/sitemap">Sitemap</a></h5>
+				<h5>Copyright Nick Murphy 2013-<?php echo date("Y"); ?>, all rights reserved.</h5>
 			</div>
 		</div>
 	</footer><!-- #colophon -->
