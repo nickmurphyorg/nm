@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the footer.
+ * The template for displaying the footer
  *
  * Contains the closing of the #content div and all content after.
  *
@@ -11,10 +11,8 @@
 
 ?>
 
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="container">
+	<footer id="colophon" class="site-footer">
+	<div class="container">
 			<div class="row footer-columns">
 				<div>
 					<?php dynamic_sidebar( 'footer-1' ); ?>

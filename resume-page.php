@@ -14,7 +14,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<div id="resumePage" class="container narrow">
+				<div id="resumePage" class="container">
 					<div class="resumeView">
 						<?php the_content(); ?>
 					</div><!-- resumeView -->

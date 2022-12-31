@@ -22,10 +22,6 @@
     }
   }
 
-  .window {
-    margin-bottom: variables.$space15;
-  }
-
   .tags-links {
     display: block;
   }
@@ -41,10 +37,6 @@
       margin: 0;
     }
   }
-
-  .window {
-    margin-bottom: variables.$space15;
-  }
 }
 
 article {
@@ -59,20 +51,12 @@ article {
       padding-top: variables.$space15;
       margin-bottom: variables.$space15;
     }
-  
-    .window {
-      margin-bottom: variables.$space7;
-    }
   }
 
   .page {
     .pageHeader {
       padding-top: variables.$space15;
       margin-bottom: variables.$space15;
-    }
-
-    .window {
-      margin-bottom: variables.$space7;
     }
   }
 }
@@ -454,48 +438,6 @@ article {
 }
 
 /*--------------------------------------------------------------
-## Next Project (Currently not in use: content-next.php)
---------------------------------------------------------------*/
-#nextProject {
-  position: relative;
-  display: block;
-  width: 100%;
-  background-color: #eeeeee;
-}
-#nextProject .container {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-#nextProject .container h1 {
-  margin-bottom: 15px;
-}
-#nextProject .container h1:hover {
-  color: #808080;
-}
-#nextProject .container h2 {
-  margin-bottom: 0;
-}
-#nextProject .container h3 {
-  margin-bottom: 0;
-}
-#nextProject .tt {
-  display: none;
-}
-
-@media (max-width: 1440px) {
-  #nextProject .container {
-    padding-top: 45px;
-    padding-bottom: 45px;
-  }
-}
-@media (max-width: 1020px) {
-  #nextProject .container {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-}
-
-/*--------------------------------------------------------------
 ## Code Highlighting
 --------------------------------------------------------------*/
 pre {
@@ -580,13 +522,6 @@ pre {
 ## Password Page
 --------------------------------------------------------------*/
 .post-password-required {
-  .container {
-    &.narrow {
-      max-width: calc(50% - 10px);
-      margin: 0;
-    }
-  }
-
   p {
     margin-bottom: variables.$space10;
   }
@@ -597,16 +532,5 @@ pre {
 
   .entry-footer {
     display: none;
-  }
-}
-
-@media (max-width: variables.$breakpoint-m) {
-  .post-password-required {
-    .container {
-      &.narrow {
-        max-width: 100%;
-        margin: 0;
-      }
-    }
   }
 }

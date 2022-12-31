@@ -33,7 +33,7 @@ get_header(); ?>
 
 				<section id="work">
 					<div class="container">
-						<?php get_template_part( 'template-parts/content', 'projects' ); ?>
+						<!-- Change this to blocks in editor or dynamic list -->
 					</div><!-- container -->
 				</section><!-- work -->
 				

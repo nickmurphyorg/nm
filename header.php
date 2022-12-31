@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for our theme.
+ * The header for our theme
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
@@ -9,15 +9,15 @@
  * @package nm
  */
 
-?><!DOCTYPE html>
+?>
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-<!-- Favicon and Webapp -->
+	<!-- Favicon and Webapp -->
 <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicons/32.png" />
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -36,57 +36,51 @@
 <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="<?php echo get_stylesheet_directory_uri(); ?>/favicons/2048x1496.png">
 
 <!-- SEO -->
-<meta name="Description" content="User Experience Designer building Design Systems.">
+<?php
+	$nm_description = get_bloginfo( 'description', 'display' );
+	if ( $nm_description || is_customize_preview() ) :
+	?>
+		<meta name="Description" content="<?php echo $nm_description;?>">
+<?php endif; ?>
 
 <!-- Social Network -->
 <meta name="twitter:url" content="https://nickmurphy.org">
-<meta name="twitter:creator" content="@nickmurphyorg">
-<meta name="twitter:site" content="https://twitter.com/nickmurphyorg">
+<meta name="twitter:creator" content="@nick___murphy">
+<meta name="twitter:site" content="https://twitter.com/nick___murphy">
 
 <?php include('analytics.php') ?>
 
-<?php wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content">
 		<?php esc_html_e( 'Skip to content', 'nm' ); ?>
 	</a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<nav id="site-navigation" class="main-navigation" role="navigation">
+	<header id="masthead" class="site-header">
+		<nav id="site-navigation" class="main-navigation">
 			<div class="container">
-				<a class="homeIcon" href="/" title="Home">
-					<img id="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/nm.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/nm.png'">
-				</a>
+				<?php
+				the_custom_logo(); ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 
-				<button class="menuButton navigation">Menu</button>
-
-				<ul itemscope itemtype="https://schema.org/SiteNavigationElement" class="tabbed-navigation" role="menu">
-					<li class="workTab" itemprop="name" role="menuitem">
-						<a class="text" href="<?php echo get_site_url(); ?>/work/" title="Work" itemprop="url">Work</a>
-					</li>
-					<li itemprop="name" role="menuitem">
-						<a class="text" href="<?php echo get_site_url(); ?>/about/" title="About" itemprop="url">About</a>
-					</li>
-					<li class="blogTab" itemprop="name" role="menuitem">
-						<a class="text" href="<?php echo get_site_url(); ?>/blog/" title="Blog" itemprop="url">Blog</a>
-					</li>
-					<li class="emailTab" itemprop="name" role="menuitem">
-						<a class="text" href="<?php echo get_site_url(); ?>/contact/" title="Contact" itemprop="url">Contact</a>
-					</li>
-					<!-- Temporarily Removing
-					<li class="searchTab" itemprop="name" role="menuitem">
-						<a class="text" href="/search/" title="Search" itemprop="url">
-							<img class="staticMagnifierIcon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier.png'">
-							<img class="selectedMagnifierIcon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier-selected.svg" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/images/magnifier-selected.png'">
-						</a>
-					</li>
-					-->
-				</ul><!-- navigation -->
+				<button class="menu-toggle menuButton navigation" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'nm' ); ?></button>
+				
+				<!-- SEO Meta
+				ul itemscope itemtype="https://schema.org/SiteNavigationElement" role="menu"
+				li itemprop="name" role="menuitem"
+				a itemprop="url" -->
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					)
+				);
+				?>
 			</div><!-- container -->
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
