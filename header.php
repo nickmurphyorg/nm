@@ -36,14 +36,12 @@
 <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="<?php echo get_stylesheet_directory_uri(); ?>/favicons/2048x1496.png">
 
 <!-- SEO -->
-<meta name="Description" content="User Experience Designer building Design Systems.">
+<meta name="Description" content="Designing systems and experiences.">
 
 <!-- Social Network -->
 <meta name="twitter:url" content="https://nickmurphy.org">
-<meta name="twitter:creator" content="@nickmurphyorg">
-<meta name="twitter:site" content="https://twitter.com/nickmurphyorg">
-
-<?php include('analytics.php') ?>
+<meta name="twitter:creator" content="@nick___murphy">
+<meta name="twitter:site" content="https://twitter.com/nick___murphy">
 
 <?php wp_head(); ?>
 </head>
