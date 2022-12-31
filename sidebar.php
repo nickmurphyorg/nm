@@ -1,17 +1,17 @@
 <?php
 /**
- * The sidebar containing the main widget area.
+ * The sidebar containing the main widget area
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package nm
  */
 
-if ( ! is_active_sidebar( 'footer-1' ) ) {
+if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
 ?>
 
-<div class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'footer-1' ); ?>
-</div><!-- #secondary -->
+<aside id="secondary" class="widget-area">
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+</aside><!-- #secondary -->

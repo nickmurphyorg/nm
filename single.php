@@ -1,24 +1,26 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying all single posts
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package nm
  */
 
-get_header(); ?>
+get_header();
+?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-			<div class="container">
-				<?php while ( have_posts() ) : the_post(); ?>
+	<main id="primary" class="site-main">
+		<div class="container">
 
-					<?php get_template_part( 'template-parts/content', 'single' ); ?>
-					
-					<div class="container narrow">
-						<!-- post navigation widget -->
-						<div class="contentPostNavigation">
+			<?php
+			while ( have_posts() ) :
+				the_post();
+
+				get_template_part( 'template-parts/content', get_post_type() ); ?>
+
+				<!-- Post Navigation Widget -->
+				<div class="contentPostNavigation">
 							<div class="navigationPostTile">
 								<?php $previous_post = get_previous_post();
 									
@@ -49,17 +51,17 @@ get_header(); ?>
 								<?php endif; ?>
 							</div><!-- next post -->
 						</div>
-						<?php
-							// If comments are open or we have at least one comment, load up the comment template.
-							if ( comments_open() || get_comments_number() ) :
-								comments_template();
-							endif;
-						?>
-					</div><!-- container narrow -->
+			<?php
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
 
-				<?php endwhile; // End of the loop. ?>
-			</div><!-- Container -->
-		</main><!-- #main -->
-	</div><!-- #primary -->
+			endwhile; // End of the loop.
+			?>
 
-<?php get_footer(); ?>
+		</div><!-- Container -->
+	</main><!-- #main -->
+
+<?php
+get_footer();

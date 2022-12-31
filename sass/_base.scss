@@ -11,10 +11,6 @@
   padding: 0 20px;
   box-sizing: border-box;
 
-  &.narrow {
-    max-width: 960px;
-    padding: 0;
-  }
 }
 
 .row {
@@ -852,76 +848,6 @@ span.wpcf7-not-valid-tip {
   }
 }
 
-.resultTxt {
-  .entry-header {
-    .entry-title {
-      font-family: variables.$medium-font-stack;
-      font-size: 40px;
-      line-height: 49px;
-      margin-bottom: 0;
-
-      a {
-        color: variables.$black-color;
-      }
-
-      a:hover {
-        color: variables.$silver-color;
-      }
-    }
-
-    .entry-meta {
-      .posted-on {
-        font-weight: 300;
-
-        a {
-          color: variables.$black-color;
-
-          &:hover {
-            color: variables.$silver-color;
-          }
-        }
-      }
-    }
-
-    .entry-summary {
-      margin-top: 2em;
-
-      p {
-        margin-bottom: 0.4em;
-      }
-    }
-
-    .entry-footer {
-      font-weight: 300;
-      margin-bottom: 1.5em;
-
-      .tags-links {
-        display: none;
-      }
-
-      .comments-link {
-        font-family: variables.$light-font-stack;
-      }
-    }
-  }
-}
-
-@media (max-width: variables.$breakpoint-s) {
-  .resultTxt {
-    .entry-header {
-      margin-top: 1em;
-    }
-
-    .entry-summary {
-      margin-top: 1em;
-    }
-
-    .entry-footer {
-      margin-bottom: 2em;
-    }
-  }
-}
-
 .no-results {
   min-height: 100vh;
 
@@ -1160,13 +1086,6 @@ object {
 }
 
 /* Blog Post */
-.window {
-  position: relative;
-  height: 750px;
-  z-index: 3;
-  display: block;
-}
-
 .hero {
   position: absolute;
   top: 0px;
@@ -1193,9 +1112,6 @@ object {
   .postHero {
     height: 400px;
   }
-  .window {
-    height: 450px;
-  }
   .hero {
     height: 450px;
   }
@@ -1208,9 +1124,6 @@ object {
     left: 0px;
     height: 250px;
     width: 100%;
-  }
-  .window {
-    height: 250px;
   }
 }
 

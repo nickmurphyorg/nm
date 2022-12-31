@@ -17,7 +17,7 @@ get_header(); ?>
 				<div class="row">
 					<h1 class="xl">Work</h1>
 				</div>
-				<?php get_template_part( 'template-parts/content', 'projects' ); ?>
+				<!-- Like front page, change this to blocks or a list -->
 			</div><!-- #workpage -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
